@@ -40,7 +40,7 @@ class creg extends CI_Controller {
 		$password=$this->input->post('Password');
 		 $passht2=htmlspecialchars($password);
 		$encpassword=$this->encrypt->sha1($passht2);
-		$randomnumber = random_string('alnum',20);
+		$randomnumber = random_string('alnum',25);
 		$status = "F";
   $data = array(
 'Name' => $this->input->post('Name'),
@@ -57,7 +57,7 @@ class creg extends CI_Controller {
 
 $this->load->model('mreg');
 $this->mreg->insertdb($data);
-$this->emailmodel->sendVerificatinEmail("shafeq.hasan@gmail.com","13nRGi7UDv4CkE7JHP1o");
+$this->emailmodel->sendVerificatinEmail($this->input->post('Email'),$randomnumber);
 $this->load->view('success');//loading success view
 }
 }
