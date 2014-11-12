@@ -17,7 +17,7 @@ $lang['is_numeric']			= "The %s field must contain only numeric characters.";
 $lang['integer']			= "The %s field must contain an integer.";
 $lang['regex_match']		= "The %s field is not in the correct format.";
 $lang['matches']			= "The %s field does not match the %s field.";
-$lang['is_unique'] 			= "<font color= #DC0558 size =2px >This %s is already taken. Please choose another one.</font>";
+$lang['is_unique'] 			= "<font color= #DC0558 size =2px > %s telah digunakan.</font>";
 $lang['is_natural']			= "The %s field must contain only positive numbers.";
 $lang['is_natural_no_zero']	= "The %s field must contain a number greater than zero.";
 $lang['decimal']			= "The %s field must contain a decimal number.";

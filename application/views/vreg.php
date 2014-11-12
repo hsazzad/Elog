@@ -32,23 +32,23 @@
 
   </head>
 
-  <body>
+  <body class="lock-screen">
 
-  <section id="container" class="">
-    
+  <br/>
+     <br/>
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper">
+          
               <!-- page start-->
      
               <div class="row">
                  
-                  <div class="row">
+              
 				
-                  <div class="col-lg-6">
+                  <div class="col-md-7 col-md-offset-1">
                       <section class="panel">
                           <header class="panel-heading">
-                             Daftar
+                         <center>    Daftar</center>
                           </header>
                           <div class="panel-body">
 						  						  		 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
@@ -63,7 +63,7 @@
                                   </div>
                                   <div class="form-group">
                                       <label for="ic">No. Kad Pengenalan <?php echo form_error('ID'); ?></label>
-                                      <input type="text" class="form-control" name = "ID"  value="<?php echo set_value('ID'); ?>" required>
+                                      <input type="text"  maxlength="12" class="form-control" name = "ID"  value="<?php echo set_value('ID'); ?>" required>
                                   </div>
                                   <div class="form-group">
                                       <label for="grade">Jawatan/Gred <?php echo form_error('Grade'); ?></label>
@@ -96,7 +96,7 @@
                               <input type="email" class="form-control" name = "Email" placeholder="Email" value="<?php echo set_value('Email'); ?>" required>
                                   </div>
                                   
-                                  <button type="submit" class="btn btn-info">Submit</button>
+                               <center>   <button type="submit" class="btn btn-info ">Submit</button></center>
                               </form>
 
                           </div>

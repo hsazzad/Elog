@@ -23,7 +23,7 @@ class creg extends CI_Controller {
 		$this->form_validation->set_rules('Name', 'Full Name', 'trim|required');
 		$this->form_validation->set_rules('ID', 'Identity Card No', 'trim|required|numeric|exact_length[12]');
 		$this->form_validation->set_rules('Unit', 'Division/Branch/Unit', 'trim|required');
-		$this->form_validation->set_rules('Grade', 'Post/Grade', 'trim|required|is_unique[user.Grade]');
+		$this->form_validation->set_rules('Grade', 'Jawatan/Gred', 'trim|required|is_unique[user.Grade]');
 		$this->form_validation->set_rules('Date', 'Day/Month/Year', 'trim|required');
 		$this->form_validation->set_rules('Password', 'Password', 'required|min_length[5]');
 		$this->form_validation->set_rules('Email', 'Email', 'trim|required');
@@ -39,6 +39,7 @@ class creg extends CI_Controller {
 		$password=$this->input->post('Password');
 		 $passht2=htmlspecialchars($password);
 		$encpassword=$this->encrypt->sha1($passht2);
+		$Email = $this->input->post('Email');
   $data = array(
 'Name' => $this->input->post('Name'),
 'ID' => $this->input->post('ID'),
@@ -52,7 +53,7 @@ class creg extends CI_Controller {
 
 $this->load->model('mreg');
 $this->mreg->insertdb($data);
-$this->load->view('success');//loading success view
+$this->load->view('success',$Email);//loading success view
 }
 }
 

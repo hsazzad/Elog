@@ -38,11 +38,11 @@
            <input type="password" class="form-control" id ="Password" name ="Password" placeholder="Password" required>
 		 
 		 <select class="form-control" id= "User_type" name="User_type">
-			<option value="User">User</option>
+			<option value="User">Kakitangan</option>
 			<option value="Admin">Admin</option>			
 		</select>
 
-
+<br/>
            
             <button class="btn btn-lg btn-login btn-block" type="submit">Log Masuk</button>
            

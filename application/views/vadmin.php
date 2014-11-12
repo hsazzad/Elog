@@ -139,7 +139,14 @@ foreach ($query2->result() as $row3)
 		<button type='submit' name='val' id='val'   class='btn btn-primary btn-block' value="<?php echo $j; ?>" >Approve</button>
 	<?php	echo "</td>";
 		}
+else
+		{ 
+		echo "<td>";?>
+		<button type='submit' name='val2' id='val2'   class='btn btn-primary btn-block' value="<?php echo $j; ?>">Get PDF</button>
+	<?php	echo "</td>";
+		}	
 ?>
+
     </tr>
 	
 <?php $j++;?>

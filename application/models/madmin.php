@@ -33,8 +33,7 @@ class madmin extends CI_Model{
 	 $val= $_POST['val'];
 	   $UID= $_POST['UID'][$val];
 	   $Supervisor_Grade= $_POST['Supervisor_Grade'][$val];
-	 echo $UID."<br/>";
-	 echo  $Supervisor_Grade;
+	
 $this->db->where('UID', $UID); 
 $res=$this->db->update('course',array ('Supervisor_Grade' => $Supervisor_Grade)); 
 	
