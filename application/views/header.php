@@ -97,9 +97,7 @@ foreach ($query1->result() as $row1)
           </div>
           <div class="top-nav ">
               <ul class="nav pull-right top-menu">
-                  <li>
-                      <input type="text" class="form-control search" placeholder="Search">
-                  </li>
+                 
                   <!-- user login dropdown start-->
                   <li class="dropdown">
                       <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -124,11 +122,11 @@ foreach ($query1->result() as $row1)
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-			  <i class="icon-dashboard"></i>
-			   <li role="presentation"><a>Enter Course Info</a></li>
+		
+			   <li role="presentation"><a href="<?php  $this->load->helper('url'); echo site_url("/courseinfo/index"); ?>">Maklumat Program Latihan</a></li>
   
   
-  <li role="presentation" class="active"><a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/index"); ?>">Evaluate<span class="badge">
+  <li role="presentation" class="active"><a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/index"); ?>">Pengesahan <span class="badge">
   <?php
   $UID=$this->session->userdata('UID');
    	  
@@ -148,41 +146,7 @@ foreach ($query1->result() as $row1)
 				   
 				   ?>
   </span></a></li>
-                  <li>
-                      <a href="index.html">
-                          <i class="icon-dashboard"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="icon-laptop"></i>
-                          <span>Layouts</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="boxed_page.html">Boxed Page</a></li>
-                          <li><a  href="horizontal_menu.html">Horizontal Menu</a></li>
-                          <li><a  href="language_switch_bar.html">Language Switch Bar</a></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="icon-book"></i>
-                          <span>UI Elements</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="widget.html">Widget</a></li>
-                          <li><a  href="slider.html">Slider</a></li>
-                          <li><a  href="nestable.html">Nestable</a></li>
-                          <li><a  href="font_awesome.html">Font Awesome</a></li>
-                      </ul>
-                  </li>
-
-                
+              
 
 
                   <!--multi level menu end-->

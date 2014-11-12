@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2014 at 10:42 AM
+-- Generation Time: Nov 12, 2014 at 03:00 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -56,21 +56,24 @@ CREATE TABLE IF NOT EXISTS `course` (
   `Knowledge` varchar(10) NOT NULL,
   `Comments` varchar(150) NOT NULL,
   `Supervisor_Grade` varchar(200) NOT NULL,
+  `Supervisor_comment` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Submit_date` varchar(50) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Status` varchar(200) NOT NULL,
+  `Mail_status` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `Coursename` (`Coursename`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`Coursename`, `Cert_file`, `Course_Date`, `UID`, `Place_type`, `Satisfaction`, `Knowledge`, `Comments`, `Supervisor_Grade`, `Submit_date`, `id`, `Status`) VALUES
-('Cissp', 'TR-03124-1.pdf', '10/10/2010', 'sazzad11', 'External', '4', '4', 'good!!', 'asda', '1415074542', 1, 'In Progress'),
-('ciso', '', '10/10/2010', 'zad12', 'Internal', '3', '5', 'ok', '', '1415248883', 2, 'Pending'),
-('sap', '', '10/10/2010', 'azda12', 'Internal', '1', '2', 'not good', 'pap12', '1415248925', 3, 'In Progress');
+INSERT INTO `course` (`Coursename`, `Cert_file`, `Course_Date`, `UID`, `Place_type`, `Satisfaction`, `Knowledge`, `Comments`, `Supervisor_Grade`, `Supervisor_comment`, `Submit_date`, `id`, `Status`, `Mail_status`) VALUES
+('Cissp', 'TR-03124-1.pdf', '10/10/2010', 'sazzad11', 'External', '4', '4', 'good!!', 'pap12', 'valoi', '1415074542', 1, 'Completed', ''),
+('ciso', '', '10/10/2010', 'zad12', 'Internal', '3', '5', 'ok', 'pap12', 'motamuti', '1415248883', 2, 'Pending', ''),
+('sap', '', '10/10/2010', 'azda12', 'Internal', '1', '2', 'not good', 'pap5', 'ewqqwewq', '1415248925', 3, '', ''),
+('sads', 'TR-03124-11.pdf', '10/10/2010', 'alice12', 'Internal', '4', '5', 'ok', 'pap5', 'kharap na', '1415597363', 4, 'Pending', '');
 
 -- --------------------------------------------------------
 
@@ -97,15 +100,17 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`Name`, `ID`, `Grade`, `Date`, `Unit`, `UID`, `Password`, `Email`, `email_verification_code`, `active_status`) VALUES
-('sdfdsfgdsfs', '56456546546546', '45654654', '45645', 'dfe45', 'asdfsf', 'c177e077a9d7e681e95e419a33186a8f1ca3678e', 'sdsaj@jsjs.com', 'jf9tofR5LS8OBqqFJWtv', 'F'),
+('saiful', '12341', 'pap12', '10/10/1010', 'security', 'aaazada12', '7e13df6e4fe5dc6fc0bbe2fb9eb9e71b3d30f833', 'saiful@g.com', '', ''),
+('saiful', '123412312312312312321321321', 'pap12', '10/10/1010', 'security', 'aaazda12', '7e13df6e4fe5dc6fc0bbe2fb9eb9e71b3d30f833', 'saiful@g.com', '', ''),
+('alice', 'ewq1211212', 'permai11', '12/18/2001', 'security', 'alice12', '51efc99c659b5f840f6266654af7707bb888dafe', 'alice@gmail.com', '', ''),
 ('azda', '211kasa', 'pap12', '12/18/2001', 'security', 'azda12', '7d5b188a8885fd49d97691480653405be9d31bb4', 'azda@gmail.com', '', ''),
-('dsfdsfsdfsd', '453534534534534', 'drf34f45', '12/10/2014', 'sdgfsdgdg', 'dsgfdgtdg', '94a1029caedc19140ca8115ccf386c288b7ba377', 'estalokaz@gmail.com', 'GxWFopTUoCgkSRfOEEHC', 'F'),
-('sdfgvdgergeg', 'fegv4r5gf54f4f445gv', 'gvertgvtrg', 'dgergrtgtrgrtg', 'grtgrtgrtgrtg', 'gvrtgtrgrt', 'c3da422f6c0235f9edb6c3be1a5c549750c2e113', 'sdsaj@jsjs.com', 'qZ0sffPIo03aFD7TGrYt', 'F'),
-('sdfgvdgergeg', 'fegv4r5gf54f4f445gv', 'gvertgvtrg', 'dgergrtgtrgrtg', 'grtgrtgrtgrtg', 'gvrtgtrgrt6767', '70d290a147d41465dc1fe1fb9604e980991aef24', 'sdsaj@jsjs.com', 'kF4MykiiOOe6cKsdS7YC', 'F'),
-('sdfgvdgergeg', 'fegv4r5gf54f4f445gv', 'gvertgvtrg', 'dgergrtgtrgrtg', 'grtgrtgrtgrtg', 'hehehe', 'd0ab5e5b62db092043f6996a17d44fa8ff447f9e', 'sdsaj@jsjs.com', 'IelM53ju7dFP5QwWbT5f', 'F'),
+('fairuz', '123131231231', 'pap007', '10/10/1010', 'security', 'fai12', 'fdf62591e5d6e577b84d42e811d640e78dc09425', 'asdasd@sadas.sdas', '', ''),
+('fairuz', '123131231231', 'pap008', '10/10/1010', 'security', 'fai13', '55f7504162a7ae380cb9b7c70da635bbe42a1455', 'asdasd@sadas.sdas', '', ''),
+('fairuz', '123131231231', 'pap009', '10/10/1010', 'security', 'fai14', 'feb00d5e00c02adee706b8174fe7dad918f76477', 'asdasd@sadas.sdas', '', ''),
+('fairuz', '123131231231', 'pap010', '10/10/1010', 'security', 'fai15', 'f3594fc7f8118ab58b5159ee21787170a2167fe8', 'asdasd@sadas.sdas', '', ''),
+('fairuz', '123131231231', 'pap011', '10/10/1010', 'security', 'fai16', 'b0e18a8e5dbfba759d10afdd3322947275d110e7', 'asdasd@sadas.sdas', '', ''),
+('fairuz', '123131231231', 'pap012', '10/10/1010', 'security', 'fai17', '2da57cfdf88a2da86c3c0bc248b27d3f83509cd6', 'asdasd@sadas.sdas', '', ''),
 ('sazzad', '12312asd', 'asda', '12/18/2001', 'sadasd', 'sazzad11', 'c1dd73cfe42e27cf8914373a2c01aad5e065ac7f', 'sazzadknife@gmail.com', '', ''),
-('test', '546456546456', 'dsfdfe4f3', '13/10/2014', 'safdsfs', 'shark', 'b7c40b9c66bc88d38a59e554c639d743e77f1b65', 'nizam.eija@gmail.com', 'CU5NTLrVKsZ17MLDrgYd', 'F'),
-('MOHD SHAFEQ BIN MD HASAN', '871015568494', '3deff', '12/10/2014', 'sadasd', 'shark77', '3d4f2bf07dc1be38b20cd6e46949a1071f9d0e3d', 'shafeq.hasan@gmail.com', 'TvkxzMzK02gmcfVIvvE5', ''),
 ('zad', '123aqwe', 'pap5', '12/18/2001', 'IT', 'zad12', 'c62c6a4f802d94b4d9d0a678505929d957c2d186', 'zad@gmail.com', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
