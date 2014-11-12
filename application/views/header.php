@@ -63,10 +63,7 @@ foreach ($query1->result() as $row1)
 		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
 	 
 	$num=$query2->num_rows();
-	if($num>0)
-	{
-	echo $num;
-	}
+	
 				   
 				   ?>
               <li id="header_inbox_bar" class="dropdown">
