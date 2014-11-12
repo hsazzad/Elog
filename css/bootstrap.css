@@ -1960,7 +1960,7 @@ output {
 }
 
 .form-control::-webkit-input-placeholder {
-  color: #999999;
+  color: #fffffff;
 }
 
 .form-control[disabled],
