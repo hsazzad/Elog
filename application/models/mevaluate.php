@@ -13,29 +13,47 @@ class mevaluate extends CI_Model{
    public function search()
     {
           $UID=$this->session->userdata('UID');
-         
-     $query = $this->db->select('*')->from('course')->get();
-    return $query->result() ;
+   	  
+		  $query1 = $this->db->get_where('user', array('UID' => $UID));
+foreach ($query1->result() as $row1)
+{
+          $egrade= $row1->Grade;
 }
-  public function mdo_approve()
+	$Status = "Pending";
+		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
+	 
+	$num=$query2->num_rows();
+         if($num>0){
+		
+		 return $query2->result() ;
+		  }
+		  else
+		  {
+		   return false;
+		  }
+		     return true;
+}
+
+public function mdo_approve()
     {
-	$Status = "In Progress";
-	$id=$this->input->post('id');
-    $Supervisor_Grade=$this->input->post('Supervisor_Grade'); 
-	$data = array( 
-'Status' => $Status, 
-'Supervisor_Grade' => $Supervisor_Grade
-); 
-$this->db->where('id', $id); 
-$res=$this->db->update('course', $data); 
 	
 	
-			 if($res!=0)	  
+	$Status = "Completed";
+  
+    $val= $_POST['val'];
+       $UID= $_POST['UID'][$val];
+	   $Supervisor_comment= $_POST['Supervisor_comment'][$val];
+		
+		$this->db->where('UID', $UID); 
+$res=$this->db->update('course',array ('Supervisor_comment' => $Supervisor_comment, 'Status' => $Status)); 
+    
+	 if($res!=0)	  
        {       return true;
 }
 else
 {return false;}
 
- }
+
+}
 }
 ?>

@@ -15,19 +15,28 @@ class madmin extends CI_Model{
           
          
      $query = $this->db->select('*')->from('course')->get();
-    return $query->result() ;
-}
+	 $num=$query->num_rows();
+
+ if($num>0){
+		
+		 return $query->result() ;
+		  }
+		  else
+		  {
+		   return false;
+		  }
+		     return true;
+	
+	}
   public function mdo_approve()
     {
-	$Status = "In Progress";
-	$id=$this->input->post('id');
-    $Supervisor_Grade=$this->input->post('Supervisor_Grade'); 
-	$data = array( 
-'Status' => $Status, 
-'Supervisor_Grade' => $Supervisor_Grade
-); 
-$this->db->where('id', $id); 
-$res=$this->db->update('course', $data); 
+	 $val= $_POST['val'];
+	   $UID= $_POST['UID'][$val];
+	   $Supervisor_Grade= $_POST['Supervisor_Grade'][$val];
+	 echo $UID."<br/>";
+	 echo  $Supervisor_Grade;
+$this->db->where('UID', $UID); 
+$res=$this->db->update('course',array ('Supervisor_Grade' => $Supervisor_Grade)); 
 	
 	
 			 if($res!=0)	  

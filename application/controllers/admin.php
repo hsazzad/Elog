@@ -12,8 +12,17 @@ class admin extends CI_Controller {
  }
      public function index(){
 	  $this->load->model ('madmin'); 
-  $data ['query']=$this->madmin->search();	  
+  $res=$this->madmin->search();
+				
+				if($res!=0)  
+{
+$data ['query']=$this->madmin->search();	  
          $this->load->view('vadmin', $data);
+				   }
+				   else
+				   {
+				    $this->load->view('vadmin2');
+				   }
 				
     }
     public function do_approve()
@@ -25,8 +34,6 @@ class admin extends CI_Controller {
 	{
 	redirect('admin');
 	}
-	
-    
     }
   
 }

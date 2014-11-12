@@ -22,9 +22,9 @@ class creg extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('UID', 'User ID', 'trim|required|is_unique[user.UID]');
 		$this->form_validation->set_rules('Name', 'Full Name', 'trim|required');
-		$this->form_validation->set_rules('ID', 'Identity Card No', 'trim|required');
+		$this->form_validation->set_rules('ID', 'Identity Card No', 'trim|required|numeric|exact_length[12]');
 		$this->form_validation->set_rules('Unit', 'Division/Branch/Unit', 'trim|required');
-		$this->form_validation->set_rules('Grade', 'Post/Grade', 'trim|required');
+		$this->form_validation->set_rules('Grade', 'Post/Grade', 'trim|required|is_unique[user.Grade]');
 		$this->form_validation->set_rules('Date', 'Day/Month/Year', 'trim|required');
 		$this->form_validation->set_rules('Password', 'Password', 'required|min_length[5]');
 		$this->form_validation->set_rules('Email', 'Email', 'trim|required');
