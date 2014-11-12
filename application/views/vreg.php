@@ -42,41 +42,67 @@
               <!-- page start-->
      
               <div class="row">
-                  <div class="col-lg-7">
+                 
+                  <div class="row">
+				
+                  <div class="col-lg-6">
                       <section class="panel">
                           <header class="panel-heading">
-                            Daftar Baru
+                             Daftar
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal" method="post" action="<?php  $this->load->helper('url'); echo site_url("/creg/insert"); ?>">
-							  			 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+						  						  		 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 $this->load->helper('form');
 ?>
+                            <form  method="post" action="<?php  $this->load->helper('url'); echo site_url("/creg/insert"); ?>" role="form">
                                   <div class="form-group">
-                                      <label for="name">Nama Penuh</label>
-                                    <input type="text" class="form-control" id ="Name" name = "Name" placeholder="Nama"  value="<?php echo set_value('Name'); ?>" required autofocus>
+		
+	
+                                      <label for="exampleInputEmail1">Nama Penuh</label>
+                                      <input type="text" class="form-control" id ="Name" name = "Name"   value="<?php echo set_value('Name'); ?>" required autofocus>
                                   </div>
                                   <div class="form-group">
-                                      <label for="exampleInputPassword1">Password</label>
-                                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                      <label for="ic">No. Kad Pengenalan</label>
+                                      <input type="text" class="form-control" name = "ID"  value="<?php echo set_value('ID'); ?>" required>
                                   </div>
                                   <div class="form-group">
-                                      <label for="exampleInputFile">File input</label>
-                                      <input type="file" id="exampleInputFile">
-                                      <p class="help-block">Example block-level help text here.</p>
+                                      <label for="grade">Jawatan/Gred</label>
+                                 <input type="text" class="form-control" name = "Grade" placeholder="Jawatan/Gred" value="<?php echo set_value('Grade'); ?>" required>
                                   </div>
-                                  <div class="checkbox">
-                                      <label>
-                                          <input type="checkbox"> Check me out
-                                      </label>
+								   <div class="form-group">
+                                      <label for="grade">Tarikh Lantikan</label>
+                              
+                                                  <input type="text" placeholder="" data-mask="99/99/9999" class="form-control">
+                                                  <span class="help-inline">dd/mm/yyyy</span>
+                                            
                                   </div>
+								   <div class="form-group">
+                                      <label for="grade">Unit/Bahagian/Jabatan</label>
+                               <input type="text" class="form-control" name = "Unit" placeholder="Unit/Bahagian/Jabatan" value="<?php echo set_value('Unit'); ?>" required>
+                                  </div>
+								   <div class="form-group">
+								   <label for="inputUnit">Username <?php echo form_error('UID'); ?></label>
+                                    
+                               <input type="text" class="form-control" name = "UID" placeholder="User ID" value="<?php echo set_value('UID'); ?>">
+                                  </div>
+								    <div class="form-group">
+								<label for="inputPassword">Kata Laluan <?php echo form_error('Password'); ?></label>
+                                    
+                               <input type="password" class="form-control" name = "Password" placeholder="Kata Laluan" required>
+                                  </div>
+								    <div class="form-group">
+								<label for="inputEmail">Email</label>
+                                    
+                              <input type="email" class="form-control" name = "Email" placeholder="Email" value="<?php echo set_value('Email'); ?>" required>
+                                  </div>
+                                  
                                   <button type="submit" class="btn btn-info">Submit</button>
                               </form>
 
                           </div>
                       </section>
                   </div>
-                 
                      
 
              
@@ -85,16 +111,13 @@ $this->load->helper('form');
                           </div>
                       </div>
 
-                  </div>
-              </div>
-              <!-- page end-->
-          </section>
+     </section>
       </section>
       <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2013 &copy; FlatLab by VectorLab.
+              2014 &copy; SyloBpsm by goldtechsolution.
               <a href="#" class="go-top">
                   <i class="icon-angle-up"></i>
               </a>
