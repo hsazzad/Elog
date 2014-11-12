@@ -41,7 +41,7 @@
               <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
           </div>
           <!--logo start-->
-          <a href="index.html" class="logo" >Flat<span>lab</span></a>
+          <a href="index.html" class="logo" >Sylo<span>Bpsm</span></a>
           <!--logo end-->
           <div class="nav notify-row" id="top_menu">
             <!--  notification start -->
@@ -130,122 +130,38 @@
               </li>
               <!-- settings end -->
               <!-- inbox dropdown start-->
+			   <?php
+  $UID=$this->session->userdata('UID');
+   	  
+		  $query1 = $this->db->get_where('user', array('UID' => $UID));
+foreach ($query1->result() as $row1)
+{
+          $egrade= $row1->Grade;
+}
+	$Status = "Pending";
+		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
+	 
+	$num=$query2->num_rows();
+	if($num>0)
+	{
+	echo $num;
+	}
+				   
+				   ?>
               <li id="header_inbox_bar" class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                       <i class="icon-envelope-alt"></i>
-                      <span class="badge bg-important">5</span>
+                      <span class="badge bg-important"><?php echo $num; ?></span>
                   </a>
+				 
                   <ul class="dropdown-menu extended inbox">
                       <div class="notify-arrow notify-arrow-red"></div>
                       <li>
-                          <p class="red">You have 5 new messages</p>
+                          <p class="red">You have <?php echo $num; ?> new messages</p>
                       </li>
-                      <li>
-                          <a href="#">
-                              <span class="photo"><img alt="avatar" src="./img/avatar-mini.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Jonathan Smith</span>
-                                    <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
-                                        Hello, this is an example msg.
-                                    </span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="photo"><img alt="avatar" src="./img/avatar-mini2.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Jhon Doe</span>
-                                    <span class="time">10 mins</span>
-                                    </span>
-                                    <span class="message">
-                                     Hi, Jhon Doe Bhai how are you ?
-                                    </span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="photo"><img alt="avatar" src="./img/avatar-mini3.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Jason Stathum</span>
-                                    <span class="time">3 hrs</span>
-                                    </span>
-                                    <span class="message">
-                                        This is awesome dashboard.
-                                    </span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="photo"><img alt="avatar" src="./img/avatar-mini4.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Jondi Rose</span>
-                                    <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
-                                        Hello, this is metrolab
-                                    </span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">See all messages</a>
-                      </li>
-                  </ul>
-              </li>
+                   
               <!-- inbox dropdown end -->
-              <!-- notification dropdown start-->
-              <li id="header_notification_bar" class="dropdown">
-                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-
-                      <i class="icon-bell-alt"></i>
-                      <span class="badge bg-warning">7</span>
-                  </a>
-                  <ul class="dropdown-menu extended notification">
-                      <div class="notify-arrow notify-arrow-yellow"></div>
-                      <li>
-                          <p class="yellow">You have 7 new notifications</p>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-danger"><i class="icon-bolt"></i></span>
-                              Server #3 overloaded.
-                              <span class="small italic">34 mins</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-warning"><i class="icon-bell"></i></span>
-                              Server #10 not respoding.
-                              <span class="small italic">1 Hours</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-danger"><i class="icon-bolt"></i></span>
-                              Database overloaded 24%.
-                              <span class="small italic">4 hrs</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-success"><i class="icon-plus"></i></span>
-                              New user registered.
-                              <span class="small italic">Just now</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-info"><i class="icon-bullhorn"></i></span>
-                              Application error.
-                              <span class="small italic">10 mins</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">See all notifications</a>
-                      </li>
-                  </ul>
-              </li>
+           
               <!-- notification dropdown end -->
           </ul>
           </div>
@@ -279,6 +195,29 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
+			   <li role="presentation"><a>Enter Course Info<span class="badge"></span></a></li>
+  
+  
+  <li role="presentation" class="active"><a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/index"); ?>">Evaluate<span class="badge">
+  <?php
+  $UID=$this->session->userdata('UID');
+   	  
+		  $query1 = $this->db->get_where('user', array('UID' => $UID));
+foreach ($query1->result() as $row1)
+{
+          $egrade= $row1->Grade;
+}
+	$Status = "Pending";
+		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
+	 
+	$num=$query2->num_rows();
+	if($num>0)
+	{
+	echo $num;
+	}
+				   
+				   ?>
+  </span></a></li>
                   <li>
                       <a href="index.html">
                           <i class="icon-dashboard"></i>

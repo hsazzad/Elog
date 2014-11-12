@@ -1,34 +1,14 @@
 <?php include 'header.php';?>
 
-
+<section id="container" class="">
+    
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              <!-- page start-->
   <div class="row">
   <div class="col-md-3">
-   <ul class="nav nav-pills" role="tablist">
-  <li role="presentation"><a>Enter Course Info<span class="badge"></span></a></li>
-  
-  
-  <li role="presentation" class="active"><a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/index"); ?>">Evaluate<span class="badge">
-  <?php
-  $UID=$this->session->userdata('UID');
-   	  
-		  $query1 = $this->db->get_where('user', array('UID' => $UID));
-foreach ($query1->result() as $row1)
-{
-          $egrade= $row1->Grade;
-}
-	$Status = "Pending";
-		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
-	 
-	$num=$query2->num_rows();
-	if($num>0)
-	{
-	echo $num;
-	}
-				   
-				   ?>
-  </span></a></li>
-  
-</ul>
+   
 </div>
 		<div class="col-md-6 ">
 		
@@ -101,6 +81,6 @@ foreach ($query1->result() as $row1)
       </div>
 	  </div>
 	 </div>
-      </div></section>
+      </div></section></section></section>
 	  
  <?php include 'footer.php';?>
