@@ -17,7 +17,10 @@
 	  
 	
 	<?php $i=1;$j=0;?>
-	<?php foreach($query as $row): ?>
+	<?php 
+	if($query > 0){
+	
+	foreach($query as $row): ?>
 	<form method="post" action="<?php  $this->load->helper('url'); echo site_url("evaluate/do_approve"); ?>" >
 		<table class='table table-striped table-bordered table-condensed' >
 	<tr><th><?php echo $i.".";
@@ -62,7 +65,12 @@ foreach ($querycp->result() as $row2)
 </table>
 <hr/>
 <?php $j++;?>
-    <?php endforeach; ?>
+    <?php endforeach; }
+	
+	else{
+	echo "nothing";
+	}
+	?>
 	
 	    
 

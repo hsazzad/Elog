@@ -14,15 +14,10 @@ class evaluate extends CI_Controller {
      public function index(){
 	  $this->load->model ('mevaluate'); 
   $res=$this->mevaluate->search();
-if($res!=0)  
-{
+
 $data ['query']=$this->mevaluate->search();
                    $this->load->view('vevaluate', $data);
-				   }
-				   else
-				   {
-				    $this->load->view('vevaluate2');
-				   }
+				  
 				   
         
     }
