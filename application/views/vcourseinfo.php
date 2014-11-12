@@ -15,21 +15,26 @@
 	  <div class="panel panel-default">
 	  
 	  <div class="panel-heading">Course Information</div>
-	<form class="form-horizontal" method="post" action="<?php  $this->load->helper('url'); echo site_url("courseinfo/insert"); ?>" enctype="multipart/form-data" >
+	   <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+														 $this->load->helper('form');
+															?>
+	<form role="form" method="post" action="<?php  $this->load->helper('url'); echo site_url("courseinfo/insert"); ?>" enctype="multipart/form-data" >
 	
-			  <fieldset>
+			
 			  
 			  
 			 <?php $UID=$this->session->userdata('UID');echo "<input type='hidden' id='UID' name='UID' value='$UID'>"; ?>
-		  
+		  <div class="form-group">
 			<label for="inputName">Course Name</label>
 			<input type="text" class="form-control" id ="Coursename" name = "Coursename" placeholder="Course Name" required autofocus>
+			</div>
+			<div class="form-group">
 			<label for="inputID">Place of Course</label>
 			<select class="form-control" id= "Place_type" name="Place_type">
 			<option value="Internal">Internal</option>
 			<option value="External">External</option>
 			</select>
-			
+			</div>
 			<label for="inputGrade">Upload Certificate</label>
 			<input class="btn btn-file" type="file" name="Cert_file"   >
 		
@@ -73,7 +78,7 @@
  
   <button type="submit" class="btn btn-primary btn-block" type="submit">Submit</button>
   <button class="btn btn-default btn-block" type="reset">Reset</button>
- </fieldset>
+
 </form>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
      <!-- /container -->
