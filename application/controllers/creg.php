@@ -1,11 +1,26 @@
+Skip to content
+ This repository
+Explore
+Gist
+Blog
+Help
+sharkcreep87 sharkcreep87
+ 
+2  Unwatch 
+  Star 0
+ Fork 0hsazzad/Elog
+ tree: e0f58211bf  Elog / application / controllers / creg.php
+hsazzadhsazzad 11 hours ago 11/12/14
+2 contributors sharkcreep87hsazzad
+77 lines (62 sloc)  2.269 kb RawBlameHistory  
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 class creg extends CI_Controller {
     function __construct(){
         parent::__construct();
     $this->load->database();
 	$this->load->library('encrypt');
 	$this->load->helper('security');
+	$this->load->model('emailmodel');
     }	
 	public function index(){
                   
@@ -15,9 +30,7 @@ class creg extends CI_Controller {
 	
 	function insert()
 {
-
 		$this->load->helper(array('form', 'url'));
-
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('UID', 'User ID', 'trim|required|is_unique[user.UID]');
 		$this->form_validation->set_rules('Name', 'Full Name', 'trim|required');
@@ -39,7 +52,8 @@ class creg extends CI_Controller {
 		$password=$this->input->post('Password');
 		 $passht2=htmlspecialchars($password);
 		$encpassword=$this->encrypt->sha1($passht2);
-		$Email = $this->input->post('Email');
+		$randomnumber = random_string('alnum',25);
+		$status = "F";
   $data = array(
 'Name' => $this->input->post('Name'),
 'ID' => $this->input->post('ID'),
@@ -48,15 +62,19 @@ class creg extends CI_Controller {
 'Unit' => $this->input->post('Unit'),
 'UID' => $this->input->post('UID'),
 'Password' => $encpassword,
-'Email' => $this->input->post('Email')
+'Email' => $this->input->post('Email'),
+'email_verification_code' => $randomnumber,
+'active_status' => $status
 );
-
 $this->load->model('mreg');
 $this->mreg->insertdb($data);
-$this->load->view('success',$Email);//loading success view
+$this->emailmodel->sendVerificatinEmail($this->input->post('Email'),$randomnumber);
+$this->load->view('success');//loading success view
 }
 }
-
+ 
+ 
+ 
 public function password_check($str)
 {
    if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str)) {
@@ -65,3 +83,5 @@ public function password_check($str)
    return FALSE;
 }
 	}
+Status API Training Shop Blog About
+© 2014 GitHub, Inc. Terms Privacy Security Contact
