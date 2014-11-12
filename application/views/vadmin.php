@@ -1,3 +1,24 @@
+<?php include 'header2.php';?>
+
+    
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              <!-- page start-->
+ 
+ 	<div class="col-md-6 col-md-offset-3">      
+		 
+		
+	  <section class="panel">
+	
+	  </section>
+      </div>
+	  </div>
+	 </div>
+      </div></section></section></section>
+	  
+ 
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,26 +70,11 @@ body {
   </head>
 
   <body>
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="collapse navbar-collapse">
-       
-    <h4> You have signed in as <b> <?php echo $this->session->userdata('Name'); ?> </b> </h4>
-        
-    </div>
-	<div class="navbar-brand navbar-brand-centered1">
-       
-    <b><a href="<?php  $this->load->helper('url'); echo site_url("/login/do_logout"); ?>"> <span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></b>
-    
-    </div>
-    </div> 
+
 	
 	
-		
-   <div class="jumbotron">
-   <div class="container">
 	
-	
-	<table class='table table-striped table-bordered table-condensed' >
+		<table class='table table-striped table-bordered table-condensed' >
 	<thead><tr><th>Employee Name</th><th>Employee Grade</th><th>Course Name</th><th>Certificate</th><th>Course Date</th><th>Place</th>
 	<th>Satisfaction</th><th>Knowledge</th><th>Comments</th><th>Supervisor Grade</th><th>Status</th></tr></thead>
     <tbody>
@@ -111,7 +117,7 @@ $query2 = $this->db->get_where('user');
 echo "<td><select class='form-control' name='Supervisor_Grade[".$j."]'>";
 foreach ($query2->result() as $row3)
 {
-        echo  "<option value='".$row3->Grade."'>".$row3->Grade." - ".$j."</option>";
+        echo  "<option value='".$row3->Grade."'>".$row3->Grade."</option>";
 }
 
  echo"</td></select>";
@@ -139,12 +145,7 @@ foreach ($query2->result() as $row3)
 		<button type='submit' name='val' id='val'   class='btn btn-primary btn-block' value="<?php echo $j; ?>" >Approve</button>
 	<?php	echo "</td>";
 		}
-else
-		{ 
-		echo "<td>";?>
-		<button type='submit' name='val2' id='val2'   class='btn btn-primary btn-block' value="<?php echo $j; ?>">Get PDF</button>
-	<?php	echo "</td>";
-		}	
+	
 ?>
 
     </tr>
@@ -154,10 +155,15 @@ else
     </tbody>
 </table>
 	<form>
-	
 	</div>
-    </div> 
+	  </div>
+	 </section>
+      </div>
+	  </div>
+	 </div>
+      </div></section></section></section>
+
 	
 	
-  </body>
-</html>
+		  
+ <?php include 'footer.php';?>

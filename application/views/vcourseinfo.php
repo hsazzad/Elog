@@ -1,16 +1,13 @@
 <?php include 'header.php';?>
 
-<section id="container" class="">
     
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
               <!-- page start-->
-  <div class="row">
-  <div class="col-md-3">
-   
-</div>
-		<div class="col-md-6 ">
+ 
+ 	<div class="col-md-6 col-md-offset-3">      
+		 
 		
 	  <section class="panel">
 	  
@@ -18,7 +15,7 @@
 	   <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 														 $this->load->helper('form');
 															?>
-	<form role="form" method="post" action="<?php  $this->load->helper('url'); echo site_url("courseinfo/insert"); ?>" enctype="multipart/form-data" >
+	<form  role="form" method="post" action="<?php  $this->load->helper('url'); echo site_url("courseinfo/insert"); ?>" enctype="multipart/form-data" >
 	
 			
 			  

@@ -28,8 +28,7 @@ $data ['query']=$this->madmin->search();
     }
     public function do_approve()
     {
-	if($this->input->post('val'))
-	{ 
+	
 	  $this->load->model ('madmin'); 
 	   $res = $this->madmin->mdo_approve();
 	if( $res==1)
@@ -37,28 +36,6 @@ $data ['query']=$this->madmin->search();
 	redirect('admin');
 	}
 	} 
-	else {
-   
-     $this->load->library('cezpdf');
-
-	  $val2= $_POST['val2'];
-	   $UID= $_POST['UID'][$val2];
-		$this->cezpdf->ezText('Report', 20, array('justification' => 'center'));
-		$this->cezpdf->ezSetDy(-10);
-
-		$this->cezpdf->selectFont('include/fonts/Helvetica.afm');
-		
-		$this->cezpdf->ezSetMargins(120,70,90,50);
-		$this->cezpdf->ezText('Employee Name: ' .$UID,14);
-
-		$this->cezpdf->ezStream();
-   
-   
-   
-   
-}
-    }
-	
 	
   
 }
