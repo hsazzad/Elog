@@ -12,7 +12,7 @@
 </div>
 		<div class="col-md-6 ">
 		
-	  <div class="panel panel-default">
+	  <section class="panel">
 	  
 	  <div class="panel-heading">Course Information</div>
 	   <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
@@ -82,7 +82,7 @@
 </form>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
      <!-- /container -->
-	  </div>
+	  </section>
       </div>
 	  </div>
 	 </div>
