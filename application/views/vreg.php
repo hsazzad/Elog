@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
    
+			
 
     <title>Form Component</title>
 
@@ -48,6 +49,9 @@
                           </header>
                           <div class="panel-body">
                               <form class="form-horizontal" method="post" action="<?php  $this->load->helper('url'); echo site_url("/creg/insert"); ?>">
+							  			 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$this->load->helper('form');
+?>
                                   <div class="form-group">
                                       <label for="name">Nama Penuh</label>
                                     <input type="text" class="form-control" id ="Name" name = "Name" placeholder="Nama"  value="<?php echo set_value('Name'); ?>" required autofocus>
