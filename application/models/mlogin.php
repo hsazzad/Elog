@@ -26,6 +26,7 @@ class mlogin extends CI_Model{
          $query = $this->db->get_where('admin', array('UID' => $UID));
          }
 		
+		
 		 $num=$query->num_rows();
          if($num>0){
          foreach ($query->result() as $row)

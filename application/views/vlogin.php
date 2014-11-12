@@ -33,8 +33,16 @@
        <form class="form-signin" role="form"  method="post" action="<?php  $this->load->helper('url'); echo site_url("/login/process"); ?>">
         <h2 class="form-signin-heading">Log Masuk</h2>
         <div class="login-wrap">
+			<?php if(! is_null($msg)) echo $msg;?>  
             <input class="form-control" type="text" class="form-control" id ="UID" name ="UID" placeholder="Username" required autofocus> 
            <input type="password" class="form-control" id ="Password" name ="Password" placeholder="Password" required>
+		 
+		 <select class="form-control" id= "User_type" name="User_type">
+			<option value="User">User</option>
+			<option value="Admin">Admin</option>			
+		</select>
+
+
            
             <button class="btn btn-lg btn-login btn-block" type="submit">Log Masuk</button>
            
