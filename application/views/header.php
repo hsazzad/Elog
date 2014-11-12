@@ -56,6 +56,8 @@
 foreach ($query1->result() as $row1)
 {
           $egrade= $row1->Grade;
+		  $name= $row1->Name;
+		  $email= $row1->Email;
 }
 	$Status = "Pending";
 		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
@@ -78,6 +80,18 @@ foreach ($query1->result() as $row1)
                       <li>
                           <p class="red">You have <?php echo $num; ?> new messages</p>
                       </li>
+					   <li>
+                          <a href="#">
+                           
+                                    <span class="subject">
+                                    <span class="from"><?php echo $name; ?></span>
+                                    <span class="time"><?php echo $egrade; ?></span>
+                                    </span>
+                                    <span class="message">
+                                        <?php echo $email; ?>
+                                    </span>
+                          </a>
+                      </li>
                    
               <!-- inbox dropdown end -->
            
@@ -99,9 +113,7 @@ foreach ($query1->result() as $row1)
                       </a>
                       <ul class="dropdown-menu extended logout">
                           <div class="log-arrow-up"></div>
-                          <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
-                          <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-                          <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
+                        
                           <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
                       </ul>
                   </li>
