@@ -11,36 +11,36 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>js/jquery.js"></script>
+    <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>js/jquery.scrollTo.min.js"></script>
+    <script src="<?php echo base_url();?>js/jquery.nicescroll.js" type="text/javascript"></script>
 
-    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="<?php echo base_url();?>js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script class="include" type="text/javascript" src="<?php echo base_url();?>js/jquery.dcjqaccordion.2.7.js"></script>
 
   <!--custom switch-->
-  <script src="js/bootstrap-switch.js"></script>
+  <script src="<?php echo base_url();?>js/bootstrap-switch.js"></script>
   <!--custom tagsinput-->
-  <script src="js/jquery.tagsinput.js"></script>
+  <script src="<?php echo base_url();?>js/jquery.tagsinput.js"></script>
   <!--custom checkbox & radio-->
-  <script type="text/javascript" src="js/ga.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>js/ga.js"></script>
 
-  <script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-  <script type="text/javascript" src="assets/bootstrap-daterangepicker/date.js"></script>
-  <script type="text/javascript" src="assets/bootstrap-daterangepicker/daterangepicker.js"></script>
-  <script type="text/javascript" src="assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-  <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap-daterangepicker/date.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/ckeditor/ckeditor.js"></script>
 
-  <script type="text/javascript" src="assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
-  <script src="js/respond.min.js" ></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+  <script src="<?php echo base_url();?>js/respond.min.js" ></script>
 
 
   <!--common script for all pages-->
-    <script src="js/common-scripts.js"></script>
+    <script src="<?php echo base_url();?>js/common-scripts.js"></script>
 
   <!--script for this page-->
-  <script src="js/form-component.js"></script>
+  <script src="<?php echo base_url();?>js/form-component.js"></script>
 
   </body>
 </html>

@@ -101,6 +101,6 @@ foreach ($query1->result() as $row1)
       </div>
 	  </div>
 	 </div>
-      </div>
+      </div></section>
 	  
  <?php include 'footer.php';?>
