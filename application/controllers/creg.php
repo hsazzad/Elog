@@ -6,7 +6,6 @@ class creg extends CI_Controller {
     $this->load->database();
 	$this->load->library('encrypt');
 	$this->load->helper('security');
-	$this->load->model('emailmodel');
     }	
 	public function index(){
                   
@@ -40,8 +39,6 @@ class creg extends CI_Controller {
 		$password=$this->input->post('Password');
 		 $passht2=htmlspecialchars($password);
 		$encpassword=$this->encrypt->sha1($passht2);
-		$randomnumber = random_string('alnum',25);
-		$status = "F";
   $data = array(
 'Name' => $this->input->post('Name'),
 'ID' => $this->input->post('ID'),
@@ -50,22 +47,14 @@ class creg extends CI_Controller {
 'Unit' => $this->input->post('Unit'),
 'UID' => $this->input->post('UID'),
 'Password' => $encpassword,
-'Email' => $this->input->post('Email'),
-'email_verification_code' => $randomnumber,
-'active_status' => $status
+'Email' => $this->input->post('Email')
 );
 
 $this->load->model('mreg');
 $this->mreg->insertdb($data);
-$this->emailmodel->sendVerificatinEmail($this->input->post('Email'),$randomnumber);
 $this->load->view('success');//loading success view
 }
 }
-
- 
- 
-
- 
 
 public function password_check($str)
 {

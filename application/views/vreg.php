@@ -52,9 +52,8 @@
                           </header>
                           <div class="panel-body">
 						  						  		 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-$this->load->helper('form');
-?>
+														 $this->load->helper('form');
+															?>
                             <form  method="post" action="<?php  $this->load->helper('url'); echo site_url("/creg/insert"); ?>" role="form">
                                   <div class="form-group">
 		
@@ -63,17 +62,17 @@ $this->load->helper('form');
                                       <input type="text" class="form-control" id ="Name" name = "Name"   value="<?php echo set_value('Name'); ?>" required autofocus>
                                   </div>
                                   <div class="form-group">
-                                      <label for="ic">No. Kad Pengenalan</label>
+                                      <label for="ic">No. Kad Pengenalan <?php echo form_error('ID'); ?></label>
                                       <input type="text" class="form-control" name = "ID"  value="<?php echo set_value('ID'); ?>" required>
                                   </div>
                                   <div class="form-group">
-                                      <label for="grade">Jawatan/Gred</label>
+                                      <label for="grade">Jawatan/Gred <?php echo form_error('Grade'); ?></label>
                                  <input type="text" class="form-control" name = "Grade" placeholder="Jawatan/Gred" value="<?php echo set_value('Grade'); ?>" required>
                                   </div>
 								   <div class="form-group">
                                       <label for="grade">Tarikh Lantikan</label>
                               
-                                                  <input type="text" placeholder="" data-mask="99/99/9999" class="form-control">
+                                                  <input type="text" placeholder="" name = "Date" data-mask="99/99/9999" class="form-control" value="<?php echo set_value('Date'); ?>">
                                                   <span class="help-inline">dd/mm/yyyy</span>
                                             
                                   </div>
