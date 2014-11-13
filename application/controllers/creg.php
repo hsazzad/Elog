@@ -1,18 +1,4 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-sharkcreep87 sharkcreep87
- 
-2  Unwatch 
-  Star 0
- Fork 0hsazzad/Elog
- tree: e0f58211bf  Elog / application / controllers / creg.php
-hsazzadhsazzad 11 hours ago 11/12/14
-2 contributors sharkcreep87hsazzad
-77 lines (62 sloc)  2.269 kb RawBlameHistory  
+
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class creg extends CI_Controller {
     function __construct(){
@@ -83,5 +69,3 @@ public function password_check($str)
    return FALSE;
 }
 	}
-Status API Training Shop Blog About
-© 2014 GitHub, Inc. Terms Privacy Security Contact

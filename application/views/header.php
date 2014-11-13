@@ -4,7 +4,7 @@
    
 
     <title></title>
-
+ <link rel="icon" href="<?php echo base_url();?>images/Lock1.ico">
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/bootstrap-reset.css" rel="stylesheet">
