@@ -118,7 +118,7 @@ foreach ($query1->result() as $row1)
                       <ul class="dropdown-menu extended logout">
                           <div class="log-arrow-up"></div>
                         
-                          <li><a href="<?php  $this->load->helper('url'); echo site_url("/login/do_logout"); ?>"><i class="icon-key"></i> Log Out</a></li>
+                         <li><a href="<?php  $this->load->helper('url'); echo site_url("/login/do_logout"); ?>"><i class="icon-key"></i> Log keluar</a></li>
                       </ul>
                   </li>
                   <!-- user login dropdown end -->
