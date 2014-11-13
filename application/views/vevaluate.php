@@ -13,7 +13,7 @@
 		
 	  <div class="panel panel-default">
 	  
-	  <div class="panel-heading">Evaluate</div>
+	  <div class="panel-heading">Pengesahan</div>
 	  
 	
 	<?php $i=1;$j=0;?>
@@ -26,7 +26,7 @@
 	<tr><th><?php echo $i.".";
 		$i++;
 		?></th></tr>
-	<tr><th>Employee Name</th>
+	<tr><th>Nama Kakitangan</th>
 	
 	<?php  $UID= $row->UID;
 	echo "<input type='hidden' id='UID[".$j."]' name='UID[".$j."]' value='".$UID."'>"; ?>
@@ -37,28 +37,28 @@ foreach ($querycp->result() as $row2)
           echo $row2->Name;
 }
  ?></td></tr>
-	<tr><th>Course Name</th>
+	<tr><th>Nama Kursus</th>
 	 <td><?php echo $row->Coursename; ?></td>
 	</tr>
-	<tr><th>Course Date</th>
+	<tr><th>Tarikh Kursus</th>
 	 <td><?php echo $row->Course_Date; ?></td>
 	</tr>
-	<tr><th>Place</th>
+	<tr><th>Tempat</th>
 	 <td><?php echo $row->Place_type; ?></td>
 	</tr>
-	<tr><th>Certificate</th>
+	<tr><th>Sijil Kursus</th>
 	 <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file; ?></td>
 	</tr>
-	<tr><th>Satisfaction</th>
+	<tr><th>Penilaian Kakitangan</th>
 	 <td><?php echo $row->Satisfaction; ?></td>
 	</tr>
-	<tr><th>Knowledge</th>
+	<tr><th>Penilaian Pengetahuan</th>
 	 <td><?php echo $row->Knowledge; ?></td>
 	</tr>
-	<tr><th>Employee Comments</th>
+	<tr><th>Komen Kakitangan</th>
 	 <td><?php echo $row->Comments; ?></td>
 	</tr>
-	<tr><th>Your Comments</th>    
+	<tr><th>Komen Pegawai Penilai</th>    
    <td><textarea class="form-control" id="Supervisor_comment[<?php echo $j;?>]" name="Supervisor_comment[<?php echo $j;?>]" rows="4"></textarea></td>
 	</tr>
 	<th><button type='submit' name="val" id="val"  value="<?php echo $j;?>" class='btn btn-primary btn-block' >Approve</button></th>
@@ -68,7 +68,7 @@ foreach ($querycp->result() as $row2)
     <?php endforeach; }
 	
 	else{
-	echo "nothing";
+	echo "Tiada Rekod untuk disahkan";
 	}
 	?>
 	
