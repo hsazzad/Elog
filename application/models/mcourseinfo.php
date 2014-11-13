@@ -23,7 +23,8 @@ public function do_upload()
 	 $Submit_date = time();
 	 $Status = "Pending";
 	 $UID=$this->input->post('UID');
-                       $Coursename=$this->input->post('Coursename');              
+                       $Coursename=$this->input->post('Coursename'); 
+						$course_catagory=$this->input->post('course_catagory');					   
                        $Place_type=$this->input->post('Place_type');
                        $Satisfaction=$this->input->post('Satisfaction');
                        $Knowledge=$this->input->post('Knowledge');
@@ -35,6 +36,7 @@ $this->db->insert('course', array(
         'Submit_date' => $Submit_date,
 		'UID' => $UID,
         'Coursename' => $Coursename,
+		'course_catagory' => $course_catagory,
         'Place_type' => $Place_type,
         'Satisfaction' => $Satisfaction,
         'Knowledge' => $Knowledge,

@@ -30,7 +30,7 @@
 			<label for="inputName">Nama Kursus</label>
 			<input type="text" class="form-control" id ="Coursename" name = "Coursename" required autofocus>
 			 </div>
-			 <div class="form-group">
+			
 			
 			<label for="inputComm">Kategori Kursus</label>
 			<br/>
@@ -61,8 +61,7 @@
                                               </label>
                                           </div>
 
-<br/>
-</div>
+
 			 <div class="form-group">
 			<label for="inputID">Tempat Kursus</label>
 			<input type="text" class="form-control" id ="Place_type" name = "Place_type"  required autofocus>
@@ -73,41 +72,45 @@
 		</div>
 			<label for="inputDate">Tarikh Kursus</label>
 			<input type="text" class="form-control" name = "Course_Date" placeholder="Day/Month/Year" required>
-			<div class="form-group">
-			
+			<br/>
 			<label for="inputComm">Anda gembira mengikuti program latihan ini?</label>
-			<br/>
-			
-  <input type="radio" name="Satisfaction" id="Satisfaction1" value="1"> 1
-
-  <input type="radio" name="Satisfaction" id="Satisfaction2" value="2"> 2
-
-  <input type="radio" name="Satisfaction" id="Satisfaction3" value="3"> 3
-
-  <input type="radio" name="Satisfaction" id="Satisfaction4" value="4"> 4
-
-  <input type="radio" name="Satisfaction" id="Satisfaction5" value="5"> 5
 		
-<br/>
-</div><div class="form-group">
+	 <div class="radios">	
+	  <label class="label_radio" for="radio-01">
+  <input type="radio" name="Satisfaction" id="Satisfaction1" value="1" checked> 1
+</label><label class="label_radio" for="radio-01">
+  <input type="radio" name="Satisfaction" id="Satisfaction2" value="2"> 2
+</label><label class="label_radio" for="radio-01">
+  <input type="radio" name="Satisfaction" id="Satisfaction3" value="3"> 3
+</label><label class="label_radio" for="radio-01">
+  <input type="radio" name="Satisfaction" id="Satisfaction4" value="4"> 4
+</label><label class="label_radio" for="radio-01">
+  <input type="radio" name="Satisfaction" id="Satisfaction5" value="5"> 5
+	</label>
+
+</div>
 	<label for="inputComm">Anda mendapat pengetahuan yang diperlukan atau idea baru untuk menjalankan tugas.</label>
-			<br/>
-	<input type="radio" name="Knowledge" id="Knowledge1" value="1"> 1
-
+			
+			<div class="radios">
+			<label class="label_radio" for="radio-01">
+	<input type="radio" name="Knowledge" id="Knowledge1" value="1" checked> 1
+</label><label class="label_radio" for="radio-01">
   <input type="radio" name="Knowledge" id="Knowledge2" value="2"> 2
-
+</label><label class="label_radio" for="radio-01">
 
   <input type="radio" name="Knowledge" id="Knowledge3" value="3"> 3
 
-	
+	</label><label class="label_radio" for="radio-01">
   <input type="radio" name="Knowledge" id="Knowledge4" value="4"> 4
-
+</label><label class="label_radio" for="radio-01">
 
   <input type="radio" name="Knowledge" id="Knowledge5" value="5"> 5
-<br/>
+  </label>
+ </div>
+ <div class="form-group">
 	<label for="inputName">Sila nyatakan penegetahuan/ idea yang mempunyai hubungkait dan bole meningkatkan mutu kerja anda :</label>
 	
-    </div><div class="form-group">
+   
     <textarea class="form-control" id="Comments" name="Comments" rows="4"></textarea>
  </div>
   <button type="submit" class="btn btn-primary btn-block" type="submit">Hantar</button>

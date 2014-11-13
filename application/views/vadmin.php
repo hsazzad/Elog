@@ -11,7 +11,7 @@
 	  <section class="panel">
 	 
 		<table class="table table-striped table-bordered table-condensed" >
-	<thead><tr><th>Employee Name</th><th>Employee Grade</th><th>Course Name</th><th>Certificate</th><th>Course Date</th><th>Place</th>
+	<thead><tr><th>Employee Name</th><th>Employee Grade</th><th>Course Name</th><th>Course Category</th><th>Certificate</th><th>Course Date</th><th>Place</th>
 	<th>Satisfaction</th><th>Knowledge</th><th>Comments</th><th>Supervisor Grade</th><th>Status</th></tr></thead>
     <tbody>
 	<form method="post" action="<?php  $this->load->helper('url'); echo site_url("admin/do_approve"); ?>" >
@@ -35,7 +35,7 @@ foreach ($querycp2->result() as $row4)
  ?>
 </td>
     <td><?php echo $row->Coursename; ?></td>
-	
+	<td><?php echo $row->course_catagory; ?></td>
    <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file; ?></td>
     <td><?php echo $row->Course_Date; ?></td>
 	 <td><?php echo $row->Place_type; ?></td>
