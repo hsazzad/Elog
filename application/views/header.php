@@ -1,3 +1,12 @@
+<?php 
+ 
+header("cache-Control: no-store, no-cache, must-revalidate");
+header("cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -109,7 +118,7 @@ foreach ($query1->result() as $row1)
                       <ul class="dropdown-menu extended logout">
                           <div class="log-arrow-up"></div>
                         
-                          <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                          <li><a href="<?php  $this->load->helper('url'); echo site_url("/login/do_logout"); ?>"><i class="icon-key"></i> Log Out</a></li>
                       </ul>
                   </li>
                   <!-- user login dropdown end -->
