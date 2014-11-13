@@ -1,88 +1,22 @@
 <?php include 'header2.php';?>
 
-    
+    <section id="container">
       <!--main content start-->
-      <section id="main-content">
+      
           <section class="wrapper">
               <!-- page start-->
- 
- 	<div class="col-md-6 col-md-offset-3">      
+ <div class="row">   
+ 	<div class="col-md-12 col-offset-0">      
 		 
-		
 	  <section class="panel">
-	
-	  </section>
-      </div>
-	  </div>
-	 </div>
-      </div></section></section></section>
-	  
- 
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    
-   
-    <link rel="icon" href="<?php echo base_url();?>images/Lock1.ico">
-    <title>Admin panel</title>
-    <link href="<?php echo base_url();?>css/css/bootstrap.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>css/css/bootstrap.min.css" rel="stylesheet">
-<style>
-
-body {
-  
-  background-color: #eee;
-  
-}
-
-.form-horizontal {
-  max-width: 630px;
-  padding: 25px;
-  margin: 0 auto;
-}
-.form-control {
- 
-  margin-bottom: 10px;
-}
-  
-.navbar-collapse {
-        position: absolute;
-        left: 40%;
-        text-align: center;
-     top:15%;
-	  font-family: 'Georgia';
-    }
-	.navbar-brand-centered1 {
-        position: absolute;
-        left: 22%;
-		text-align: center;
-		top:-20%;
-		 font-family: 'Arial';
-    }
-
-</style>
-	
-	<script src="<?php echo base_url();?>css/js/jquery.min.js"></script>
-	<script src="<?php echo base_url();?>css/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url();?>css/js/bootstrap.js"></script>
-  </head>
-
-  <body>
-
-	
-	
-	
-		<table class='table table-striped table-bordered table-condensed' >
+	 
+		<table class="table table-striped table-bordered table-condensed" >
 	<thead><tr><th>Employee Name</th><th>Employee Grade</th><th>Course Name</th><th>Certificate</th><th>Course Date</th><th>Place</th>
 	<th>Satisfaction</th><th>Knowledge</th><th>Comments</th><th>Supervisor Grade</th><th>Status</th></tr></thead>
     <tbody>
 	<form method="post" action="<?php  $this->load->helper('url'); echo site_url("admin/do_approve"); ?>" >
         <?php $j=0;?>
 		<?php foreach($query as $row): ?>
-		
-		
 <tr> 
 <td><?php $UID=$row->UID;
 $querycp = $this->db->get_where('user', array('UID' => $UID));
@@ -155,15 +89,14 @@ foreach ($query2->result() as $row3)
     </tbody>
 </table>
 	<form>
-	</div>
-	  </div>
 	 </section>
       </div>
 	  </div>
-	 </div>
-      </div></section></section></section>
+	 </section>
+	  
+ 
 
-	
+
 	
 		  
  <?php include 'footer.php';?>
