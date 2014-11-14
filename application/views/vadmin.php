@@ -11,13 +11,11 @@
 	  <section class="panel">
 	 
 		<table class="table table-striped table-bordered table-condensed" >
-<<<<<<< HEAD
-	<thead><tr><th>Employee Name</th><th>Employee Grade</th><th>Course Name</th><th>Course Category</th><th>Certificate</th><th>Course Date</th><th>Place</th>
-	<th>Satisfaction</th><th>Knowledge</th><th>Comments</th><th>Supervisor Grade</th><th>Status</th></tr></thead>
-=======
-	<thead><tr><th>Nama Kakitangan</th><th>Jawatan</th><th>Nama Kursus</th><th>Sijil</th><th>Tarikh</th><th>Tempat</th>
+
+
+	<thead><tr><th>Nama Kakitangan</th><th>Jawatan</th><th>Nama Kursus</th><th>Ketegori Kursus</th><th>Sijil</th><th>Tarikh</th><th>Tempat</th>
 	<th>Penilaian</th><th>Pengetahuan</th><th>Komen</th><th>Pegawai Penilai</th><th>Status</th></tr></thead>
->>>>>>> origin/master
+
     <tbody>
 	<form method="post" action="<?php  $this->load->helper('url'); echo site_url("admin/do_approve"); ?>" >
         <?php $j=0;?>

@@ -29,7 +29,7 @@
   <body class="lock-screen">
   <br/>
   <br/>
-  <?php echo $errormsg; ?>
+
 <div class="alert alert-success">
  <p>Permohonan anda telah berjaya. Link pengesahan email telah di hantar ke <?php 
  $Email=$this->input->post('Email');
