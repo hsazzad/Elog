@@ -22,15 +22,22 @@
                                       </tr>
                                       </thead>
                                       <tbody>
-                                      <tr class="gradeX">
-                                          <td>Trident</td>
+									  <?php 
+	//if($query > 0){
+
+	
+	foreach($sCourse as $row){ ?>
+                                      <tr>
+                                          <td><?php $row->Coursename ;?></td>
                                           <td>Internet
                                               Explorer 4.0</td>
                                           <td>Win 95+</td>
-                                          <td class="center hidden-phone">4</td>
-                                          <td class="center hidden-phone">X</td>
+                                          <td>4</td>
+                                          <td>X</td>
                                       </tr>
-                                  
+                                  <?php } ?>
+						
+								 
                           </table>
                                 </div>
                           </div>

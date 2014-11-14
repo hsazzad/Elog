@@ -8,14 +8,14 @@ class courseview extends CI_Controller {
             redirect('login'); }
         $this->load->helper(array('form', 'url'));
         $this->load->database();
-		$this->load->model ('mcourseview'); 
+	
 		
  }
      public function index(){
 	  $this->load->model ('mcourseview'); 
 
 
-$data ['query']=$this->mcourseview->viewCourse();
+$data['courseView']=$this->mcourseview->viewCourse();
                    $this->load->view('courseview', $data);
 				  
 				   
