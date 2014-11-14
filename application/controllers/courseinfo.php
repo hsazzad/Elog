@@ -37,7 +37,10 @@ class courseinfo extends CI_Controller {
 		}
  else {
             $this->mcourseinfo->do_upload();
-			 $this->load->view ('vupload');
+			$this->load->model ('mcourseview'); 
+
+$data['course']=$this->mcourseview->viewCourse();
+			 $this->load->view ('courseview' ,$data);
  }
         
     }

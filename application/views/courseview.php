@@ -32,12 +32,11 @@
 	 foreach($course as $row){ ?>
                                       <tr>
                                           <td><?php echo $row->Coursename ;?></td>
-                                          <td>Internet
-                                              Explorer 4.0</td>
-                                          <td>Win 95+</td>
-                                          <td>4</td>
-                                          <td>X</td>
-										  <td>Complete</td>
+                                          <td><?php echo $row->course_catagory ;?></td>
+                                          <td><?php echo $row->Place_type ;?></td>
+                                          <td><?php echo $row->Cert_file ;?></td>
+                                          <td><?php echo $row->Submit_date ;?></td>
+										  <td><?php echo $row->Status ;?></td>
 										  
                                       </tr>
                                   <?php } }?>
