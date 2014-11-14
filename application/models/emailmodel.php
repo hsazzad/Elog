@@ -28,7 +28,7 @@ class emailmodel extends CI_Model {
   $this->email->subject("Email Verification");
   $this->email->message("Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://www.kodex.zz.vc/verify/".$verificationText."\n"."\n\nThanks\nAdmin Team");
   $this->email->send();
-  
+  echo $this->email->print_debugger();
  }
 }
 ?>

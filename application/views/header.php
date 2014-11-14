@@ -1,12 +1,3 @@
-<?php 
- 
-header("cache-Control: no-store, no-cache, must-revalidate");
-header("cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,6 +19,8 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/bootstrap-daterangepicker/daterangepicker-bs3.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/bootstrap-datetimepicker/css/datetimepicker.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/jquery-multi-select/css/multi-select.css" />
+	 <link href="<?php echo base_url();?>assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
 
 
     <!-- Custom styles for this template -->
@@ -35,10 +28,10 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <link href="<?php echo base_url();?>css/style-responsive.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
+   
+      <script src="<?php echo base_url();?>js/html5shiv.js"></script>
+      <script src="<?php echo base_url();?>js/respond.min.js"></script>
+  
   </head>
 
   <body>
@@ -65,13 +58,18 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 foreach ($query1->result() as $row1)
 {
           $egrade= $row1->Grade;
-		  $name= $row1->Name;
-		  $email= $row1->Email;
+		  
 }
 	$Status = "Pending";
 		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
 	 
 	$num=$query2->num_rows();
+	
+
+
+	
+	
+	
 	
 				   
 				   ?>
@@ -87,16 +85,19 @@ foreach ($query1->result() as $row1)
                           <p class="red">You have <?php echo $num; ?> new messages</p>
                       </li>
 					   <li>
-                          <a href="#">
+					<?php   foreach ($query2->result() as $row2) { ?>
+	
+                          <a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/index"); ?>">
                            
                                     <span class="subject">
-                                    <span class="from"><?php echo $name; ?></span>
-                                    <span class="time"><?php echo $egrade; ?></span>
+                                    <span class="from"><?php echo $row2->UID; ?></span>
+                                    <span class="time">11.00 AM</span>
                                     </span>
                                     <span class="message">
-                                        <?php echo $email; ?>
+                                       <?php echo $row2->Coursename; ?>
                                     </span>
                           </a>
+						  <?php } ?>
                       </li>
                    
               <!-- inbox dropdown end -->
@@ -131,30 +132,13 @@ foreach ($query1->result() as $row1)
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-		
-			   <li role="presentation"><a href="<?php  $this->load->helper('url'); echo site_url("/courseinfo/index"); ?>">Maklumat Program Latihan</a></li>
+		 <li><a href="<?php  $this->load->helper('url'); echo site_url("/courseview/index"); ?>">Senarai Latihan </a></li>
+			   <li><a href="<?php  $this->load->helper('url'); echo site_url("/courseinfo/index"); ?>">Tambah Maklumat Latihan</a></li>
   
   
-  <li role="presentation" class="active"><a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/index"); ?>">Pengesahan <span class="badge">
-  <?php
-  $UID=$this->session->userdata('UID');
-   	  
-		  $query1 = $this->db->get_where('user', array('UID' => $UID));
-foreach ($query1->result() as $row1)
-{
-          $egrade= $row1->Grade;
-}
-	$Status = "Pending";
-		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
-	 
-	$num=$query2->num_rows();
-	if($num>0)
-	{
-	echo $num;
-	}
-				   
-				   ?>
-  </span></a></li>
+  
+  
+   <li><a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/index"); ?>">Senarai Latihan untuk disahkan</a></li>
               
 
 

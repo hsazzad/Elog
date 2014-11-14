@@ -34,13 +34,25 @@
 
   <script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
   <script src="<?php echo base_url();?>js/respond.min.js" ></script>
-
+<script type="text/javascript" language="javascript" src="<?php echo base_url();?>assets/advanced-datatable/media/js/jquery.js"></script>
+ <script class="include" type="text/javascript" src="<?php echo base_url();?>js/jquery.dcjqaccordion.2.7.js"></script>
+ <script src="<?php echo base_url();?>js/jquery.scrollTo.min.js"></script>
+  <script src="<?php echo base_url();?>js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript" src="<?php echo base_url();?>assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
 
   <!--common script for all pages-->
     <script src="<?php echo base_url();?>js/common-scripts.js"></script>
 
   <!--script for this page-->
   <script src="<?php echo base_url();?>js/form-component.js"></script>
+  
+      <script type="text/javascript" charset="utf-8">
+          $(document).ready(function() {
+              $('#example').dataTable( {
+                  "aaSorting": [[ 4, "desc" ]]
+              } );
+          } );
+      </script>
 
   </body>
 </html>
