@@ -30,12 +30,12 @@ class madmin extends CI_Model{
 	}
   public function mdo_approve()
     {
-	 $val= $_POST['val'];
-	   $UID= $_POST['UID'][$val];
-	   $Supervisor_Grade= $_POST['Supervisor_Grade'][$val];
+	 
+	  
+	   $Supervisor_Grade= $_POST['Supervisor_Grade'];
 	
-$this->db->where('UID', $UID); 
-$res=$this->db->update('course',array ('Supervisor_Grade' => $Supervisor_Grade)); 
+
+$res=$this->db->update('course','Supervisor_Grade' => $Supervisor_Grade); 
 	
 	
 			 if($res!=0)	  
