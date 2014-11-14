@@ -14,10 +14,9 @@ class courseview extends CI_Controller {
      public function index(){
 	  $this->load->model ('mcourseview'); 
 
-
-$data['courseView']=$this->mcourseview->viewCourse();
-                   $this->load->view('courseview', $data);
-				  
+$data['course']=$this->mcourseview->viewCourse();
+ $this->load->view('courseview', $data);
+				 
 				   
         
     }

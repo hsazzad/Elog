@@ -14,8 +14,8 @@ class mcourseview extends CI_Model{
     {
           $UID=$this->session->userdata('UID');
    	  
-		  $query = $this->db->get_where('course', array('UID' => $UID));
-		   return $query->result() ;
+		  $course = $this->db->get_where('course', array('UID' => $UID));
+		   return $course->result() ;
         
 }
 

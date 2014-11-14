@@ -26,12 +26,16 @@
 									  <?php 
 									  $today = date('Y-m-d');
 									  echo $today;
-	//if($query > 0)
-
+	if($course==0)
+	{
+	echo "<No Data to show>";
+	}
+else
+{
 	
-	foreach($sCourse as $row){ ?>
+	 foreach($course as $row){ ?>
                                       <tr>
-                                          <td><?php $row->Coursename ;?></td>
+                                          <td><?php echo $row->Coursename ;?></td>
                                           <td>Internet
                                               Explorer 4.0</td>
                                           <td>Win 95+</td>
@@ -40,7 +44,7 @@
 										  <td>Complete</td>
 										  
                                       </tr>
-                                  <?php } ?>
+                                  <?php } }?>
 						
 								 
                           </table>

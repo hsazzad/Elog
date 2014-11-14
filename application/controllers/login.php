@@ -43,7 +43,7 @@ class login extends CI_Controller {
 		 if ($User_type=="User")
 		 {
            
-        $this->load->view('courseview');
+        redirect('courseview');
             }
 			 elseif ($User_type=="Admin")
 		 {
