@@ -26,12 +26,8 @@
 									  <?php 
 									  $today = date('Y-m-d');
 									  echo $today;
-	if($course==0)
+	if($course>0)
 	{
-	echo "<No Data to show>";
-	}
-else
-{
 	
 	 foreach($course as $row){ ?>
                                       <tr>
