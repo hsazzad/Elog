@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class coursedetail extends CI_Controller {
+class adminview extends CI_Controller {
    function __construct()
  {
    parent:: __construct();
@@ -11,13 +11,12 @@ class coursedetail extends CI_Controller {
 	
 		
  }
-     public function detail($ID){
-	  $this->load->model ('mcoursedetail'); 
+     public function index(){
+	  $this->load->model ('madminview'); 
 
-
-$data['coursedetail']=$this->mcoursedetail->viewCourseDetail($ID);
-                   $this->load->view('vcoursedetail', $data);
-				  
+$data['User']=$this->madminview->viewUser();
+ $this->load->view('vadminview', $data);
+				 
 				   
         
     }

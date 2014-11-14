@@ -47,7 +47,7 @@ class login extends CI_Controller {
             }
 			 elseif ($User_type=="Admin")
 		 {
-            redirect('admin');
+            redirect('adminview');
        
             }
 			

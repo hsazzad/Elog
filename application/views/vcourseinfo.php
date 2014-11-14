@@ -108,7 +108,7 @@
   </label>
  </div>
  <div class="form-group">
-	<label for="inputName">Sila nyatakan penegetahuan/ idea yang mempunyai hubungkait dan bole meningkatkan mutu kerja anda :</label>
+	<label for="inputName">Sila nyatakan pengetahuan/ idea yang mempunyai hubungkait dan boleh meningkatkan mutu kerja anda :</label>
 	
    
     <textarea class="form-control" id="Comments" name="Comments" rows="4"></textarea>
