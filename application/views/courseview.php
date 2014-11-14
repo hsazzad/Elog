@@ -19,11 +19,14 @@
                                           <th>Tempat Kursus</th>
                                           <th>Sijil</th>
                                           <th>Tarikh Kursus</th>
+										  <th>Status</th>
                                       </tr>
                                       </thead>
                                       <tbody>
 									  <?php 
-	//if($query > 0){
+									  $today = date('Y-m-d');
+									  echo $today;
+	//if($query > 0)
 
 	
 	foreach($sCourse as $row){ ?>
@@ -34,6 +37,8 @@
                                           <td>Win 95+</td>
                                           <td>4</td>
                                           <td>X</td>
+										  <td>Complete</td>
+										  
                                       </tr>
                                   <?php } ?>
 						
