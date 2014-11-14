@@ -1,5 +1,5 @@
 <?php
-class HomeModel extends CI_Model{
+class memailverify extends CI_Model{
   function __construct(){
         parent::__construct();
 		 $this->load->database();
