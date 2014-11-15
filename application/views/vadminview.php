@@ -29,7 +29,7 @@
 									   <td> <div class="btn-group">
                                   <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button">Tindakan <span class="caret"></span></button>
                                   <ul role="menu" class="dropdown-menu">
-                                      <li><a href="#">Kemaskini</a></li>
+                                      <li><a href="<?php  $this->load->helper('url'); echo site_url("/updateuser/viewuser") ; echo "/"; echo $row->UID; ?>">Kemaskini</a></li>
                                 
                                       <li class="divider"></li>
                                       <li><a href="#">Padam</a></li>

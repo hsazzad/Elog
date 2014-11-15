@@ -31,7 +31,11 @@
    
       <script src="<?php echo base_url();?>js/html5shiv.js"></script>
       <script src="<?php echo base_url();?>js/respond.min.js"></script>
-  
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
   </head>
 
   <body>
