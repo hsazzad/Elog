@@ -36,7 +36,7 @@
                                   </button>
                                   <h4>
                                       <i class="icon-ok-sign"></i>
-                                   <?php $errormsg ?> 
+                                   <?php echo $errormsg; ?> 
                                   </h4>
                                  <p><?php 
  $Email=$this->input->post('Email');

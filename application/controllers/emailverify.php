@@ -17,7 +17,7 @@ class emailverify extends CI_Controller {
   if ($noRecords > 0){
    $error = "Email anda telah disahkan"; 
   }else{
-   $error = "Maaf.. terdapat email anda tidak dpapt disahkan"; 
+   $error = "Maaf.. email anda tidak dapat disahkan"; 
   }
   $data['errormsg'] = $error; 
   $this->load->view('verifysuccess', $data);   
