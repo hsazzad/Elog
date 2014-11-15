@@ -62,7 +62,7 @@ class login extends CI_Controller {
 		elseif($result == 2)
 		{
 		
-		 $msg = '<font color= #DC1558 >Your Email is not verified. Please check your Email to verify.</font><br />';
+		 $msg = '<font color= #DC1558 >You Email is not verified. Please check your Email to verify.</font><br />';
             $this->index($msg);
 		}
 		
