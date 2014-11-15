@@ -13,7 +13,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
    
 			
 
-    <title>Sylobpsm Daftar</title>
+    <title>Sylobpsm Update</title>
 <link rel="icon" href="<?php echo base_url();?>images/Lock1.ico">
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
@@ -57,60 +57,62 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                   <div class="col-md-7 col-md-offset-1">
                       <section class="panel">
                           <header class="panel-heading">
-                         <center>    Daftar</center>
+                         <center>Kemaskini</center>
                           </header>
                           <div class="panel-body">
 						  						  		 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 														 $this->load->helper('form');
+														  foreach($userView as $row)
+														  
+														
+														  
+														  
+														
 															?>
-                            <form  method="post" action="<?php  $this->load->helper('url'); echo site_url("/creg/insert"); ?>" role="form">
+                            <form  method="post" action="<?php  $this->load->helper('url'); echo site_url("/updateuser/updateUser"); ?>" role="form">
                                   <div class="form-group">
 		
 	
                                       <label for="exampleInputEmail1">Nama Penuh</label>
-                                      <input type="text" class="form-control" id ="Name" name = "Name"   value="<?php echo set_value('Name'); ?>" required autofocus>
+                                      <input type="text" class="form-control" id ="Name" name = "Name"   value="<?php echo $row->Name; ?>" required autofocus>
                                   </div>
                                   <div class="form-group">
                                       <label for="ic">No. Kad Pengenalan <?php echo form_error('ID'); ?></label>
-                                      <input type="text"  maxlength="12" class="form-control" name = "ID"  value="<?php echo set_value('ID'); ?>" required>
+                                      <input type="text"  maxlength="12" class="form-control" name = "ID"  value="<?php echo $row->ID; ?>" required>
                                   </div>
                                   <div class="form-group">
                                       <label for="grade">Jawatan/Gred <?php echo form_error('Grade'); ?></label>
-                                 <input type="text" class="form-control" name = "Grade" placeholder="Jawatan/Gred" value="<?php echo set_value('Grade'); ?>" required>
+                                 <input type="text" class="form-control" name = "Grade" placeholder="Jawatan/Gred" value="<?php echo  $row->Grade; ?>" required>
                                   </div>
 								   <div class="form-group">
                                       <label for="grade">Tarikh Lantikan</label>
-                            
-                                                  <input id="datepicker" type="text" placeholder="" name = "Date" class="form-control" value="<?php echo set_value('Date'); ?>">
-                                                 
+                              
+                                                  <input type="text" placeholder="" name = "Date" data-mask="99/99/9999" class="form-control" value="<?php echo  $row->Date ; ?>">
+                                                  <span class="help-inline">dd/mm/yyyy</span>
                                             
                                   </div>
 								   <div class="form-group">
                                       <label for="grade">Unit/Bahagian/Jabatan</label>
-                               <input type="text" class="form-control" name = "Unit" placeholder="Unit/Bahagian/Jabatan" value="<?php echo set_value('Unit'); ?>" required>
+                               <input type="text" class="form-control" name = "Unit" placeholder="Unit/Bahagian/Jabatan" value="<?php echo  $row->Unit; ?>" required>
                                   </div>
 								   <div class="form-group">
 								   <label for="inputUnit">Username <?php echo form_error('UID'); ?></label>
                                     
-                               <input type="text" class="form-control" name = "UID" placeholder="User ID" value="<?php echo set_value('UID'); ?>">
+                               <input type="text" class="form-control" name = "UID" placeholder="User ID" value="<?php echo  $row->UID; ?>" disabled>
                                   </div>
-								    <div class="form-group">
-								<label for="inputPassword">Kata Laluan <?php echo form_error('Password'); ?></label>
+								  
+							
                                     
-                               <input type="password" class="form-control" name = "Password" placeholder="Kata Laluan" required>
-                                  </div>
-								   <div class="form-group">
-								<label for="inputPassword">Ulang Kata Laluan <?php echo form_error('passconf'); ?></label>
-                                    
-                               <input type="password" class="form-control" name = "passconf" required>
-                                  </div>
+                
+                               
+								   
 								    <div class="form-group">
 								<label for="inputEmail">Email</label>
                                     
-                              <input type="email" class="form-control" name = "Email" placeholder="Email" value="<?php echo set_value('Email'); ?>" required>
+                              <input type="email" class="form-control" name = "Email" placeholder="Email" value="<?php echo  $row->Email; ?>" disabled>
                                   </div>
                                   
-                               <center>   <button type="submit" class="btn btn-info ">Hantar</button></center>
+                               <center>   <button type="submit" class="btn btn-info ">Kemaskini</button></center>
                               </form>
 
                           </div>
@@ -164,11 +166,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
   <script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
   <script src="<?php echo base_url();?>js/respond.min.js" ></script>
 
-<script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>
+
   <!--common script for all pages-->
     <script src="<?php echo base_url();?>js/common-scripts.js"></script>
 

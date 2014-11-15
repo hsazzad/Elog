@@ -29,11 +29,20 @@
   <body class="lock-screen">
   <br/>
   <br/>
-
-<div class="alert alert-success">
- <p>Permohonan anda telah berjaya. Link pengesahan email telah di hantar ke <?php 
+<div class="col-lg-6">
+  <div class="alert alert-success alert-block fade in">
+                                  <button data-dismiss="alert" class="close close-sm" type="button">
+                                      <i class="icon-remove"></i>
+                                  </button>
+                                  <h4>
+                                      <i class="icon-ok-sign"></i>
+                                    Permohonan anda telah berjaya.
+                                  </h4>
+                                 <p>Link pengesahan email telah di hantar ke <?php 
  $Email=$this->input->post('Email');
- echo $Email;?> Sila click link pengesahan untuk <a href="<?php  $this->load->helper('url'); echo site_url("/login"); ?>">Log masuk</a></p><div>
+ echo $Email;?> Sila click link pengesahan untuk <a href="<?php  $this->load->helper('url'); echo site_url("/login"); ?>">Log masuk</a></p>
+                              </div>
+</div>
 
 
 

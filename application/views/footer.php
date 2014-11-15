@@ -45,7 +45,11 @@
 
   <!--script for this page-->
   <script src="<?php echo base_url();?>js/form-component.js"></script>
-  
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
       <script type="text/javascript" charset="utf-8">
           $(document).ready(function() {
               $('#example').dataTable( {
