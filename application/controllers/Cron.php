@@ -17,18 +17,32 @@ class Reminders extends CI_Controller
       return;
   }
   $timestamp = strtotime("+90 days");
-  $appointments = $this->Appointment_model->get_days_appointments($timestamp);
-  if(!empty($appointments))
+  $reminder = $this->Appointment_model->get_days($timestamp);
+  if(!empty($reminder))
   {
-      foreach($appointments as $appointment)
+      $rid=$reminder->id;
+	  $query1 = $this->db->get_where('course', array('id' => $rid));
+foreach ($query1->result() as $row1)
+{
+          $sgrade= $row1->Supervisor_Grade;
+}
+ $query2 = $this->db->get_where('user', array('Grade' => $sgrade));
+foreach ($query2->result() as $row2)
+{
+          $email= $row2->Email;
+}
+
+	  
+	  
+      foreach($reminder as $remind)
       {
           $this->email->set_newline("\r\n");
-          $this->email->to($appointment->email);
+          $this->email->to($email->email);
           $this->email->from("youremail@example.com");
-          $this->email->subject("Appointment Reminder");
-          $this->email->message("You have an appointment tomorrow");
+          $this->email->subject("Course Evaluation Reminder");
+          $this->email->message("You have course assessment pending.");
           $this->email->send();
-          $this->Appointment_model->mark_reminded($appointment->id);
+          $this->mReminders->mark_reminded($rid);
       }
   }
   }
