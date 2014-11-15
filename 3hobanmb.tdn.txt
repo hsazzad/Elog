@@ -1,0 +1,52 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	application/models/madmin.php
+	application/views/vcoursedetail.php
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 4 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   ../controllers/coursedetail.php
+#	modified:   ../controllers/courseinfo.php
+#	modified:   ../controllers/evaluate.php
+#	modified:   madmin.php
+#	modified:   mcourseinfo.php
+#	modified:   mevaluate.php
+#	modified:   ../views/courseview.php
+#	modified:   ../views/header.php
+#	modified:   ../views/vadmin.php
+#	modified:   ../views/vadminview.php
+#	modified:   ../views/vcoursedetail.php
+#	modified:   ../views/vcourseinfo.php
+#	modified:   ../views/vevaluate.php
+#	new file:   ../../files/Attachment_B.docx
+#	new file:   ../../files/Attachment_B1.docx
+#	new file:   ../../files/Attachment_B2.docx
+#	new file:   ../../files/Attachment_B3.docx
+#	new file:   ../../files/TR-03124-110.pdf
+#	new file:   ../../files/TR-03124-111.pdf
+#	new file:   ../../files/TR-03124-112.pdf
+#	new file:   ../../files/TR-03124-12.pdf
+#	new file:   ../../files/TR-03124-13.pdf
+#	new file:   ../../files/TR-03124-14.pdf
+#	new file:   ../../files/TR-03124-15.pdf
+#	new file:   ../../files/TR-03124-16.pdf
+#	new file:   ../../files/TR-03124-17.pdf
+#	new file:   ../../files/TR-03124-18.pdf
+#	new file:   ../../files/TR-03124-19.pdf
+#
+

@@ -93,8 +93,6 @@
                                             
                                        </div></div>
 
-									<button class="btn btn-success" name='val' id='val' onclick="feedbacksubmit();" type="button">Simpan</button></form>	 
-  
 
 										 <?php echo  $row->id;?>
   <button class="btn btn-success"  data-dismiss="modal" type="button">Simpan</button></form>
