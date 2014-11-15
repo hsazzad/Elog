@@ -63,7 +63,7 @@ $this->load->view('success');//loading success view
 public function email_check($str)
 {
 
-    if (stristr($str,'@selangor.gov.my') !== false || stristr($str,'@yahoo.com') !== false)
+    if (stristr($str,'@selangor.gov.my') !== false)
 
 {	return true;}
    

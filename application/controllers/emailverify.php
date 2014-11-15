@@ -15,12 +15,12 @@ class emailverify extends CI_Controller {
    function verify($verificationText){  
   $noRecords = $this->memailverify->verifyEmailAddress($verificationText);  
   if ($noRecords > 0){
-   $error = "Email Verified Successfully!"; 
+   $error = "Email anda telah disahkan"; 
   }else{
-   $error = "Sorry Unable to Verify Your Email!"; 
+   $error = "Maaf.. terdapat email anda tidak dpapt disahkan"; 
   }
   $data['errormsg'] = $error; 
-  $this->load->view('success', $data);   
+  $this->load->view('verifysuccess', $data);   
  }
   
 }

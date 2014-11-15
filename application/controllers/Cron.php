@@ -13,10 +13,10 @@ class Reminders extends CI_Controller
   {
     if(!$this->input->is_cli_request())
   {
-      echo "This script can only be accessed via the command line" . PHP_EOL;
+      echo "This script shows that the cron job is running for email reminder." . PHP_EOL;
       return;
   }
-  $timestamp = strtotime("+1 days");
+  $timestamp = strtotime("+90 days");
   $appointments = $this->Appointment_model->get_days_appointments($timestamp);
   if(!empty($appointments))
   {

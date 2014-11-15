@@ -54,7 +54,7 @@ class login extends CI_Controller {
 			
 			else{
            
-          $msg = '<font color= #DC1558 >Invalid username and/or password.</font><br />';
+          $msg = '<font color= #DC1558 >Username atau email tidak padan.</font><br />';
             $this->index($msg);
 			
         }   
@@ -62,13 +62,17 @@ class login extends CI_Controller {
 		elseif($result == 2)
 		{
 		
+<<<<<<< HEAD
 		 $msg = '<font color= #DC1558 >Your Email is not verified. Please check your Email to verify.</font><br />';
+=======
+		 $msg = '<font color= #DC1558 >Alamat email anda masih belum disahkan. Sila periksa inbox email anda click pada link yg diberikan.</font><br />';
+>>>>>>> 8e1112164258ac8bccc1916de816c3d6e4bcedd3
             $this->index($msg);
 		}
 		
 		else{
            
-          $msg = '<font color= #DC1558 >Invalid username and/or password.</font><br />';
+          $msg = '<font color= #DC1558 >Username atau email tidak padan.</font><br />';
             $this->index($msg);
 			
         }       
