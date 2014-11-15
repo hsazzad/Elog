@@ -24,6 +24,7 @@
                                       </tr>
                                       </thead>
                                       <tbody>
+									  
 							<?php foreach ($User as $row){?>
                                       <tr>
 									   <td> <div class="btn-group">
@@ -38,7 +39,7 @@
                                           <td><a href="<?php  $this->load->helper('url'); echo site_url("/coursedetail/detail") ; echo "/"; echo $row->UID; ?>"><?php echo $row->Name ;?></a></td>
                                           <td><?php echo $row->ID ;?></td>
                                           <td><?php echo $row->Grade ;?></td>
-                                          <td><?php echo $row->Date ;?></td>
+                                         <td><?php  echo $row->Date; ?></td>
                                           <td><?php echo $row->Unit ;?></td>
 										  <td><?php echo $row->Email ;?></td>
 										 

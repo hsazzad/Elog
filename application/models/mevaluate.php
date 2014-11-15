@@ -52,8 +52,14 @@ $res=$this->db->update('course',array ('Supervisor_comment' => $Supervisor_comme
 }
 else
 {return false;}
-
-
+}
+ public function show()
+    {
+	
+         $cid= $_GET['cid'];
+   	  
+        $query = $this->db->get_where('course', array('id' => $cid));
+		 return $query->result() ;
 }
 }
 ?>

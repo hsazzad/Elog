@@ -11,7 +11,7 @@ public function do_upload()
 	{
 		$config = array(
             'upload_path'   => './files/',
-            'allowed_types' => 'gif|jpg|png|pdf'
+            'allowed_types' => 'gif|jpg|png|pdf|docx|doc'
         );
 		
 		$this->load->library('upload', $config);
@@ -20,12 +20,13 @@ public function do_upload()
 		 $upload_data = $this->upload->data();              
                                              
         $this->load->helper('date');
-	 $Submit_date = time();
+$Mail_status = "0";
 	 $Status = "Pending";
 	 $UID=$this->input->post('UID');
                        $Coursename=$this->input->post('Coursename'); 
 						$course_catagory=$this->input->post('course_catagory');					   
                        $Place_type=$this->input->post('Place_type');
+					   $Days=$this->input->post('Days');
                        $Satisfaction=$this->input->post('Satisfaction');
                        $Knowledge=$this->input->post('Knowledge');
 					   $Course_Date=$this->input->post('Course_Date');
@@ -33,17 +34,19 @@ public function do_upload()
                          
           
 $this->db->insert('course', array(
-        'Submit_date' => $Submit_date,
+        
 		'UID' => $UID,
         'Coursename' => $Coursename,
 		'course_catagory' => $course_catagory,
         'Place_type' => $Place_type,
+		'Days' => $Days,
         'Satisfaction' => $Satisfaction,
         'Knowledge' => $Knowledge,
     'Cert_file' => $upload_data['file_name'],
-        'Course_Date' => $Course_Date,
+        'Course_Date' => date('Y-m-d', strtotime($Course_Date)),
            'Comments' => $Comments,
-		   'Status' => $Status
+		   'Status' => $Status,
+		   'Mail_status' => $Mail_status
      ));                  
            
                 

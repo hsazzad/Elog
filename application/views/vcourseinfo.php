@@ -34,39 +34,43 @@
 			
 			<label for="inputComm">Kategori Kursus</label>
 			<br/>
-			 <div class="radios">
-                                              <label class="label_radio" for="radio-01">
+			 <div>
+                                              <label class="label_radio" for="radio-01"></label>
                                                   <input name="course_catagory" id="course_catagory1" value="Kursus" type="radio" checked />Kursus
-                                              </label>
-                                              <label class="label_radio" for="radio-02">
+                                              <br/>
+                                              <label class="label_radio" for="radio-02"> </label>
                                                   <input name="course_catagory" id="course_catagory2" value="Seminar" type="radio" />Seminar
-												  </label>
-                                              <label class="label_radio" for="radio-03">
+												 <br/>
+                                              <label class="label_radio" for="radio-03"></label>
                                                   <input name="course_catagory" id="course_catagory3" value="Konvensyen" type="radio" /> Konvensyen
-                                              </label>
-											   <label class="label_radio" for="radio-04">
+                                              <br/>
+											   <label class="label_radio" for="radio-04"> </label>
                                                   <input name="course_catagory" id="course_catagory4" value="Bengkel/Workshop" type="radio" /> Bengkel/Workshop
-                                              </label>
-											   <label class="label_radio" for="radio-04">
+                                             <br/>
+											   <label class="label_radio" for="radio-04"></label>
                                                   <input name="course_catagory" id="course_catagory6" value="Simposium" type="radio" /> Simposium
-                                              </label>
-											  <label class="label_radio" for="radio-04">
+                                              <br/>
+											  <label class="label_radio" for="radio-04"> </label>
                                                   <input name="course_catagory" id="course_catagory7" value="Kolokium" type="radio" /> Kolokium
-                                              </label>
-											  <label class="label_radio" for="radio-04">
+                                             <br/>
+											  <label class="label_radio" for="radio-04">  </label>
                                                   <input name="course_catagory" id="course_catagory8" value="Lawatan Rasmi" type="radio" /> Lawatan Rasmi
-                                              </label>
-											   <label class="label_radio" for="radio-04">
+                                            <br/>
+											   <label class="label_radio" for="radio-04"> </label>
                                                   <input name="course_catagory" id="course_catagory8" value="Klinik Kaunseling" type="radio" /> Klinik Kaunseling
-                                              </label>
+                                             <br/>
                                           </div>
-
+<br/>
 
 			 <div class="form-group">
 			<label for="inputID">Tempat Kursus</label>
 			<input type="text" class="form-control" id ="Place_type" name = "Place_type"  required autofocus>
-			
-		</div> <div class="form-group">
+		</div>
+ <div class="form-group">
+			<label for="inputID">Days</label>
+			<input type="text" class="form-control" id ="Days" name = "Days" placeholder="Duration of Course"  required autofocus>
+		</div>
+		<div class="form-group">
 			<label for="inputGrade">Muat Naik Sijil</label>
 			<input class="btn btn-file" type="file" name="Cert_file"   >
 		</div>
@@ -74,39 +78,36 @@
 			<input type="text" class="form-control" name = "Course_Date" id="datepicker"  required>
 			<br/>
 			<label for="inputComm">Anda gembira mengikuti program latihan ini?</label>
-		
-	 <div class="radios">	
-	  <label class="label_radio" for="radio-01">
-  <input type="radio" name="Satisfaction" id="Satisfaction1" value="1" checked> 1
-</label><label class="label_radio" for="radio-01">
-  <input type="radio" name="Satisfaction" id="Satisfaction2" value="2"> 2
-</label><label class="label_radio" for="radio-01">
-  <input type="radio" name="Satisfaction" id="Satisfaction3" value="3"> 3
-</label><label class="label_radio" for="radio-01">
-  <input type="radio" name="Satisfaction" id="Satisfaction4" value="4"> 4
-</label><label class="label_radio" for="radio-01">
-  <input type="radio" name="Satisfaction" id="Satisfaction5" value="5"> 5
-	</label>
+		<br/>
+	 
+	  <label class="label_radio" for="radio-01"></label>
+  <input type="radio" name="Satisfaction" id="Satisfaction1" value="1" checked /> 1<br/>
+<label class="label_radio" for="radio-01"></label>
+  <input type="radio" name="Satisfaction" id="Satisfaction2" value="2" /> 2<br/>
+<label class="label_radio" for="radio-01"></label>
+  <input type="radio" name="Satisfaction" id="Satisfaction3" value="3" /> 3<br/>
+<label class="label_radio" for="radio-01"></label>
+  <input type="radio" name="Satisfaction" id="Satisfaction4" value="4" /> 4<br/>
+<label class="label_radio" for="radio-01"></label>
+  <input type="radio" name="Satisfaction" id="Satisfaction5" value="5" /> 5<br/>
+	
+<br/>
 
-</div>
 	<label for="inputComm">Anda mendapat pengetahuan yang diperlukan atau idea baru untuk menjalankan tugas.</label>
 			
-			<div class="radios">
-			<label class="label_radio" for="radio-01">
-	<input type="radio" name="Knowledge" id="Knowledge1" value="1" checked> 1
-</label><label class="label_radio" for="radio-01">
-  <input type="radio" name="Knowledge" id="Knowledge2" value="2"> 2
-</label><label class="label_radio" for="radio-01">
-
-  <input type="radio" name="Knowledge" id="Knowledge3" value="3"> 3
-
-	</label><label class="label_radio" for="radio-01">
-  <input type="radio" name="Knowledge" id="Knowledge4" value="4"> 4
-</label><label class="label_radio" for="radio-01">
-
-  <input type="radio" name="Knowledge" id="Knowledge5" value="5"> 5
-  </label>
- </div>
+		<br/>
+			<label class="label_radio" for="radio-01"></label>
+	<input type="radio" name="Knowledge" id="Knowledge1" value="1" checked /> 1<br/>
+<label class="label_radio" for="radio-01"></label>
+  <input type="radio" name="Knowledge" id="Knowledge2" value="2" /> 2<br/>
+</label><label class="label_radio" for="radio-01"></label>
+ <input type="radio" name="Knowledge" id="Knowledge3" value="3" /> 3<br/>
+<label class="label_radio" for="radio-01"></label>
+  <input type="radio" name="Knowledge" id="Knowledge4" value="4" /> 4<br/>
+<label class="label_radio" for="radio-01"></label>
+  <input type="radio" name="Knowledge" id="Knowledge5" value="5" /> 5<br/>
+ 
+<br/>
  <div class="form-group">
 	<label for="inputName">Sila nyatakan pengetahuan/ idea yang mempunyai hubungkait dan boleh meningkatkan mutu kerja anda :</label>
 	

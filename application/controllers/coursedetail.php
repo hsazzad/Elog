@@ -11,6 +11,9 @@ class coursedetail extends CI_Controller {
 	
 		
  }
+  public function index(){
+	 $this->load->view('vcoursedetail');
+    }
      public function detail($ID){
 	  $this->load->model ('mcoursedetail'); 
 

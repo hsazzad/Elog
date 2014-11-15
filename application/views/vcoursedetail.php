@@ -19,6 +19,10 @@
                                           <th>Kategori Kursus</th>
                                           <th>Tempat Kursus</th>
                                           <th>Sijil</th>
+										  <th>Penilaian Kakitangan</th>
+										  <th>Penilaian Pengetahuan</th>
+										  <th>Komen Kakitangan</th>
+										  <th>Komen Pegawai Penilai</th>
                                           <th>Tarikh Kursus</th>
 										 
 										  <th>Status</th>
@@ -26,18 +30,22 @@
                                       </tr>
                                       </thead>
                                       <tbody>
-									  <?php 
-	
-	
-	 foreach($coursedetail as $row){ ?>
+									  <?php foreach($coursedetail as $row){ ?>
                                       <tr>
 									  
                                           <td><?php echo $row->Coursename ;?></td>
                                           <td><?php echo $row->course_catagory ;?></td>
                                           <td><?php echo $row->Place_type ;?></td>
-                                          <td><?php echo $row->Cert_file ;?></td>
-                                          <td><?php echo $row->Submit_date ;?></td>
-										    <td><?php if($row->Status == "Pending"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
+
+                                         <td><?php echo $row->Satisfaction ;?></td>
+										 <td><?php echo $row->Knowledge ;?></td>
+										 <td><?php echo $row->Comments ;?></td>
+										 <td><?php echo $row->Supervisor_comment ;?></td>
+										 <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file ;?><a/></td>
+                                         <td><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
+										   <td><?php echo $row->Supervisor_Grade ;?></td>
+										  <td><?php if($row->Status == "Pending"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
+
 										  
                                     
                                   <?php  }?>
@@ -65,23 +73,32 @@
                                              
   
 										
+<?php echo "<input type='hidden' id='cid' name='cid' value='".$row->id."'>"; ?>
+
 								
                                             <div class="form-group">
                                  
                                       <div class="col-lg-10">
-                                          <select class="form-control m-bot15" name="Supervisor_Grade" id="Supervisor_Grade">
-										  		     <?php $query2 = $this->db->get_where('user');
- foreach($query2->result()  as $row){ ?>
 
-                                              <option><?php echo $row->Name ; ?></option>
+                                          <select class="form-control m-bot15" name="Supervisor_Grade" name="id">
+
+										  		     <?php $query2 = $this->db->get_where('user');
+ foreach($query2->result()  as $row2){ ?>
+
+                                              <option value="<?php echo $row2->Name ; ?>"><?php echo $row2->Name ; ?></option>
                                            
 											    <?php  }?>
 												 <input type="hidden" id="uid" value="<?php echo $row->UID ; ?>"/>
                                           </select>
                                             
                                        </div></div>
+
 									<button class="btn btn-success" name='val' id='val' onclick="feedbacksubmit();" type="button">Simpan</button></form>	 
   
+
+										 <?php echo  $row->id;?>
+  <button class="btn btn-success"  data-dismiss="modal" type="button">Simpan</button></form>
+
                                           </div>
                                           <div class="modal-footer">
 										  

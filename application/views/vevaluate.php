@@ -23,9 +23,10 @@
 	foreach($query as $row): ?>
 	<form method="post" action="<?php  $this->load->helper('url'); echo site_url("evaluate/do_approve"); ?>" >
 		<table class='table table-striped table-bordered table-condensed' >
-	<tr><th><?php echo $i.".";
+	<?php
 		$i++;
-		?></th></tr>
+		?>
+		<br/>
 	<tr><th>Nama Kakitangan</th>
 	
 	<?php  $UID= $row->UID;
@@ -41,10 +42,13 @@ foreach ($querycp->result() as $row2)
 	 <td><?php echo $row->Coursename; ?></td>
 	</tr>
 	<tr><th>Tarikh Kursus</th>
-	 <td><?php echo $row->Course_Date; ?></td>
+	 <td><?php  $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
 	</tr>
 	<tr><th>Tempat</th>
 	 <td><?php echo $row->Place_type; ?></td>
+	</tr>
+	<tr><th>Days</th>
+	 <td><?php echo $row->Days; ?></td>
 	</tr>
 	<tr><th>Sijil Kursus</th>
 	 <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file; ?></td>
@@ -59,7 +63,25 @@ foreach ($querycp->result() as $row2)
 	 <td><?php echo $row->Comments; ?></td>
 	</tr>
 	<tr><th>Komen Pegawai Penilai</th>    
-   <td><textarea class="form-control" id="Supervisor_comment[<?php echo $j;?>]" name="Supervisor_comment[<?php echo $j;?>]" rows="4"></textarea></td>
+   <td><textarea class="form-control" id="Supervisor_comment[<?php echo $j;?>]" name="Supervisor_comment[<?php echo $j;?>]" rows="4" 
+   
+   <?php $UID= $row->UID; 
+$querycp = $this->db->get_where('course', array('UID' => $UID));
+foreach ($querycp->result() as $row2)
+{
+          echo $Mail_status=$row2->Mail_status;
+}
+if($Mail_status==0)
+{
+echo " disabled ";
+}else
+{
+echo " ";
+}
+ ?>
+   
+   
+   ></textarea></td>
 	</tr>
 	<th><button type='submit' name="val" id="val"  value="<?php echo $j;?>" class='btn btn-primary btn-block' >Approve</button></th>
 </table>

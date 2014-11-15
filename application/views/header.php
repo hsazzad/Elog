@@ -89,19 +89,22 @@ foreach ($query1->result() as $row1)
                           <p class="red">You have <?php echo $num; ?> new messages</p>
                       </li>
 					   <li>
-					<?php   foreach ($query2->result() as $row2) { ?>
+					   <?php $i=0;?>
+					<?php   foreach ($query2->result() as $row2) { 
+					$cid= $row2->id;
+	echo "<input type='hidden' id='cid' name='cid' value='".$cid."'>"; ?>
 	
-                          <a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/index"); ?>">
+                          <a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/show?cid=").$cid; ?>">
                            
                                     <span class="subject">
                                     <span class="from"><?php echo $row2->UID; ?></span>
                                     <span class="time">11.00 AM</span>
                                     </span>
                                     <span class="message">
-                                       <?php echo $row2->Coursename; ?>
+                                       <?php echo $row2->Coursename;?>
                                     </span>
                           </a>
-						  <?php } ?>
+						  <?php $i++;} ?>
                       </li>
                    
               <!-- inbox dropdown end -->
