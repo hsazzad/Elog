@@ -56,7 +56,7 @@ else
  public function show()
     {
 	
-         $cid= $_POST['cid'];
+         $cid= $_GET['cid'];
    	  
         $query = $this->db->get_where('course', array('id' => $cid));
 		 return $query->result() ;

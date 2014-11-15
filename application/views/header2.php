@@ -1,12 +1,3 @@
-<?php 
- 
-header("cache-Control: no-store, no-cache, must-revalidate");
-header("cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,6 +19,8 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/bootstrap-daterangepicker/daterangepicker-bs3.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/bootstrap-datetimepicker/css/datetimepicker.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/jquery-multi-select/css/multi-select.css" />
+	 <link href="<?php echo base_url();?>assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
 
 
     <!-- Custom styles for this template -->
@@ -46,9 +39,12 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
   <section id="container" class="">
       <!--header start-->
       <header class="header white-bg">
-         
+        
+          <div class="sidebar-toggle-box">
+		   <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+          </div>
           <!--logo start-->
-          <a href="index.html" class="logo" >Sylo<span>Bpsm</span></a>
+          <a href="index.html" class="logo" >Sylo<span>Bpsm</span>  Admin</a>
           <!--logo end-->
           
           <div class="top-nav ">
@@ -74,4 +70,24 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
       </header>
       <!--header end-->
       <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+		 <li><a href="<?php  $this->load->helper('url'); echo site_url("/adminview/index"); ?>">Senarai Kakitangan </a></li>
+			   <li><a href="<?php  $this->load->helper('url'); echo site_url("/courseinfo/index"); ?>">Lihat Senarai Latihan</a></li>
+  
+  
+  
+  
+
+              
+
+
+                  <!--multi level menu end-->
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
      

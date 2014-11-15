@@ -2,7 +2,7 @@
 /* Author: Jorge Torres
  * Description: Login model class
  */
-class madmin extends CI_Model{
+class madminview extends CI_Model{
   function __construct(){
         parent::__construct();
 		 $this->load->database();
@@ -10,11 +10,11 @@ class madmin extends CI_Model{
     }
  
  
-   public function search()
+   public function viewUser()
     {
           
          
-     $query = $this->db->select('*')->from('course')->get();
+     $query = $this->db->select('*')->from('user')->get();
 	 $num=$query->num_rows();
 
  if($num>0){
@@ -28,16 +28,6 @@ class madmin extends CI_Model{
 		     return true;
 	
 	}
-  public function mdo_approve()
-    {
-	
-       $cid= $_POST['cid'];
-	   $Supervisor_Grade= $_POST['Supervisor_Grade'];
-	   echo $cid;
-	   echo $Supervisor_Grade;
-	   $this->db->where('id', $cid);
-$this->db->update('course', 'Supervisor_Grade' => $Supervisor_Grade); 
-
-		
+ 
 }
 ?>

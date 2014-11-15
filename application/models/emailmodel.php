@@ -23,10 +23,10 @@ class emailmodel extends CI_Model {
   
   $this->load->library('email', $config);
   $this->email->set_newline("\r\n");
-  $this->email->from('admin@yourdomain.com', "Admin Team");
+  $this->email->from('admin@sylobpsm.com', "Admin sylobpsm");
   $this->email->to($email);  
-  $this->email->subject("Email Verification");
-  $this->email->message("Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://www.sylobpsm.com/index.php/verify/".$verificationText."\n"."\n\nThanks\nAdmin Team");
+  $this->email->subject("Pengesahan Email");
+  $this->email->message("Sila klik pada URL di bawah atau tampalkan ke dalam pelayar anda untuk mengesahkan Alamat E-mel anda\n\n http://www.sylobpsm.com/index.php/verify/".$verificationText."\n"."\n\nThanks\nAdmin Team");
   $this->email->send();
 //  echo $this->email->print_debugger();
  }

@@ -24,7 +24,8 @@ class creg extends CI_Controller {
 		$this->form_validation->set_rules('Unit', 'Division/Branch/Unit', 'trim|required');
 		$this->form_validation->set_rules('Grade', 'Jawatan/Gred', 'trim|required|is_unique[user.Grade]');
 		$this->form_validation->set_rules('Date', 'Day/Month/Year', 'trim|required');
-		$this->form_validation->set_rules('Password', 'Password', 'required|min_length[5]');
+		$this->form_validation->set_rules('Password', 'Kata Laluan', 'required|min_length[5]|trim');
+		$this->form_validation->set_rules('passconf','Ulangan Kata Laluan', 'trim|required|matches[Password]'); 
 		$this->form_validation->set_rules('Email', 'Email', 'trim|required');
 		
 		if ($this->form_validation->run() == FALSE)

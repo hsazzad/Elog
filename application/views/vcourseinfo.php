@@ -65,8 +65,13 @@
 			 <div class="form-group">
 			<label for="inputID">Tempat Kursus</label>
 			<input type="text" class="form-control" id ="Place_type" name = "Place_type"  required autofocus>
+		</div>
+ <div class="form-group">
+			<label for="inputID">Days</label>
+			<input type="text" class="form-control" id ="Days" name = "Days" placeholder="Duration of Course"  required autofocus>
 			
-		</div> <div class="form-group">
+		</div>
+		<div class="form-group">
 			<label for="inputGrade">Muat Naik Sijil</label>
 			<input class="btn btn-file" type="file" name="Cert_file"   >
 		</div>
@@ -105,7 +110,7 @@
  
 <br/>
  <div class="form-group">
-	<label for="inputName">Sila nyatakan penegetahuan/ idea yang mempunyai hubungkait dan bole meningkatkan mutu kerja anda :</label>
+	<label for="inputName">Sila nyatakan pengetahuan/ idea yang mempunyai hubungkait dan boleh meningkatkan mutu kerja anda :</label>
 	
    
     <textarea class="form-control" id="Comments" name="Comments" rows="4"></textarea>

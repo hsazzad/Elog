@@ -1,4 +1,4 @@
-<?php include 'header.php';?>
+<?php include 'header2.php';?>
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
@@ -7,41 +7,45 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                             Maklumat Kursus
+                             Maklumat Kakitangan
                           </header>
                           <div class="panel-body">
                                 <div class="adv-table">
                                     <table  class="display table table-bordered table-striped" id="example">
                                       <thead>
-                                      <tr>
-                                          <th>Nama Kursus</th>
-                                          <th>Kategori Kursus</th>
-                                          <th>Tempat Kursus</th>
-                                          <th>Sijil</th>
-                                          <th>Tarikh Kursus</th>
-										  <th>Status</th>
+                                      <tr> <th>Tindakan</th>
+                                          <th>Nama Penuh</th>
+                                          <th>No. Kad Pengenalan</th>
+                                          <th>Jawatan</th>
+                                          <th>Tarikh Lantikan</th>
+                                          <th>Unit/Jabatan</th>
+										  <th>Email</th>
+										 
                                       </tr>
                                       </thead>
                                       <tbody>
-									  <?php 
-									  $today = date('Y-m-d');
-									  echo $today;
-	if($course>0)
-	{
-	
-	 foreach($course as $row){ ?>
+									  
+							<?php foreach ($User as $row){?>
                                       <tr>
-                                          <td><?php echo $row->Coursename ;?></td>
-                                          <td><?php echo $row->course_catagory ;?></td>
-                                          <td><?php echo $row->Place_type ;?></td>
-
-                                           <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file; ?></td>
-                                         <td><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
+									   <td> <div class="btn-group">
+                                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button">Tindakan <span class="caret"></span></button>
+                                  <ul role="menu" class="dropdown-menu">
+                                      <li><a href="#">Kemaskini</a></li>
+                                
+                                      <li class="divider"></li>
+                                      <li><a href="#">Padam</a></li>
+                                  </ul>
+                              </div></td>
+                                          <td><a href="<?php  $this->load->helper('url'); echo site_url("/coursedetail/detail") ; echo "/"; echo $row->UID; ?>"><?php echo $row->Name ;?></a></td>
+                                          <td><?php echo $row->ID ;?></td>
+                                          <td><?php echo $row->Grade ;?></td>
+                                         <td><?php  echo $row->Date; ?></td>
+                                          <td><?php echo $row->Unit ;?></td>
+										  <td><?php echo $row->Email ;?></td>
 										 
-										  <td><?php if($row->Status == "Pending"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } if($row->Status == "Completed") {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
-				  
+										  
                                       </tr>
-                                  <?php } }?>
+                                <?php } ?>
 						
 								 
                           </table>

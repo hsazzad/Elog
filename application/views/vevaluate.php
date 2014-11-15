@@ -23,9 +23,10 @@
 	foreach($query as $row): ?>
 	<form method="post" action="<?php  $this->load->helper('url'); echo site_url("evaluate/do_approve"); ?>" >
 		<table class='table table-striped table-bordered table-condensed' >
-	<tr><th><?php echo $i.".";
+	<?php
 		$i++;
-		?></th></tr>
+		?>
+		<br/>
 	<tr><th>Nama Kakitangan</th>
 	
 	<?php  $UID= $row->UID;
@@ -41,10 +42,13 @@ foreach ($querycp->result() as $row2)
 	 <td><?php echo $row->Coursename; ?></td>
 	</tr>
 	<tr><th>Tarikh Kursus</th>
-	 <td><?php echo $row->Course_Date; ?></td>
+	 <td><?php  $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
 	</tr>
 	<tr><th>Tempat</th>
 	 <td><?php echo $row->Place_type; ?></td>
+	</tr>
+	<tr><th>Days</th>
+	 <td><?php echo $row->Days; ?></td>
 	</tr>
 	<tr><th>Sijil Kursus</th>
 	 <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file; ?></td>
@@ -70,6 +74,9 @@ foreach ($querycp->result() as $row2)
 if($Mail_status==0)
 {
 echo " disabled ";
+}else
+{
+echo " ";
 }
  ?>
    

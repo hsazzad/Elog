@@ -13,7 +13,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
    
 			
 
-    <title>Form Component</title>
+    <title>Sylobpsm Daftar</title>
 <link rel="icon" href="<?php echo base_url();?>images/Lock1.ico">
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
@@ -98,6 +98,11 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 								<label for="inputPassword">Kata Laluan <?php echo form_error('Password'); ?></label>
                                     
                                <input type="password" class="form-control" name = "Password" placeholder="Kata Laluan" required>
+                                  </div>
+								   <div class="form-group">
+								<label for="inputPassword">Ulang Kata Laluan <?php echo form_error('passconf'); ?></label>
+                                    
+                               <input type="password" class="form-control" name = "passconf" required>
                                   </div>
 								    <div class="form-group">
 								<label for="inputEmail">Email</label>

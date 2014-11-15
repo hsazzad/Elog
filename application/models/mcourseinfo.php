@@ -26,6 +26,7 @@ $Mail_status = "0";
                        $Coursename=$this->input->post('Coursename'); 
 						$course_catagory=$this->input->post('course_catagory');					   
                        $Place_type=$this->input->post('Place_type');
+					   $Days=$this->input->post('Days');
                        $Satisfaction=$this->input->post('Satisfaction');
                        $Knowledge=$this->input->post('Knowledge');
 					   $Course_Date=$this->input->post('Course_Date');
@@ -38,6 +39,7 @@ $this->db->insert('course', array(
         'Coursename' => $Coursename,
 		'course_catagory' => $course_catagory,
         'Place_type' => $Place_type,
+		'Days' => $Days,
         'Satisfaction' => $Satisfaction,
         'Knowledge' => $Knowledge,
     'Cert_file' => $upload_data['file_name'],
