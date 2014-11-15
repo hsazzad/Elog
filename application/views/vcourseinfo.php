@@ -69,7 +69,6 @@
  <div class="form-group">
 			<label for="inputID">Days</label>
 			<input type="text" class="form-control" id ="Days" name = "Days" placeholder="Duration of Course"  required autofocus>
-			
 		</div>
 		<div class="form-group">
 			<label for="inputGrade">Muat Naik Sijil</label>
