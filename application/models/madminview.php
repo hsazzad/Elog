@@ -29,5 +29,7 @@ class madminview extends CI_Model{
 	
 	}
  
+ 
+ 
 }
 ?>

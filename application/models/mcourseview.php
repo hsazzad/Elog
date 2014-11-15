@@ -18,6 +18,26 @@ class mcourseview extends CI_Model{
 		   return $course->result() ;
         
 }
+public function viewall()
+ {
+ 
+  $query = $this->db->select('*')->from('course')->get();
+	 $num=$query->num_rows();
+
+ if($num>0){
+		
+		 return $query->result() ;
+		  }
+		  else
+		  {
+		   return false;
+		  }
+		     return true;
+	
+ 
+ 
+ 
+ }
 
 
 }

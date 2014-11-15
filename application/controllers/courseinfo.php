@@ -44,6 +44,8 @@ $data['course']=$this->mcourseview->viewCourse();
  }
         
     }
+	
+	
   
 }
 

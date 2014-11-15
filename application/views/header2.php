@@ -75,7 +75,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 		 <li><a href="<?php  $this->load->helper('url'); echo site_url("/adminview/index"); ?>">Senarai Kakitangan </a></li>
-			   <li><a href="<?php  $this->load->helper('url'); echo site_url("/courseinfo/index"); ?>">Lihat Senarai Latihan</a></li>
+			   <li><a href="<?php  $this->load->helper('url'); echo site_url("/courseview/viewallcourse"); ?>">Lihat Senarai Latihan</a></li>
   
   
   

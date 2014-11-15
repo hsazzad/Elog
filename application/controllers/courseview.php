@@ -20,6 +20,13 @@ $data['course']=$this->mcourseview->viewCourse();
 				   
         
     }
+	
+	public function viewallcourse(){
+	$this->load->model ('mcourseview'); 
+	$data['allcourse']=$this->mcourseview->viewall();
+			 $this->load->view ('courseview2' ,$data);
+	
+	}
    
    
 }

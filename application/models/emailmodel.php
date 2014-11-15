@@ -26,7 +26,7 @@ class emailmodel extends CI_Model {
   $this->email->from('admin@sylobpsm.com', "Admin sylobpsm");
   $this->email->to($email);  
   $this->email->subject("Pengesahan Email");
-  $this->email->message("Sila klik pada URL di bawah atau tampalkan ke dalam pelayar anda untuk mengesahkan Alamat E-mel anda\n\n http://www.sylobpsm.com/index.php/verify/".$verificationText."\n"."\n\nThanks\nAdmin Team");
+  $this->email->message("Sila klik pada URL di bawah atau tampalkan ke dalam pelayar anda untuk mengesahkan Alamat E-mel anda\n\n http://www.sylobpsm.com/index.php/verify/".$verificationText."\n"."\n\nTerima Kasih\nAdmin Sylobpsm");
   $this->email->send();
 //  echo $this->email->print_debugger();
  }

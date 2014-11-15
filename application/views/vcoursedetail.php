@@ -14,14 +14,15 @@
                                     <table  class="display table table-bordered table-striped" id="example">
                                       <thead>
                                       <tr>
-									      <th>Tindakan</th>
+									    
                                           <th>Nama Kursus</th>
                                           <th>Kategori Kursus</th>
                                           <th>Tempat Kursus</th>
                                           <th>Sijil</th>
                                           <th>Tarikh Kursus</th>
-										  <th>Pegawai Penilai</th>
+										 
 										  <th>Status</th>
+										   <th>Pegawai Penilai</th>
                                       </tr>
                                       </thead>
                                       <tbody>
@@ -30,25 +31,26 @@
 	
 	 foreach($coursedetail as $row){ ?>
                                       <tr>
-									     <td> <div class="btn-group">
-                                  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button">Tindakan <span class="caret"></span></button>
-                                  <ul role="menu" class="dropdown-menu">
-                                      <li><a data-toggle="modal" href="#myModal">Pilih Pegawai</a></li>
-                                
-                                      <li class="divider"></li>
-                                      <li><a href="#">Padam</a></li>
-                                  </ul>
-                              </div></td>
+									  
                                           <td><?php echo $row->Coursename ;?></td>
                                           <td><?php echo $row->course_catagory ;?></td>
                                           <td><?php echo $row->Place_type ;?></td>
                                           <td><?php echo $row->Cert_file ;?></td>
                                           <td><?php echo $row->Submit_date ;?></td>
-										   <td><?php echo $row->Supervisor_Grade ;?></td>
-										  <td><?php if($row->Status == "Pending"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
+										    <td><?php if($row->Status == "Pending"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
 										  
-                                      </tr>
+                                    
                                   <?php  }?>
+										   <td>  <select class="form-control m-bot15" name="Supervisor_Grade" id="Supervisor_Grade">
+										  		     <?php $query2 = $this->db->get_where('user');
+ foreach($query2->result()  as $row){ ?>
+
+                                              <option><?php echo $row->Name ; ?></option>
+                                           
+											    <?php  }?>
+												
+                                          </select></td>  </tr>
+										
 						 <!-- Modal -->
                               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                   <div class="modal-dialog">
@@ -59,28 +61,30 @@
                                           </div>
                                           <div class="modal-body">
 										
- <form class="form-horizontal tasi-form" method="post" action="<?php  $this->load->helper('url'); echo site_url("admin/do_approve"); ?>">
+ <form class="form-horizontal tasi-form" method="post" onsubmit="feedbacksubmit();" >
                                              
   
 										
 								
                                             <div class="form-group">
-                                  
+                                 
                                       <div class="col-lg-10">
-                                          <select class="form-control m-bot15" name="Supervisor_Grade">
+                                          <select class="form-control m-bot15" name="Supervisor_Grade" id="Supervisor_Grade">
 										  		     <?php $query2 = $this->db->get_where('user');
  foreach($query2->result()  as $row){ ?>
 
                                               <option><?php echo $row->Name ; ?></option>
                                            
 											    <?php  }?>
+												 <input type="hidden" id="uid" value="<?php echo $row->UID ; ?>"/>
                                           </select>
                                             
                                        </div></div>
-										 
-  <button class="btn btn-success"  data-dismiss="modal" type="button">Simpan</button></form>
+									<button class="btn btn-success" name='val' id='val' onclick="feedbacksubmit();" type="button">Simpan</button></form>	 
+  
                                           </div>
                                           <div class="modal-footer">
+										  
                                               <button data-dismiss="modal" class="btn btn-default" type="button">Tutup</button>
                                              
                                           </div>
@@ -125,7 +129,26 @@
     <script src="<?php echo base_url();?>js/common-scripts.js"></script>
 
     <!--script for this page only-->
-
+	<script>
+	function feedbacksubmit() {
+    var formvalues = {
+            Supervisor_Grade : $('#Supervisor_Grade').val(),
+			UID :  $('#uid').val(),
+            
+        };
+    $.ajax({
+        type: "POST",
+        url:  "<?php  $this->load->helper('url'); echo site_url("admin/do_approve"); ?>",
+        data: { values: formvalues },
+        success: function(response) {
+            alert('Thanks for your feedback!' + formvalues);
+        },
+        error: function(error) {
+            alert("Error");
+        }
+    });
+}
+</script>
       <script type="text/javascript" charset="utf-8">
           $(document).ready(function() {
               $('#example').dataTable( {
