@@ -36,7 +36,7 @@ class madmin extends CI_Model{
 	   echo $cid;
 	   echo $Supervisor_Grade;
 	   $this->db->where('id', $cid);
-$this->db->update('course', 'Supervisor_Grade' => $Supervisor_Grade); 
+$this->db->update('course', array('Supervisor_Grade' => $Supervisor_Grade)); 
 
 		
 }

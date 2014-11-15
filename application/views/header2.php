@@ -33,7 +33,16 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
   </head>
+<style>
+.scrollable-menu {
+    height: auto;
+    max-height: 400px;
+    overflow-x: hidden;
+}
 
+
+
+</style>
   <body>
 
   <section id="container" class="">
@@ -46,22 +55,80 @@
           <!--logo start-->
           <a href="index.html" class="logo" >Sylo<span>Bpsm</span>  Admin</a>
           <!--logo end-->
-          
+        <div class="nav notify-row" id="top_menu">
+            <!--  notification start -->
+            <ul class="nav top-menu">
+              <!-- settings start -->
+             
+              <!-- inbox dropdown start-->
+			   <?php
+  $UID=$this->session->userdata('UID');
+
+	$Status = "Pending";
+		  $query2 = $this->db->get_where('course', array( 'Status' => $Status));
+	 
+	$num=$query2->num_rows();
+	
+
+
+	
+	
+	
+	
+				   
+				   ?>
+              <li id="header_inbox_bar" class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                      <i class="icon-envelope-alt"></i>
+                      <span class="badge bg-important"><?php echo $num; ?></span>
+                  </a>
+				 
+                  <ul class="dropdown-menu extended inbox scrollable-menu">
+                      <div class="notify-arrow notify-arrow-red"></div>
+                      <li>
+                          <p class="red"><?php echo $num; ?> Permohonan Baru</p>
+                      </li>
+					   <li>
+					   <?php $i=0;?>
+					<?php   foreach ($query2->result() as $row2) { 
+					$cid= $row2->id;
+	echo "<input type='hidden' id='cid' name='cid' value='".$cid."'>"; ?>
+	
+                          <a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/show?cid=").$cid; ?>">
+                           
+                                    <span class="subject">
+                                    <span class="from"><?php echo $row2->UID; ?></span>
+                                    <span class="time"><?php echo $row2->Course_Date; ?></span>
+                                    </span>
+                                    <span class="message">
+                                       <?php echo $row2->Coursename;?>
+                                    </span>
+                          </a>
+						  <?php $i++;} ?>
+                      </li>
+                   
+              <!-- inbox dropdown end -->
+           
+              <!-- notification dropdown end -->
+          </ul>
+          </div>
           <div class="top-nav ">
               <ul class="nav pull-right top-menu">
                  
                   <!-- user login dropdown start-->
                   <li class="dropdown">
+				 
                       <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                       
 						  <?php $UID=$this->session->userdata('UID'); ?>
                           <span class="username"><?php echo $UID; ?> </span>
                           <b class="caret"></b>
                       </a>
+					 
                       <ul class="dropdown-menu extended logout">
                           <div class="log-arrow-up"></div>
                         
-                          <li><a href="<?php  $this->load->helper('url'); echo site_url("/login/do_logout"); ?>"><i class="icon-key"></i> Log Out</a></li>
+                         <li><a href="<?php  $this->load->helper('url'); echo site_url("/login/do_logout"); ?>"><i class="icon-key"></i> Log keluar</a></li>
                       </ul>
                   </li>
                   <!-- user login dropdown end -->
@@ -75,7 +142,8 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 		 <li><a href="<?php  $this->load->helper('url'); echo site_url("/adminview/index"); ?>">Senarai Kakitangan </a></li>
-			   <li><a href="<?php  $this->load->helper('url'); echo site_url("/courseview/viewallcourse"); ?>">Lihat Senarai Latihan</a></li>
+			   <li><a href="<?php  $this->load->helper('url'); echo site_url("/courseview/viewallcourse"); ?>">Senarai Latihan</a></li>
+			    <li><a href="<?php  $this->load->helper('url'); echo site_url("/report/index"); ?>">Laporan</a></li>
   
   
   

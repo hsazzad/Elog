@@ -19,12 +19,12 @@ class mupdateuser extends CI_Model{
         
 }
 
- public function updateUserID($data)
+ public function updateUserID($UID,$data)
     {
-         $uid= $_POST['UID'];
-   	     $this->db->where('user', $uid);
-		 $res=$this->db->update('user',array($data)); 
-		   return $user->result() ;
+      
+   	     $this->db->where('UID',$UID);
+		 $res=$this->db->update('user',$data); 
+		   return $res->result() ;
         
 }
 

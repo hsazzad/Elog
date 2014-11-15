@@ -86,7 +86,7 @@ foreach ($query1->result() as $row1)
                   <ul class="dropdown-menu extended inbox">
                       <div class="notify-arrow notify-arrow-red"></div>
                       <li>
-                          <p class="red">You have <?php echo $num; ?> new messages</p>
+                         <p class="red"><?php echo $num; ?> Permohonan Baru</p>
                       </li>
 					   <li>
 					   <?php $i=0;?>

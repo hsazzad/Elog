@@ -18,11 +18,12 @@ class updateuser extends CI_Controller {
 $data['userView']=$this->mupdateuser->viewUserID($ID);
                    $this->load->view('vupdateuser', $data);
 				  
-				   
+				 
         
     }
 	public function updateUser(){
 	  $this->load->model ('mupdateuser'); 
+	    $uid =$this->input->post('UID');
 $data = array(
 'Name' => $this->input->post('Name'),
 'ID' => $this->input->post('ID'),
@@ -34,7 +35,7 @@ $data = array(
 
 );
 
-$this->mupdateuser->updateUserID($data);
+$this->mupdateuser->updateUserID($uid,$data);
                    $this->load->view('vadminview');
 				  
 				   
