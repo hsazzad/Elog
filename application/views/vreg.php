@@ -105,7 +105,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                                <input type="password" class="form-control" name = "passconf" required>
                                   </div>
 								    <div class="form-group">
-								<label for="inputEmail">Email</label>
+								<label for="inputEmail">Email</label><?php echo form_error('Email'); ?>
                                     
                               <input type="email" class="form-control" name = "Email" placeholder="Email" value="<?php echo set_value('Email'); ?>" required>
                                   </div>

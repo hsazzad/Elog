@@ -26,7 +26,7 @@ class creg extends CI_Controller {
 		$this->form_validation->set_rules('Date', 'Day/Month/Year', 'trim|required');
 		$this->form_validation->set_rules('Password', 'Kata Laluan', 'required|min_length[5]|trim');
 		$this->form_validation->set_rules('passconf','Ulangan Kata Laluan', 'trim|required|matches[Password]'); 
-		$this->form_validation->set_rules('Email', 'Email', 'trim|required|callback_email_check');
+		$this->form_validation->set_rules('Email', 'Email', 'callback_email_check');
 		
 		if ($this->form_validation->run() == FALSE)
 		{
@@ -60,16 +60,18 @@ $this->load->view('success');//loading success view
 }
 }
 
-function email_check($str)
+public function email_check($str)
 {
 
-    if (stristr($str,'@selangor.gov.my') !== false) return true;
-    if (stristr($str,'@yahoo.com') !== false) return true;
+    if (stristr($str,'@selangor.gov.my') !== false || stristr($str,'@yahoo.com') !== false)
+
+{	return true;}
    
-
-        $this->form_validation->set_message('Email', 'Please provide an acceptable email address.');
-        return FALSE;
-
+   
+else{
+        $this->form_validation->set_message('email_check', 'Please provide an acceptable email address.');
+        return false;
+}
 } 
  
  
