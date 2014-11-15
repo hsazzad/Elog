@@ -42,7 +42,7 @@ foreach ($querycp2->result() as $row4)
     <td><?php echo $row->Coursename; ?></td>
 	<td><?php echo $row->course_catagory; ?></td>
    <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file; ?></td>
-    <td><?php echo $row->Course_Date; ?></td>
+    <td><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
 	 <td><?php echo $row->Place_type; ?></td>
 	  <td><?php echo $row->Satisfaction; ?></td>
 	   <td><?php echo $row->Knowledge; ?></td>

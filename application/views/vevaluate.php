@@ -59,7 +59,22 @@ foreach ($querycp->result() as $row2)
 	 <td><?php echo $row->Comments; ?></td>
 	</tr>
 	<tr><th>Komen Pegawai Penilai</th>    
-   <td><textarea class="form-control" id="Supervisor_comment[<?php echo $j;?>]" name="Supervisor_comment[<?php echo $j;?>]" rows="4"></textarea></td>
+   <td><textarea class="form-control" id="Supervisor_comment[<?php echo $j;?>]" name="Supervisor_comment[<?php echo $j;?>]" rows="4" 
+   
+   <?php $UID= $row->UID; 
+$querycp = $this->db->get_where('course', array('UID' => $UID));
+foreach ($querycp->result() as $row2)
+{
+          echo $Mail_status=$row2->Mail_status;
+}
+if($Mail_status==0)
+{
+echo " disabled ";
+}
+ ?>
+   
+   
+   ></textarea></td>
 	</tr>
 	<th><button type='submit' name="val" id="val"  value="<?php echo $j;?>" class='btn btn-primary btn-block' >Approve</button></th>
 </table>

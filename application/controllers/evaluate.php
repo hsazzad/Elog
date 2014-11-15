@@ -34,6 +34,17 @@ $data ['query']=$this->mevaluate->search();
 	
     
     }
+	 public function show()
+    {
+	
+  $this->load->model ('mevaluate'); 
+  $res=$this->mevaluate->show();
+
+$data ['query']=$this->mevaluate->show();
+                   $this->load->view('vevaluate', $data);
+	
+    
+    }
   
 }
 

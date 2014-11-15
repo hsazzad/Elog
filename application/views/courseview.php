@@ -34,8 +34,8 @@
                                           <td><?php echo $row->Coursename ;?></td>
                                           <td><?php echo $row->course_catagory ;?></td>
                                           <td><?php echo $row->Place_type ;?></td>
-                                          <td><?php echo $row->Cert_file ;?></td>
-                                          <td><?php echo $row->Submit_date ;?></td>
+                                           <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file; ?></td>
+                                         <td><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
 										  <td><?php echo $row->Status ;?></td>
 										  
                                       </tr>
