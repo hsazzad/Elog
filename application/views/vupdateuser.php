@@ -69,7 +69,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 														  
 														
 															?>
-                            <form  method="post" action="<?php  $this->load->helper('url'); echo site_url("/creg/insert"); ?>" role="form">
+                            <form  method="post" action="<?php  $this->load->helper('url'); echo site_url("/updateuser/updateUser"); ?>" role="form">
                                   <div class="form-group">
 		
 	
@@ -103,16 +103,16 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 								  
 							
                                     
-                               <input type="hidden" class="form-control" name = "Password" placeholder="Kata Laluan" required>
+                
                                
 								   
 								    <div class="form-group">
 								<label for="inputEmail">Email</label>
                                     
-                              <input type="email" class="form-control" name = "Email" placeholder="Email" value="<?php echo set_value('Email'); ?>" required>
+                              <input type="email" class="form-control" name = "Email" placeholder="Email" value="<?php echo  $row->Email; ?>" disabled>
                                   </div>
                                   
-                               <center>   <button type="submit" class="btn btn-info ">Hantar</button></center>
+                               <center>   <button type="submit" class="btn btn-info ">Kemaskini</button></center>
                               </form>
 
                           </div>

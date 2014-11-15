@@ -21,6 +21,27 @@ $data['userView']=$this->mupdateuser->viewUserID($ID);
 				   
         
     }
+	public function updateUser(){
+	  $this->load->model ('mupdateuser'); 
+$data = array(
+'Name' => $this->input->post('Name'),
+'ID' => $this->input->post('ID'),
+'Grade' => $this->input->post('Grade'),
+'Date' => $this->input->post('Date'),
+'Unit' => $this->input->post('Unit'),
+'UID' => $this->input->post('UID'),
+'Email' => $this->input->post('Email')
+
+);
+
+$this->mupdateuser->updateUserID($data);
+                   $this->load->view('vadminview');
+				  
+				   
+        
+    }
+	
+	
 	 public function deleteUser($ID){
 	  $this->load->model ('mupdateuser'); 
 
