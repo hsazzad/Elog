@@ -14,7 +14,7 @@ class mcoursedetail extends CI_Model{
     {
          
    	  
-		  $course = $this->db->get_where('course', array('UID' => $UID));
+		  $course = $this->db->get_where('course', array('id' => $UID));
 		   return $course->result() ;
         
 }
