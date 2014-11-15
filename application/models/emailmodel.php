@@ -30,5 +30,20 @@ class emailmodel extends CI_Model {
   $this->email->send();
 //  echo $this->email->print_debugger();
  }
+ 
+ function resetpassword($user)
+	{
+		date_default_timezone_set('GMT');
+		$this->load->helper('string');
+		$password= random_string('alnum', 16);
+		$this->db->where('id', $user->id);
+		$this->db->update('user',array('password'=>MD5($password)));
+		$this->load->library('email');
+		$this->email->from('admin@sylobpsm.com', 'Admin sylobpsm');
+		$this->email->to($user->email); 	
+		$this->email->subject('Reset Password');
+		$this->email->message('You have requested the new password, Here is you new password:'. $password);	
+		$this->email->send();
+	} 
 }
 ?>
