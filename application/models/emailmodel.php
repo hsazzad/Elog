@@ -45,10 +45,10 @@ class emailmodel extends CI_Model {
   );
  
     $this->email->set_newline("\r\n");
-          $this->email->to($email->email);
+          $this->email->to($email);
           $this->email->from("admin@sylobpsm.com");
           $this->email->subject("Peringatan Pengesahan Latihan");
-          $this->email->message("Sila buat penilaian Latihan untuk kakitangan".$name);
+          $this->email->message("Sila buat penilaian Latihan untuk kakitangan  "  .$name);
           $this->email->send();
   echo $this->email->print_debugger();
  }
