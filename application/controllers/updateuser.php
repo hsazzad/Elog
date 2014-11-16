@@ -21,13 +21,16 @@ $data['userView']=$this->mupdateuser->viewUserID($ID);
     }
 	public function do_approve()
     {
-	
+	$val= $_POST['val'];
+	$UID = $_POST['UID'][$val];
 	  $this->load->model ('mcoursedetail'); 
 	   $res = $this->mcoursedetail->mdo_approve();
 	if( $res==1)
 	{
-	
-	$this->load->view('vcoursedetail');
+	$this->load->model ('mcoursedetail'); 	  
+
+$data['coursedetail']=$this->mcoursedetail->viewCourseDetail($UID);
+                   $this->load->view('vcoursedetail', $data);
 	}
 	} 
 	
