@@ -63,7 +63,7 @@ foreach ($querycp->result() as $row2)
 	 <td><?php echo $row->Comments; ?></td>
 	</tr>
 	<tr><th>Komen Pegawai Penilai</th>    
-   <td><textarea class="form-control" id="Supervisor_comment[<?php echo $j;?>]" name="Supervisor_comment[<?php echo $j;?>]" rows="4" 
+   <td><textarea class="form-control" id="Supervisor_comment[<?php echo $j;?>]" name="Supervisor_comment[<?php echo $j;?>]" rows="4"> 
    
    <?php $UID= $row->UID; 
 $querycp = $this->db->get_where('course', array('UID' => $UID));
@@ -77,11 +77,8 @@ echo " disabled ";
 }else
 {
 echo " ";
-}
- ?>
-   
-   
-   ></textarea></td>
+} ?>
+   </textarea></td>
 	</tr>
 	<th><button type='submit' name="val" id="val"  value="<?php echo $j;?>" class='btn btn-primary btn-block' >Approve</button></th>
 </table>

@@ -59,62 +59,53 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                           <header class="panel-heading">
                          <center>Kemaskini</center>
                           </header>
-                          <div class="panel-body">
+                          <div class="panel-body"><?php $i=0;?>
 						  						  		 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 														 $this->load->helper('form');
-														  foreach($userView as $row)
-														  
-														
-														  
-														  
-														
+														  foreach($userView as $row):
 															?>
                             <form  method="post" action="<?php  $this->load->helper('url'); echo site_url("/updateuser/updateUser"); ?>" role="form">
                                   <div class="form-group">
 		
 	
                                       <label for="exampleInputEmail1">Nama Penuh</label>
-                                      <input type="text" class="form-control" id ="Name" name = "Name"   value="<?php echo $row->Name; ?>" required autofocus>
+                                      <input type="text" class="form-control" id ="Name[<?php echo $i;?>]" name = "Name[<?php echo $i;?>]"   value="<?php echo $row->Name; ?>" required autofocus>
                                   </div>
                                   <div class="form-group">
                                       <label for="ic">No. Kad Pengenalan <?php echo form_error('ID'); ?></label>
-                                      <input type="text"  maxlength="12" class="form-control" name = "ID"  value="<?php echo $row->ID; ?>" required>
+                                      <input type="text"  maxlength="12" class="form-control" name = "ID[<?php echo $i;?>]"  value="<?php echo $row->ID; ?>" required>
                                   </div>
                                   <div class="form-group">
                                       <label for="grade">Jawatan/Gred <?php echo form_error('Grade'); ?></label>
-                                 <input type="text" class="form-control" name = "Grade" placeholder="Jawatan/Gred" value="<?php echo  $row->Grade; ?>" required>
+                                 <input type="text" class="form-control" name = "Grade[<?php echo $i;?>]" placeholder="Jawatan/Gred" value="<?php echo  $row->Grade; ?>" required>
                                   </div>
 								   <div class="form-group">
                                       <label for="grade">Tarikh Lantikan</label>
                               
-                                                  <input type="text" placeholder="" name = "Date" data-mask="99/99/9999" class="form-control" value="<?php echo  $row->Date ; ?>">
+                                                  <input type="text" placeholder="" name = "Date[<?php echo $i;?>]" data-mask="99/99/9999" class="form-control" value="<?php echo  $row->Date ; ?>">
                                                   <span class="help-inline">dd/mm/yyyy</span>
                                             
                                   </div>
 								   <div class="form-group">
                                       <label for="grade">Unit/Bahagian/Jabatan</label>
-                               <input type="text" class="form-control" name = "Unit" placeholder="Unit/Bahagian/Jabatan" value="<?php echo  $row->Unit; ?>" required>
+                               <input type="text" class="form-control" name = "Unit[<?php echo $i;?>]" placeholder="Unit/Bahagian/Jabatan" value="<?php echo  $row->Unit; ?>" required>
                                   </div>
 								   <div class="form-group">
 								   <label for="inputUnit">Username <?php echo form_error('UID'); ?></label>
                                     
-                               <input type="text" class="form-control" name = "UID" placeholder="User ID" value="<?php echo  $row->UID; ?>" disabled>
+                               <input type="text" class="form-control" id="UID2" name = "UID2" placeholder="User ID" value="<?php echo  $row->UID; ?>" disabled>
                                   </div>
-								  
-							
-                                    
-                
-                               
-								   
 								    <div class="form-group">
 								<label for="inputEmail">Email</label>
                                     
-                              <input type="email" class="form-control" name = "Email" placeholder="Email" value="<?php echo  $row->Email; ?>" disabled>
+                              <input type="text" class="form-control" id = "Email[<?php echo $i;?>]" name = "Email[<?php echo $i;?>]" placeholder="Email" value="<?php echo  $row->Email; ?>" disabled>
                                   </div>
-                                  
-                               <center>   <button type="submit" class="btn btn-info ">Kemaskini</button></center>
+                                  <?php  $UID= $row->UID;
+	echo "<input type='hidden' id='UID[".$i."]' name='UID[".$i."]' value='".$UID."'>"; ?>
+                               <center>   <button type="submit"  name="val" id="val"  value="<?php echo $i;?>" class="btn btn-info ">Kemaskini</button></center>
                               </form>
-
+							<?php $i++;?>
+    <?php endforeach; ?>
                           </div>
                       </section>
                   </div>

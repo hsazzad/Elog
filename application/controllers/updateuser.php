@@ -11,36 +11,39 @@ class updateuser extends CI_Controller {
 	
 		
  }
-     public function viewuser($ID){
+     public function viewuser(){
 	  $this->load->model ('mupdateuser'); 
-
+  $ID = $_GET['UID'];
 
 $data['userView']=$this->mupdateuser->viewUserID($ID);
                    $this->load->view('vupdateuser', $data);
-				  
 				 
         
     }
 	public function updateUser(){
 	  $this->load->model ('mupdateuser'); 
-	    $uid =$this->input->post('UID');
-$data = array(
-'Name' => $this->input->post('Name'),
-'ID' => $this->input->post('ID'),
-'Grade' => $this->input->post('Grade'),
-'Date' => $this->input->post('Date'),
-'Unit' => $this->input->post('Unit'),
-'UID' => $this->input->post('UID'),
-'Email' => $this->input->post('Email')
-
-);
-
-$this->mupdateuser->updateUserID($uid,$data);
-                   $this->load->view('vadminview');
-				  
+	    
+		$val= $_POST['val'];
+       $UID= $_POST['UID'][$val];
+	   $Name= $_POST['Name'][$val];
+	   $ID= $_POST['ID'][$val];
+	   $Grade= $_POST['Grade'][$val];
+	   $Date= $_POST['Date'][$val];
+	   $Unit= $_POST['Unit'][$val];
+	  
+	    
+		echo $UID;
+  $this->db->where('UID',$UID);
+		$res= $this->db->update('user',array ('Name' => $Name, 'ID' => $ID)); 
+ if($res>0)	  
+       {      
+	  redirect('adminview');
+	   
+}
+}
+                
 				   
-        
-    }
+  
 	
 	
 	 public function deleteUser($ID){

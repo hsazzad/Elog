@@ -24,13 +24,14 @@
                                       </tr>
                                       </thead>
                                       <tbody>
-									  
+									  <?php $i=0;?>
 							<?php foreach ($User as $row){?>
                                       <tr>
 									   <td> <div class="btn-group">
                                   <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button">Tindakan <span class="caret"></span></button>
                                   <ul role="menu" class="dropdown-menu">
-                                      <li><a href="<?php  $this->load->helper('url'); echo site_url("/updateuser/viewuser") ; echo "/"; echo $row->UID; ?>">Kemaskini</a></li>
+								  <?php  echo "<input type='hidden' name='UID' id='UID' value='".$row->UID."'>"; ?>
+                                      <li><a href="<?php  $this->load->helper('url'); echo site_url("/updateuser/viewuser") ; echo "?UID="; echo $row->UID; ?>">Kemaskini</a></li>
                                 
                                       <li class="divider"></li>
                                       <li><a href="#">Padam</a></li>
@@ -42,7 +43,7 @@
                                          <td><?php  echo $row->Date; ?></td>
                                           <td><?php echo $row->Unit ;?></td>
 										  <td><?php echo $row->Email ;?></td>
-										 
+										
 										  
                                       </tr>
                                 <?php } ?>

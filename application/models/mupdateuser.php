@@ -12,10 +12,11 @@ class mupdateuser extends CI_Model{
  
    public function viewUserID($UID)
     {
-         
+        
+    $this->db->from('user');   
+    $this->db->where('UID', $UID);
+    return $this->db->get()->result();
    	  
-		  $user = $this->db->get_where('user', array('UID' => $UID));
-		   return $user->result() ;
         
 }
 
@@ -23,9 +24,8 @@ class mupdateuser extends CI_Model{
     {
       
    	     $this->db->where('UID',$UID);
-		 $res=$this->db->update('user',$data); 
-		   return $res->result() ;
-        
+		 $this->db->update('user',$data); 
+		   
 }
 
 
