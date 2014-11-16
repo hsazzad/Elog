@@ -69,7 +69,7 @@ public function email_check($str)
    
    
 else{
-        $this->form_validation->set_message('email_check', 'Please provide an acceptable email address.');
+        $this->form_validation->set_message('email_check', 'Hanya email @selangor.gov.my dibenarkan untuk mendaftar ');
         return false;
 }
 } 
