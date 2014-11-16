@@ -21,12 +21,12 @@ class mcoursedetail extends CI_Model{
 public function mdo_approve()
     {
 	 $val= $_POST['val'];
-      
+      $Status= "Dalam Proses";
        $cid= $_POST['cid'][$val];
 	   $Supervisor_Grade= $_POST['Supervisor_Grade'][$val];
 	   
 	   $this->db->where('id', $cid);
-	$res=$this->db->update('course', array('Supervisor_Grade' => $Supervisor_Grade)); 
+	$res=$this->db->update('course', array('Supervisor_Grade' => $Supervisor_Grade,'Status' => $Status) ); 
 if($res!=0)	  
        {       return true;
 }

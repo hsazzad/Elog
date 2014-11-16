@@ -12,7 +12,7 @@ class coursedetail extends CI_Controller {
  
      public function detail(){
 $this->load->model ('mcoursedetail'); 	  
-$UID = $_GET['UID'];
+$UID = $_POST['cid'];
 
 $data['coursedetail']=$this->mcoursedetail->viewCourseDetail($UID);
                    $this->load->view('vcoursedetail', $data);

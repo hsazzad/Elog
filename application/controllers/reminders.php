@@ -21,7 +21,10 @@ class reminders extends CI_Controller
   $reminder = $this->mreminders->get_days($timestamp);
   if(!empty($reminder))
   {
-      $rid=$reminder->id;
+  foreach($reminder as $row)
+  {
+      $rid=$row->id;
+	 
 	  $query1 = $this->db->get_where('course', array('id' => $rid));
 foreach ($query1->result() as $row1)
 {
@@ -38,7 +41,7 @@ foreach ($query2->result() as $row2)
 	  
 	 
          $this->emailmodel->sendRemainderEmail($email,$name);
-          $this->mreminders->mark_reminded($rid);
+          $this->mreminders->mark_reminded($rid); }
     }
   }
   }

@@ -94,7 +94,7 @@
 					$cid= $row2->id;
 	echo "<input type='hidden' id='cid' name='cid' value='".$cid."'>"; ?>
 	
-                          <a href="<?php  $this->load->helper('url'); echo site_url("coursedetail/detail?").$cid; ?>">
+                          <a href="<?php  $this->load->helper('url'); echo site_url("coursedetail/detail?cid=").$cid; ?>">
                            
                                     <span class="subject">
                                     <span class="from"><?php echo $row2->UID; ?></span>

@@ -47,7 +47,7 @@
 										 <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file ;?><a/></td>
                                          <td><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
 										  
-										  <td><?php if($row->Status == "Pending"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
+										  <td><?php if($row->Status == "Belum Selesai"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } elseif($row->Status == "Dalam Proses"){?> <span class="label label-warning"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
 
 										  
 										     <?php $Supervisor_Grade=$row->Supervisor_Grade;
@@ -57,13 +57,25 @@ $query2 = $this->db->get_where('user');
 echo "<td><select  name='Supervisor_Grade[".$i."]'>";
 foreach ($query2->result() as $row2)
 {
-        echo  "<option value='".$row2->Grade."'>".$row2->Grade."</option>";
+        echo  "<option value='".$row2->Grade."'>".$row2->Name."</option>";
 }
  echo"</td></select>";
 ?>
  <td><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary btn-block'  >Sahkan</button></td>
  <?php
- } 	else{echo "<td>".$Supervisor_Grade."</td>";}?>
+ } 	else{
+	$query3 = 	$this->db->get_where('user', array('Grade'=>$Supervisor_Grade));
+ 
+foreach ($query3->result() as $row3)
+{
+         echo "<td>".$row3->Name."</td>";
+}
+  }
+
+ 
+ 
+ 
+ ?>
 										
 										<?php $i++;?>
 											

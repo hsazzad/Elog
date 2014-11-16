@@ -21,7 +21,7 @@ public function do_upload()
                                              
         $this->load->helper('date');
 $Mail_status = "0";
-	 $Status = "Pending";
+	 $Status = "Belum Selesai";
 	 $UID=$this->input->post('UID');
                        $Coursename=$this->input->post('Coursename'); 
 						$course_catagory=$this->input->post('course_catagory');					   
