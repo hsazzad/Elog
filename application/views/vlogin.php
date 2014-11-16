@@ -31,7 +31,7 @@
     <div class="container">
 
        <form class="form-signin" role="form"  method="post" action="<?php  $this->load->helper('url'); echo site_url("/login/process"); ?>">
-        <h2 class="form-signin-heading">SyloBpsm</h2>
+      <center> <span class="form-signin-heading"><img src="<?php echo base_url();?>images/bpsm.png" width="60"></span><span class="form-signin-heading"><img src="<?php echo base_url();?>images/selangor.png" width="60"></span> </center> <h2 class="form-signin-heading">SyloBpsm </h2>
         <div class="login-wrap">
 			<?php if(! is_null($msg)) echo $msg;?>  
             <input class="form-control" type="text" class="form-control" id ="UID" name ="UID" placeholder="Username" required autofocus> 

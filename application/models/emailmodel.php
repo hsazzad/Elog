@@ -43,15 +43,14 @@ class emailmodel extends CI_Model {
      'charset' => 'iso-8859-1',
      'wordwrap' => TRUE
   );
-  
-  
+ 
     $this->email->set_newline("\r\n");
           $this->email->to($email->email);
           $this->email->from("admin@sylobpsm.com");
           $this->email->subject("Peringatan Pengesahan Latihan");
-          $this->email->message("Sila buat penilaian Latihan untuk kakitangan" $name);
+          $this->email->message("Sila buat penilaian Latihan untuk kakitangan".$name);
           $this->email->send();
-//  echo $this->email->print_debugger();
+  echo $this->email->print_debugger();
  }
  function resetpassword($user)
 	{
@@ -66,6 +65,7 @@ class emailmodel extends CI_Model {
 		$this->email->subject('Reset Password');
 		$this->email->message('You have requested the new password, Here is you new password:'. $password);	
 		$this->email->send();
+		
 	} 
 }
 ?>

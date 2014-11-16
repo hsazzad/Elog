@@ -1,5 +1,5 @@
 <?php
-class Reminders extends CI_Controller
+class reminders extends CI_Controller
 {
 
   public function __construct()
@@ -26,9 +26,9 @@ class Reminders extends CI_Controller
 foreach ($query1->result() as $row1)
 {
           $sgrade= $row1->Supervisor_Grade;
-		  $uname =  $row1->Name;
+		
 }
- $query2 = $this->db->get_where('user', array('Name' => $uname));
+ $query2 = $this->db->get_where('user', array('Grade' => sgrade));
 foreach ($query2->result() as $row2)
 {
           $email= $row2->Email;
@@ -38,7 +38,7 @@ foreach ($query2->result() as $row2)
 	  
 	 
          $this->emailmodel->sendRemainderEmail($email,$name);
-          $this->mReminders->mark_reminded($rid);
+          $this->mreminders->mark_reminded($rid);
     }
   }
   }

@@ -1,5 +1,5 @@
 <?php
-class mReminders extends CI_Model
+class mreminders extends CI_Model
 {
   public function get_days($day)
   {
