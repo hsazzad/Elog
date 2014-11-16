@@ -1,0 +1,15 @@
+To: 
+Subject: =?utf-8?Q?Peringatan_Pengesahan_Latihan?=
+From: <admin@sylobpsm.com>
+Return-Path: <admin@sylobpsm.com>
+Reply-To: "admin@sylobpsm.com" <admin@sylobpsm.com>
+X-Sender: admin@sylobpsm.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: <5468d2431a85d@sylobpsm.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Sila buat penilaian Latihan untuk kakitangan
+

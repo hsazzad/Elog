@@ -19,30 +19,25 @@ class reminders extends CI_Controller
   }
   $timestamp = strtotime("+90 days");
   $reminder = $this->mreminders->get_days($timestamp);
-  if(!empty($reminder))
+  if($reminder)
   {
   foreach($reminder as $row)
   {
-      $rid=$row->id;
-	 
-	  $query1 = $this->db->get_where('course', array('id' => $rid));
-foreach ($query1->result() as $row1)
-{
-          $sgrade= $row1->Supervisor_Grade;
-		
-}
- $query2 = $this->db->get_where('user', array('Grade' => sgrade));
-foreach ($query2->result() as $row2)
-{
-          $email= $row2->Email;
-		  $name = $row2->Name;
+      $rid= $row->id;
+          $email= $row->Email;
+		  $name = $row->Name;
 
-
-	  
-	 
          $this->emailmodel->sendRemainderEmail($email,$name);
-          $this->mreminders->mark_reminded($rid); }
+          $this->mreminders->mark_reminded($rid);
+		  }
     }
+	else
+	{
+	$rid= $row->id;
+	$this->db->where('id', $rid)->update('course', array('Mail_status' => 1));
+	}
   }
+  
+  
   }
-}
+
