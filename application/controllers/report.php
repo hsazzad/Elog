@@ -12,10 +12,10 @@ class report extends CI_Controller {
 		
  }
      public function index(){
-	  //$this->load->model ('mreport'); 
+	   $this->load->model ('mreport'); 
 
-//$data['User']=$this->madminview->viewUser();
- $this->load->view('vreport');
+$data['User']=$this->mreport->viewUser();
+ $this->load->view('vreport', $data);
 				 
 				   
         
