@@ -25,7 +25,7 @@ class reminders extends CI_Controller
   {
   foreach($reminder as $row)
   {
-<<<<<<< HEAD
+
       $rid= $row->id;
           $email= $row->Email;
 		  $name = $row->Name;
@@ -39,7 +39,7 @@ class reminders extends CI_Controller
 	$rid= $row->id;
 	$this->db->where('id', $rid)->update('course', array('Mail_status' => 1));
 	}
-=======
+
       $rid=$row->id;
 	
 	  $query1 = $this->db->get_where('course', array('id' => $rid));
@@ -66,7 +66,7 @@ echo $email;
   else{
   echo "no data found!!!";
   
->>>>>>> origin/master
+
   }
   
   
