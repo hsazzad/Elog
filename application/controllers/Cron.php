@@ -8,6 +8,7 @@ class Reminders extends CI_Controller
       $this->load->library('input');
     $this->load->library('email');
     $this->load->model('Appointment_model');
+	$this->load->model('emailmodel');
   }
   public function index()
   {
@@ -30,20 +31,14 @@ foreach ($query1->result() as $row1)
 foreach ($query2->result() as $row2)
 {
           $email= $row2->Email;
-}
+		  $name = $row2->Name;
+
 
 	  
-	  
-      foreach($reminder as $remind)
-      {
-          $this->email->set_newline("\r\n");
-          $this->email->to($email->email);
-          $this->email->from("youremail@example.com");
-          $this->email->subject("Course Evaluation Reminder");
-          $this->email->message("You have course assessment pending.");
-          $this->email->send();
+	 
+         $this->emailmodel->sendRemainderEmail($email,$name);
           $this->mReminders->mark_reminded($rid);
-      }
+    }
   }
   }
 }
