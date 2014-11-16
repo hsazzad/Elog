@@ -20,6 +20,16 @@ $data['coursedetail']=$this->mcoursedetail->viewCourseDetail($UID);
         
     }
    
+     public function detail2(){
+$this->load->model ('mcoursedetail'); 
+$this->mcoursedetail->show();	  
+
+
+$data['coursedetail']=$this->mcoursedetail->show();	
+                   $this->load->view('vcoursedetail', $data);
+				   
+        
+    }
    
 }
 

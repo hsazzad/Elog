@@ -91,14 +91,14 @@ foreach ($query1->result() as $row1)
 					   <li>
 					   <?php $i=0;?>
 					<?php   foreach ($query2->result() as $row2) { 
-					$cid= $row2->id;
+				
 	echo "<input type='hidden' id='cid' name='cid' value='".$cid."'>"; ?>
 	
                           <a href="<?php  $this->load->helper('url'); echo site_url("/evaluate/show?cid=").$cid; ?>">
                            
                                     <span class="subject">
                                     <span class="from"><?php echo $row2->UID; ?></span>
-                                    <span class="time">11.00 AM</span>
+                                    <span class="time"></span>
                                     </span>
                                     <span class="message">
                                        <?php echo $row2->Coursename;?>

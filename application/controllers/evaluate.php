@@ -38,8 +38,8 @@ $data ['query']=$this->mevaluate->search();
     {
 	
   $this->load->model ('mevaluate'); 
-  $res=$this->mevaluate->show();
-
+  $this->mevaluate->show();
+$cid= $_POST['cid'];
 $data ['query']=$this->mevaluate->show();
                    $this->load->view('vevaluate', $data);
 	
