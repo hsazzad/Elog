@@ -7,7 +7,7 @@ class Reminders extends CI_Controller
     parent::__construct();
       $this->load->library('input');
     $this->load->library('email');
-    $this->load->model('Appointment_model');
+    $this->load->model('mReminders');
   }
   public function index()
   {
@@ -17,7 +17,7 @@ class Reminders extends CI_Controller
       return;
   }
   $timestamp = strtotime("+90 days");
-  $reminder = $this->Appointment_model->get_days($timestamp);
+  $reminder = $this->mReminders->get_days($timestamp);
   if(!empty($reminder))
   {
       $rid=$reminder->id;
