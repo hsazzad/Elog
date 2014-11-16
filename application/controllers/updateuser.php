@@ -18,7 +18,26 @@ class updateuser extends CI_Controller {
 $data['userView']=$this->mupdateuser->viewUserID($ID);
                    $this->load->view('vupdateuser', $data);
 				 
-        
+    }
+	public function do_approve()
+    {
+	
+	  $this->load->model ('mcoursedetail'); 
+	   $res = $this->mcoursedetail->mdo_approve();
+	if( $res==1)
+	{
+	
+	$this->load->view('vcoursedetail');
+	}
+	} 
+	
+	public function detail(){
+$this->load->model ('mcoursedetail'); 	  
+$UID = $_GET['UID'];
+
+$data['coursedetail']=$this->mcoursedetail->viewCourseDetail($UID);
+                   $this->load->view('vcoursedetail', $data);
+				 
     }
 	public function updateUser(){
 	  $this->load->model ('mupdateuser'); 
@@ -41,21 +60,15 @@ $data['userView']=$this->mupdateuser->viewUserID($ID);
 	   
 }
 }
-                
-				   
-  
-	
-	
-	 public function deleteUser($ID){
-	  $this->load->model ('mupdateuser'); 
+	 public function delete()
+    {
+     $UID = $_GET['UID'];
 
-
-$data['coursedetail']=$this->mupdateuser->viewUserID($ID);
-                   $this->load->view('vupdateuser', $data);
-				  
-				   
-        
-    }
+   $this->db->delete('user', array('UID' => $UID)); 
+   
+ redirect('adminview');
+    
+ }
    
    
 }

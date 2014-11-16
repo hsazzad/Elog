@@ -8,19 +8,14 @@ class coursedetail extends CI_Controller {
             redirect('login'); }
         $this->load->helper(array('form', 'url'));
         $this->load->database();
-	
-		
  }
-  public function index(){
-	 $this->load->view('vcoursedetail');
-    }
-     public function detail($ID){
-	  $this->load->model ('mcoursedetail'); 
+ 
+     public function detail(){
+$this->load->model ('mcoursedetail'); 	  
+$UID = $_GET['UID'];
 
-
-$data['coursedetail']=$this->mcoursedetail->viewCourseDetail($ID);
+$data['coursedetail']=$this->mcoursedetail->viewCourseDetail($UID);
                    $this->load->view('vcoursedetail', $data);
-				  
 				   
         
     }

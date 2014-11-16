@@ -34,10 +34,11 @@
                                       <li><a href="<?php  $this->load->helper('url'); echo site_url("/updateuser/viewuser") ; echo "?UID="; echo $row->UID; ?>">Kemaskini</a></li>
                                 
                                       <li class="divider"></li>
-                                      <li><a href="#">Padam</a></li>
+                                      <li><a href="<?php  $this->load->helper('url'); echo site_url("/updateuser/delete") ; echo "?UID="; echo $row->UID; ?>"  onclick="return confirm('Are you sure you want to delete <?php echo $row->Name ;?>?')" >Padam</a></li>
+									  
                                   </ul>
                               </div></td>
-                                          <td><a href="<?php  $this->load->helper('url'); echo site_url("/coursedetail/detail") ; echo "/"; echo $row->UID; ?>"><?php echo $row->Name ;?></a></td>
+                                          <td><a href="<?php  $this->load->helper('url'); echo site_url("/updateuser/detail") ; echo "?UID="; echo $row->UID; ?>" ><?php echo $row->Name ;?></a></td>
                                           <td><?php echo $row->ID ;?></td>
                                           <td><?php echo $row->Grade ;?></td>
                                          <td><?php  echo $row->Date; ?></td>

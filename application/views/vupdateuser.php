@@ -29,16 +29,6 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <link href="<?php echo base_url();?>css/style.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/style-responsive.css" rel="stylesheet" />
 
-
-
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-
-
   </head>
 
   <body class="lock-screen">
@@ -47,13 +37,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
      <br/>
       <!--main content start-->
       <section id="main-content">
-          
-              <!-- page start-->
-     
-              <div class="row">
-                 
-              
-				
+          <div class="row">
                   <div class="col-md-7 col-md-offset-1">
                       <section class="panel">
                           <header class="panel-heading">

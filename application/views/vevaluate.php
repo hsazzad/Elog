@@ -23,9 +23,7 @@
 	foreach($query as $row): ?>
 	<form method="post" action="<?php  $this->load->helper('url'); echo site_url("evaluate/do_approve"); ?>" >
 		<table class='table table-striped table-bordered table-condensed' >
-	<?php
-		$i++;
-		?>
+	<?php $i++;	?>
 		<br/>
 	<tr><th>Nama Kakitangan</th>
 	
