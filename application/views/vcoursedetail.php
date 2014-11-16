@@ -34,6 +34,7 @@
 									  <?php foreach($coursedetail as $row){ ?>
                                       <tr>
 									  <form method="post" action="<?php  $this->load->helper('url'); echo site_url("updateuser/do_approve"); ?>" >
+									  <?php echo "<input type='hidden' id='UID[".$i."]' name='UID[".$i."]' value='".$row->UID."'>"; ?>
 									  <?php echo "<input type='hidden' id='cid[".$i."]' name='cid[".$i."]' value='".$row->id."'>"; ?>
                                           <td><?php echo $row->Coursename ;?></td>
                                           <td><?php echo $row->course_catagory ;?></td>
@@ -64,7 +65,7 @@ foreach ($query2->result() as $row2)
  <?php
  } 	else{echo "<td>".$Supervisor_Grade."</td>";}?>
 										
-										
+										<?php $i++;?>
 											
 											<?php  }?>	
                                           

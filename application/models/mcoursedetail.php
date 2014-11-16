@@ -24,10 +24,14 @@ public function mdo_approve()
       
        $cid= $_POST['cid'][$val];
 	   $Supervisor_Grade= $_POST['Supervisor_Grade'][$val];
+	   
 	   $this->db->where('id', $cid);
-$this->db->update('course', array('Supervisor_Grade' => $Supervisor_Grade)); 
-
-		
+	$res=$this->db->update('course', array('Supervisor_Grade' => $Supervisor_Grade)); 
+if($res!=0)	  
+       {       return true;
+}
+else
+{return false;}	
 }
 
 
