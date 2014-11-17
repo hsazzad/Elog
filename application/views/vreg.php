@@ -75,8 +75,8 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                                       <input type="text"  maxlength="12" class="form-control" name = "ID"  value="<?php echo set_value('ID'); ?>" required>
                                   </div>
                                   <div class="form-group">
-                                      <label for="grade">Jawatan/Gred <?php echo form_error('Grade'); ?></label>
-                                 <input type="text" class="form-control" name = "Grade" placeholder="Jawatan/Gred" value="<?php echo set_value('Grade'); ?>" required>
+                                      <label for="grade">Gelaran Jawatan<?php echo form_error('Grade'); ?></label>
+                                 <input type="text" class="form-control" name = "Grade"  value="<?php echo set_value('Grade'); ?>" required>
                                   </div>
 								   <div class="form-group">
                                       <label for="grade">Tarikh Lantikan</label>
