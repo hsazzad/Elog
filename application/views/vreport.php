@@ -22,7 +22,16 @@
                                       Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
                                   </td>
                                   <td>
-                                      <span class="badge bg-important">75%</span>
+								  <?php $Days=0;
+										
+$daysquery = $this->db->get_where('course', 'Days >', 7);
+foreach ($daysquery->result() as $row1)
+{
+           $Days+=$row1->Days;		  
+}
+
+ ?>
+                                      <span class="badge bg-important"><?php echo $Days; ?></span>
                                   </td>
                                   <td>
                                     <div id="work-progress1"></div>
@@ -61,7 +70,7 @@
                                       <tr> 
                                           <th>Nama Penuh</th>
                                          
-                                          <th>Jawatan</th>
+                                    
                                           <th>Hari</th>
                                           
 										 
@@ -73,7 +82,7 @@
                                       <tr>
 									  
                                           <td><?php echo $row->Name ;?></a></td>
-                                          <td><?php echo $row->Grade ;?></td>
+                                       
                                          <td>
                                           <?php $Days=0;
 										  $UID= $row->UID; 
