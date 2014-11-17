@@ -31,11 +31,14 @@ foreach ($daysquery->result() as $row1)
 }
 if($Days>7)
 {
-echo $Days;
+?>
+<span class="badge bg-important">
+<?php
+echo $Days; ?></span><?php
 }
 
  ?>
-                                      <span class="badge bg-important"><?php echo $Days; ?></span>
+                                     
                                   </td>
                                   <td>
                                     <div id="work-progress1"></div>
