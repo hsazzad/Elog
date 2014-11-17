@@ -113,14 +113,14 @@ $f++;
                           <table class="table table-hover personal-task">
                               <tbody>
                               <tr>
-                                  <td>1</td>
+                                
                                   <td>
-                                      Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
+                                      Bil. Kakitangan yang menghadiri latihan Lebih dari 7 hari
                                   </td>
                                   <td>
 								  
 								  		 
- <span class="badge bg-important"><?php echo $d; ?>
+ <span class="badge bg-success"><?php echo $d; ?>
 </span>
                                      
                                   </td>
@@ -129,24 +129,24 @@ $f++;
                                   </td>
                               </tr>
                               <tr>
-                                  <td>2</td>
+                             
                                   <td>
                                        Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
                                   </td>
                                   <td>
-                                      <span class="badge bg-success"><?php echo $e; ?></span>
+                                      <span class="badge bg-danger"><?php echo $e; ?></span>
                                   </td>
                                   <td>
                                       <div id="work-progress2"></div>
                                   </td>
                               </tr>
 							   <tr>
-                                  <td>3</td>
+                               
                                   <td>
-                                       Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
+                                       Bil. Kakitangan yang menghadiri latihan sebanyak 7 hari
                                   </td>
                                   <td>
-                                      <span class="badge bg-success"><?php echo $f; ?></span>
+                                      <span class="badge bg-warning"><?php echo $f; ?></span>
                                   </td>
                                   <td>
                                       <div id="work-progress2"></div>
