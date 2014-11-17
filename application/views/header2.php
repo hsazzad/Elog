@@ -64,7 +64,7 @@
 			   <?php
   $UID=$this->session->userdata('UID');
 
-	$Status = "Pending";
+	$Status = "Belum Selesai";
 		  $query2 = $this->db->get_where('course', array( 'Status' => $Status));
 	 
 	$num=$query2->num_rows();
