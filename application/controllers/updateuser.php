@@ -54,9 +54,9 @@ $data['coursedetail']=$this->mcoursedetail->viewCourseDetail($UID);
 	   $Unit= $_POST['Unit'][$val];
 	  
 	    
-		echo $UID;
+		
   $this->db->where('UID',$UID);
-		$res= $this->db->update('user',array ('Name' => $Name, 'ID' => $ID)); 
+		$res= $this->db->update('user',array ('Name' => $Name, 'ID' => $ID, 'Grade' => $Grade,'Date' => $Date,'Unit' => $Unit)); 
  if($res>0)	  
        {      
 	  redirect('adminview');
