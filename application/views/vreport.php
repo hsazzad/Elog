@@ -86,7 +86,7 @@ foreach ($querycp->result() as $row2)
            $Days+=$row2->Days;		  
 }
 echo $Days;
-if ($Days>7)
+if ($Days<7)
 {
 $d++;
 }
