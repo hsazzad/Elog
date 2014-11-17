@@ -16,7 +16,7 @@
                                       <tr>
 									    
                                           <th>Nama Kursus</th>
-										  <th>Nama Pekerja</th>
+										  <th>Nama</th>
                                           <th>Kategori Kursus</th>
                                           <th>Tempat Kursus</th>
                                     
