@@ -71,7 +71,7 @@
                                       </tr>
                                       </thead>
                                       <tbody>
-									  <?php $i=0;$d=0;$e=0;?>
+									  <?php $i=0;$d=0;$e=0;$f=0;?>
 							<?php foreach ($User as $row){?>
                                       <tr>
 									  
@@ -93,6 +93,10 @@ $d++;
 if ($Days<7)
 {
 $e++;
+}
+if ($Days==7)
+{
+$f++;
 }
  ?></td> </tr>
                                 <?php } ?>
@@ -131,6 +135,18 @@ $e++;
                                   </td>
                                   <td>
                                       <span class="badge bg-success"><?php echo $e; ?></span>
+                                  </td>
+                                  <td>
+                                      <div id="work-progress2"></div>
+                                  </td>
+                              </tr>
+							   <tr>
+                                  <td>3</td>
+                                  <td>
+                                       Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
+                                  </td>
+                                  <td>
+                                      <span class="badge bg-success"><?php echo $f; ?></span>
                                   </td>
                                   <td>
                                       <div id="work-progress2"></div>
