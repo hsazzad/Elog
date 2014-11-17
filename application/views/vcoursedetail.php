@@ -16,6 +16,7 @@
                                       <tr>
 									    
                                           <th>Nama Kursus</th>
+										  <th>Nama Pekerja</th>
                                           <th>Kategori Kursus</th>
                                           <th>Tempat Kursus</th>
                                     
@@ -30,13 +31,21 @@
 										   
                                       </tr>
                                       </thead>
-                                      <tbody><?php $i++; ?>
+                                      <tbody><?php $i =0; ?>
 									  <?php foreach($coursedetail as $row){ ?>
                                       <tr>
 									  <form method="post" action="<?php  $this->load->helper('url'); echo site_url("updateuser/do_approve"); ?>" >
 									  <?php echo "<input type='hidden' id='UID[".$i."]' name='UID[".$i."]' value='".$row->UID."'>"; ?>
 									  <?php echo "<input type='hidden' id='cid[".$i."]' name='cid[".$i."]' value='".$row->id."'>"; ?>
                                           <td><?php echo $row->Coursename ;?></td>
+										  <td> <?php
+										  $UID=$row->UID;
+										  $query2 = $this->db->get_where('user', array( 'UID' => $UID)); 
+										  foreach ($query2->result() as $row2)
+										  {
+										  echo $row2->Name;
+										  }
+										  ?>
                                           <td><?php echo $row->course_catagory ;?></td>
                                           <td><?php echo $row->Place_type ;?></td>
    

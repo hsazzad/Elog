@@ -102,13 +102,11 @@ foreach ($query1->result() as $row1)
 {
           $name= $row1->Name;
 		  echo "<input type='hidden' id='name' name='name' value='".$name."'>"; 
-		  
 }
-					
 	echo "<input type='hidden' id='cid' name='cid' value='".$cid."'>"; ?>
 	
 	
-                          <a href="<?php  $this->load->helper('url'); echo site_url("coursedetail/detail2?cid=").$cid.?>">
+                          <a href="<?php  $this->load->helper('url'); echo site_url("coursedetail/detail2?cid=").$cid ;?> ">
                        
                                     <span class="subject">
                                     <span class="from"><?php echo $row2->UID; ?></span>
