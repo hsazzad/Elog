@@ -24,10 +24,14 @@
                                   <td>
 								  <?php $Days=0;
 										
-$daysquery = $this->db->get_where('course', 'Days >', 7);
+$daysquery = $this->db->get('course');
 foreach ($daysquery->result() as $row1)
 {
            $Days+=$row1->Days;		  
+}
+if($Days>7)
+{
+echo $Days;
 }
 
  ?>
