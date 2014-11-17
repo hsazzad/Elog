@@ -4,10 +4,112 @@
           <section class="wrapper">
               <!-- page start-->
               <div class="row">
-			 
+			  <div class="col-lg-8">
+                      <!--custom chart start-->
+                      <div class="border-head">
+                          <h3>Perbezaan bilangan latihan yang sudah dinilai dengan belum dinilai</h3>
+                      </div>
+                      <div class="custom-bar-chart">
+                          <ul class="y-axis">
+                              <li><span>100</span></li>
+                              <li><span>80</span></li>
+                              <li><span>60</span></li>
+                              <li><span>40</span></li>
+                              <li><span>20</span></li>
+                              <li><span>0</span></li>
+                          </ul>
+					<?php	  $query = $this->db->get_where('course', array('Mail_status' => 0));
+					
+					
+					$num = $query->num_rows() ;
+					
+			
+					
+					?>
+					<?php	  $query2 = $this->db->get_where('course', array('Mail_status' => 1));
+					
+					
+					$num2 = $query2->num_rows() ;
+					
+			
+					
+					?>
+                          <div class="bar">
+                              <div class="title">Belum</div>
+                              <div class="value tooltips" data-original-title="80%" data-toggle="tooltip" data-placement="top"><?php echo $num ?></div>
+                          </div>
+                          <div class="bar ">
+                              <div class="title">Sudah</div>
+                              <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top"><?php echo $num ?></div>
+                          </div>
+                         
+                      </div>
+                      <!--custom chart end-->
+                  </div>
 				  <div class="col-lg-8">
                       <!--work progress start-->
+<<<<<<< HEAD
                      
+=======
+                      <section class="panel">
+                          <div class="panel-body progress-panel">
+                              <div class="task-progress">
+                                  <h1>Bil Hari Kursus</h1>
+
+                              </div>
+                          </div>
+                          <table class="table table-hover personal-task">
+                              <tbody>
+                              <tr>
+                               
+                                  <td>
+                                      Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
+                                  </td>
+                                  <td>
+								  <?php $Days=0;
+										
+$daysquery = $this->db->get('course');
+foreach ($daysquery->result() as $row1)
+{
+           $Days+=$row1->Days;		  
+}
+if($Days>7)
+{
+?>
+<span class="badge bg-important">
+<?php
+echo $Days; ?></span><?php
+}
+
+elseif($Days<7)
+{
+echo $Days;
+}
+
+ ?>
+                                     
+                                  </td>
+                                  <td>
+                                    <div id="work-progress1"></div>
+                                  </td>
+                              </tr>
+                              <tr>
+                          
+                                  <td>
+                                       Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
+                                  </td>
+                                  <td>
+                                      <span class="badge bg-success">43%</span>
+                                  </td>
+                                  <td>
+                                      <div id="work-progress2"></div>
+                                  </td>
+                              </tr>
+                             
+                              </tbody>
+                          </table>
+                      </section>
+>>>>>>> origin/master
                       <!--work progress end-->
                   </div>
                   <div class="col-lg-8">
