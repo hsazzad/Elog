@@ -59,7 +59,7 @@ foreach ($query2->result() as $row2)
 {
         echo  "<option value='".$row2->Grade."'>".$row2->Name."</option>";
 }
- echo"</td></select>";
+ echo"</select></td>";
 ?>
  <td><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary'>Sahkan</button></td>
  <?php
@@ -82,7 +82,7 @@ foreach ($query3->result() as $row3)
 											<?php  }?>	
                                           
 										
-						
+						</tr>
 								 
                           </table>
                                 </div>

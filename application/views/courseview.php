@@ -38,7 +38,7 @@
                                            <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file; ?></td>
                                          <td><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
 										 
-										  <td><?php if($row->Status == "Pending"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } if($row->Status == "Completed") {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
+										   <td><?php if($row->Status == "Belum Selesai"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } elseif($row->Status == "Dalam Proses"){?> <span class="label label-warning"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
 				  
                                       </tr>
                                   <?php } }?>
