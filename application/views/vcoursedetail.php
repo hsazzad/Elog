@@ -18,7 +18,7 @@
                                           <th>Nama Kursus</th>
                                           <th>Kategori Kursus</th>
                                           <th>Tempat Kursus</th>
-                                          <th>Sijil</th>
+                                    
 										  <th>Penilaian Kakitangan</th>
 										  <th>Penilaian Pengetahuan</th>
 										  <th>Komen Kakitangan</th>
@@ -39,12 +39,12 @@
                                           <td><?php echo $row->Coursename ;?></td>
                                           <td><?php echo $row->course_catagory ;?></td>
                                           <td><?php echo $row->Place_type ;?></td>
-
+   
                                          <td><?php echo $row->Satisfaction ;?></td>
 										 <td><?php echo $row->Knowledge ;?></td>
 										 <td><?php echo $row->Comments ;?></td>
 										 <td><?php echo $row->Supervisor_comment ;?></td>
-										 <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file ;?><a/></td>
+									
                                          <td><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
 										  
 										  <td><?php if($row->Status == "Belum Selesai"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } elseif($row->Status == "Dalam Proses"){?> <span class="label label-warning"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>

@@ -36,6 +36,12 @@
     $( "#datepicker" ).datepicker();
   });
   </script>
+  <style>
+  input {
+  text-transform: uppercase;
+}
+  
+  </style>
   </head>
 
   <body>

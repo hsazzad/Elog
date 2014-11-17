@@ -41,6 +41,11 @@
 }
 
 
+  input {
+  text-transform: uppercase;
+}
+  
+
 
 </style>
   <body>
@@ -89,13 +94,22 @@
                           <p class="red"><?php echo $num; ?> Permohonan Baru</p>
                       </li>
 					   <li>
-					   <?php $i=0;?>
+					   
 					<?php   foreach ($query2->result() as $row2) { 
 					$cid= $row2->id;
+					$query1 = $this->db->get_where('user', array('UID' => $cid));
+foreach ($query1->result() as $row1)
+{
+          $name= $row1->Name;
+		  echo "<input type='hidden' id='name' name='name' value='".$name."'>"; 
+		  
+}
+					
 	echo "<input type='hidden' id='cid' name='cid' value='".$cid."'>"; ?>
 	
-                          <a href="<?php  $this->load->helper('url'); echo site_url("coursedetail/detail2?cid=").$cid; ?>">
-                           
+	
+                          <a href="<?php  $this->load->helper('url'); echo site_url("coursedetail/detail2?cid=").$cid.?>">
+                       
                                     <span class="subject">
                                     <span class="from"><?php echo $row2->UID; ?></span>
                                     <span class="time"><?php echo $row2->Course_Date; ?></span>
@@ -104,7 +118,7 @@
                                        <?php echo $row2->Coursename;?>
                                     </span>
                           </a>
-						  <?php $i++;} ?>
+						  <?php } ?>
                       </li>
                    
               <!-- inbox dropdown end -->
