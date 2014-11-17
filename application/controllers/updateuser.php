@@ -49,14 +49,14 @@ $data['coursedetail']=$this->mcoursedetail->viewCourseDetail($UID);
        $UID= $_POST['UID'][$val];
 	   $Name= $_POST['Name'][$val];
 	   $ID= $_POST['ID'][$val];
-	   $Grade= $_POST['Grade'][$val];
+	   
 	   $Date= $_POST['Date'][$val];
 	   $Unit= $_POST['Unit'][$val];
 	  
 	    
 		
   $this->db->where('UID',$UID);
-		$res= $this->db->update('user',array ('Name' => $Name, 'ID' => $ID, 'Grade' => $Grade,'Date' => $Date,'Unit' => $Unit)); 
+		$res= $this->db->update('user',array ('Name' => $Name, 'ID' => $ID, 'Date' => $Date,'Unit' => $Unit)); 
  if($res>0)	  
        {      
 	  redirect('adminview');

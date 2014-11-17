@@ -61,7 +61,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                                   </div>
                                   <div class="form-group">
                                       <label for="grade">Jawatan/Gred <?php echo form_error('Grade'); ?></label>
-                                 <input type="text" class="form-control" name = "Grade[<?php echo $i;?>]" placeholder="Jawatan/Gred" value="<?php echo  $row->Grade; ?>" required>
+                                 <input type="text" class="form-control" name = "Grade[<?php echo $i;?>]" placeholder="Jawatan/Gred" value="<?php echo  $row->Grade; ?>" disabled>
                                   </div>
 								   <div class="form-group">
                                       <label for="grade">Tarikh Lantikan</label>
