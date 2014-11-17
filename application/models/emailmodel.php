@@ -11,9 +11,9 @@ class emailmodel extends CI_Model {
   
   $config = Array(
      'protocol' => 'smtp',
-     'smtp_host' => 'ssl://smtp.gmail.com',
-     'smtp_port' => 465,
-     'smtp_user' => 'sharkcreep87@gmail.com', // change it to yours
+     'smtp_host' => 'mx1.hostinger.my',
+     'smtp_port' => 2525,
+     'smtp_user' => 'admin@sylobpsm.com', // change it to yours
      'smtp_pass' => '01082003', // change it to yours
      'mailtype' => 'html',
      'charset' => 'iso-8859-1',

@@ -17,6 +17,7 @@
                                           <th>Nama Kursus</th>
                                           <th>Kategori Kursus</th>
                                           <th>Tempat Kursus</th>
+						<th>Bil. Hari Kursus</th>
                                           <th>Sijil</th>
                                           <th>Tarikh Kursus</th>
 										  <th>Status</th>
@@ -34,7 +35,7 @@
                                           <td><?php echo $row->Coursename ;?></td>
                                           <td><?php echo $row->course_catagory ;?></td>
                                           <td><?php echo $row->Place_type ;?></td>
-
+ <td><?php echo $row->Days;?></td>
                                            <td><a href="<?php echo base_url();?>files/<?php echo $row->Cert_file; ?>" target="_blank"><?php echo $row->Cert_file; ?></td>
                                          <td><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
 										 
