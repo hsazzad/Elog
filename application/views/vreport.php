@@ -7,59 +7,7 @@
 			 
 				  <div class="col-lg-8">
                       <!--work progress start-->
-                      <section class="panel">
-                          <div class="panel-body progress-panel">
-                              <div class="task-progress">
-                                  <h1>Bil Hari Kursus</h1>
-
-                              </div>
-                          </div>
-                          <table class="table table-hover personal-task">
-                              <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>
-                                      Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
-                                  </td>
-                                  <td>
-								  <?php $Days=0;
-										
-$daysquery = $this->db->get('course');
-foreach ($daysquery->result() as $row1)
-{
-           $Days+=$row1->Days;		  
-}
-if($Days>7)
-{
-?>
-<span class="badge bg-important">
-<?php
-echo $Days; ?></span><?php
-}
-
- ?>
-                                     
-                                  </td>
-                                  <td>
-                                    <div id="work-progress1"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>
-                                       Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-success">43%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress2"></div>
-                                  </td>
-                              </tr>
-                             
-                              </tbody>
-                          </table>
-                      </section>
+                     
                       <!--work progress end-->
                   </div>
                   <div class="col-lg-8">
@@ -84,7 +32,7 @@ echo $Days; ?></span><?php
                                       </tr>
                                       </thead>
                                       <tbody>
-									  <?php $i=0;?>
+									  <?php $i=0;$d=0;?>
 							<?php foreach ($User as $row){?>
                                       <tr>
 									  
@@ -99,18 +47,58 @@ foreach ($querycp->result() as $row2)
            $Days+=$row2->Days;		  
 }
 echo $Days;
- ?></td>
-										  
-                                      </tr>
+if ($Days>7)
+{
+$d++;
+}
+ ?></td> </tr>
                                 <?php } ?>
 						
-								 
+                          </table> </div> </div>
+						   </section>
+			   <section class="panel">
+                          <div class="panel-body progress-panel">
+                              <div class="task-progress">
+                                  <h1>Bil Hari Kursus</h1>
+
+                              </div>
+                          </div>
+                          <table class="table table-hover personal-task">
+                              <tbody>
+                              <tr>
+                                  <td>1</td>
+                                  <td>
+                                      Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
+                                  </td>
+                                  <td>
+								  
+								  		 
+ <span class="badge bg-important"><?php echo $d; ?>
+</span>
+                                     
+                                  </td>
+                                  <td>
+                                    <div id="work-progress1"></div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>2</td>
+                                  <td>
+                                       Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
+                                  </td>
+                                  <td>
+                                      <span class="badge bg-success">43%</span>
+                                  </td>
+                                  <td>
+                                      <div id="work-progress2"></div>
+                                  </td>
+                              </tr>
+                             
+                              </tbody>
                           </table>
-                                </div>
-						
-              </div>
+                      </section>
               <!-- page end-->
-          </section>
+         
       </section>
       <!--main content end-->
       <!--footer start-->
