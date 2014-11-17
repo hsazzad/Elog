@@ -4,7 +4,6 @@ class mreminders extends CI_Model
   public function get_days($day)
   {
 
-    $day_start = date('Y-m-90');
 
     $day_start = date('Y-m-d', $day);
 
@@ -13,11 +12,9 @@ class mreminders extends CI_Model
     return $this->db->select('*')
       ->from('course')
 
-	 //  ->where('Course_Date <', $day_start)
-      ->where('Course_Date >',  $day)
 
 	   ->where('Course_Date <', $day_start)
-   //   ->where('Course_Date >', $day_end)
+  
 
       ->where('Mail_status =', $Mail_status)
       ->get()->result();

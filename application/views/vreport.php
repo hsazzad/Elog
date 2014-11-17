@@ -96,7 +96,7 @@ echo $Days;
                               <tr>
                           
                                   <td>
-                                       Bil. Kakitangan yang menghadiri latihan kurang dari 7 hari
+                                       Bil. Kakitangan yang menghadiri latihan Lebih dari 7 hari
                                   </td>
                                   <td>
                                       <span class="badge bg-success">43%</span>
