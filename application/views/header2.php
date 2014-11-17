@@ -36,7 +36,7 @@
 <style>
 .scrollable-menu {
     height: auto;
-    max-height: 400px;
+    max-height: 900px;
     overflow: scroll;
 }
 

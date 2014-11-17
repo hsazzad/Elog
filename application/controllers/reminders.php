@@ -14,7 +14,7 @@ class reminders extends CI_Controller
   {
    
   date_default_timezone_set('Asia/Kuala_Lumpur'); 
-  $timestamp = strtotime("+90 days" , date("Y/m/d"));
+  $timestamp = strtotime("+90 days");
  
   $reminder = $this->mreminders->get_days($timestamp);
   if(!empty($reminder))
@@ -24,7 +24,7 @@ class reminders extends CI_Controller
 
       $rid= $row->id;
 
-
+echo   $rid;
 	
 	  $query1 = $this->db->get_where('course', array('id' => $rid));
 foreach ($query1->result() as $row1)

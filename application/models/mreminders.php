@@ -13,7 +13,7 @@ class mreminders extends CI_Model
       ->from('course')
 
 
-	   ->where('Course_Date <', $day_start)
+	   ->where('Course_Date <=', $day_start)
   
 
       ->where('Mail_status =', $Mail_status)
