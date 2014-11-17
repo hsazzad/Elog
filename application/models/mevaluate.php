@@ -9,7 +9,6 @@ class mevaluate extends CI_Model{
 		 
     }
  
- 
    public function search()
     {
           $UID=$this->session->userdata('UID');
@@ -19,7 +18,7 @@ foreach ($query1->result() as $row1)
 {
           $egrade= $row1->Grade;
 }
-	$Status = "Pending";
+	$Status = "Belum Selesai";
 		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
 	 
 	$num=$query2->num_rows();
@@ -38,7 +37,7 @@ public function mdo_approve()
     {
 	
 	
-	$Status = "Completed";
+	$Status = "Selesai";
   
     $val= $_POST['val'];
        $UID= $_POST['UID'][$val];
