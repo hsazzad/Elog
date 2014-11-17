@@ -39,7 +39,7 @@
  <script src="<?php echo base_url();?>js/jquery.scrollTo.min.js"></script>
   <script src="<?php echo base_url();?>js/jquery.nicescroll.js" type="text/javascript"></script>
     <script type="text/javascript" language="javascript" src="<?php echo base_url();?>assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
-
+ <script src="<?php echo base_url();?>assets/chart-master/Chart.js"></script>
   <!--common script for all pages-->
     <script src="<?php echo base_url();?>js/common-scripts.js"></script>
 

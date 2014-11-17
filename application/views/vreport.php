@@ -104,6 +104,18 @@ echo $Days;
 								 
                           </table>
                                 </div>
+								<div class="tab-pane" id="chartjs">
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <section class="panel">
+                              <header class="panel-heading">
+                                  Doughnut
+                              </header>
+                              <div class="panel-body text-center">
+                                  <canvas id="doughnut" height="300" width="400"></canvas>
+                              </div>
+                          </section>
+                      </div>
                           </div>
                       </section>
                   </div>
