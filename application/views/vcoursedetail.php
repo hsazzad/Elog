@@ -61,7 +61,7 @@ foreach ($query2->result() as $row2)
 }
  echo"</td></select>";
 ?>
- <td><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary btn-block'  >Sahkan</button></td>
+ <td><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary'>Sahkan</button></td>
  <?php
  } 	else{
 	$query3 = 	$this->db->get_where('user', array('Grade'=>$Supervisor_Grade));
