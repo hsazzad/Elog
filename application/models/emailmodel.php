@@ -39,17 +39,16 @@ class emailmodel extends CI_Model {
      'smtp_port' => 465,
      'smtp_user' => 'sharkcreep87@gmail.com', // change it to yours
      'smtp_pass' => '01082003', // change it to yours
+     'mailtype' => 'html',
      'charset' => 'iso-8859-1',
      'wordwrap' => TRUE
   );
- $email_config['mailtype'] = 'html';
-
-$this->email->initialize($email_config);
+ 
     $this->email->set_newline("\r\n");
           $this->email->to($email);
           $this->email->from("admin@sylobpsm.com");
           $this->email->subject("Peringatan Pengesahan Latihan");
-          $this->email->message("Sila buat penilaian Latihan untuk kakitangan  "  .$name);
+          $this->email->message($name. " Sila buat penilaian Latihan untuk kakitangan anda, Sila   klik disini http://sylobpsm.com ");
           $this->email->send();
   echo $this->email->print_debugger();
  }
