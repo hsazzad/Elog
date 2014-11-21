@@ -28,7 +28,7 @@
 
   <body class="lock-screen">
 
-          <section class="wrapper">
+   <br><br>
    <div class="container">
 		
 		<form class="form-horizontal well" method="post" id="form" action="<?php  $this->load->helper('url'); echo site_url("/forgetPassword/doforget"); ?>">
@@ -43,20 +43,35 @@
 				<div class="form-actions">
 					<input type="submit" class="btn btn-primary" value="Reset" />
 				</div>
+				<br>
 				<?php if( isset($info)): ?>
-					<div class="alert alert-success">
-						<?php echo($info) ?>
+					<div class="alert alert-success alert-block fade in">
+					<button data-dismiss="alert" class="close close-sm" type="button">
+                                      <i class="icon-remove"></i>
+                                  </button>
+                                  <h4>
+                                      <i class="icon-ok-sign"></i>
+                                    <?php echo($info) ?>
+                                  </h4>
+						
 					</div>
 				<?php elseif( isset($error)): ?>
-					<div class="alert alert-error">
-						<?php echo($error) ?>
+					<div class="alert alert-danger alert-block fade in">
+					<button data-dismiss="alert" class="close close-sm" type="button">
+                                      <i class="icon-remove"></i>
+                                  </button>
+                                  <h4>
+                                     
+                                   	<?php echo($error) ?>
+                                  </h4>
+					
 					</div>
 				<?php endif; ?>
 				
 			</fieldset>
 		</form>
 	</div> 
-</section>
+
 
 
     <!-- js placed at the end of the document so the pages load faster -->

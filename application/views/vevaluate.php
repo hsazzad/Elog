@@ -69,15 +69,16 @@ foreach ($querycp->result() as $row2)
 {
           echo $Mail_status=$row2->Mail_status;
 }
-if($Mail_status==0)
+if($Mail_status==1)
+{
+
+}else
 {
 echo " disabled />";
 echo"Penyelia hanya boleh komen selepas 3 bulan dari tarikh latihan ini";
-}else
-{
-echo " ";
+echo " />";
 } ?> 
- />
+
    </textarea></td>
 	</tr>
 	
@@ -91,7 +92,21 @@ echo " ";
 	}
 	?>
 	
-	    
+	<section class="panel">
+                          <header class="panel-heading">
+                              Gritter Notifications
+                          </header>
+                          <div class="panel-body">
+                              <p class="text-muted">Click on below buttons to check it out.</p>
+                              <a id="add-regular" class="btn btn-default btn-sm" href="javascript:;">Regular</a>
+                              <a id="add-sticky" class="btn btn-success  btn-sm" href="javascript:;">Sticky</a>
+                              <a id="add-without-image" class="btn btn-info  btn-sm" href="javascript:;">Imageless</a>
+
+                              <a id="add-gritter-light" class="btn btn-warning  btn-sm" href="javascript:;">Light</a>
+                              <a id="add-max" class="btn btn-primary  btn-sm" href="javascript:;">Max of 3</a>
+                              <a id="remove-all" class="btn btn-danger  btn-sm" href="#">Remove all</a>
+                          </div>
+                      </section>    
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
      <!-- /container -->

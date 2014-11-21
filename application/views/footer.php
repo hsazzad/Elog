@@ -42,6 +42,7 @@
  <script src="<?php echo base_url();?>assets/chart-master/Chart.js"></script>
   <!--common script for all pages-->
     <script src="<?php echo base_url();?>js/common-scripts.js"></script>
+ <script src="<?php echo base_url();?>js/gritter.js" type="text/javascript"></script>
 
   <!--script for this page-->
   <script src="<?php echo base_url();?>js/form-component.js"></script>
