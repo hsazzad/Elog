@@ -31,10 +31,10 @@ class forgetPassword extends CI_Controller
             $r = $q->result();
             $user=$r[0];
 			$this->emailmodel->resetpassword($user);
-			$info= "Password has been reset and has been sent to email id: ". $email;
+			$info= "Kata laluan telah di reset dan dihantar ke : ". $email;
 			redirect('/forgetPassword/forget?info=' . $info, 'refresh');
         }
-		$error= "The email id you entered not found on our database ";
+		$error= "Alamat email ini tidak wujud dalam pangkalan data ";
 		redirect('/forgetPassword/forget?error=' . $error, 'refresh');
 		
 	} 

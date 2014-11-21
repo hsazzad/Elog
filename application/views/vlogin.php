@@ -53,6 +53,12 @@
                     Daftar
                 </a>
             </div>
+			 <div class="registration">
+             
+                <a class="" href="<?php  $this->load->helper('url'); echo site_url("/forgetPassword/forget"); ?>">
+                     Lupa Kata Laluan?
+                </a>
+            </div>
 
         </div>
 

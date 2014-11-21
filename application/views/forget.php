@@ -28,16 +28,18 @@
 
   <body class="lock-screen">
 
+          <section class="wrapper">
    <div class="container">
 		
 		<form class="form-horizontal well" method="post" id="form" action="<?php  $this->load->helper('url'); echo site_url("/forgetPassword/doforget"); ?>">
 			<fieldset>
-	          <legend>Reset password</legend>
+	          <legend>Reset Katalaluan</legend>
 			
 				<div class="control-group">
 					<label for="email"> Email</label>
 					<input class="box" type="text" id="email" name="email" />
 				</div>
+				<br>
 				<div class="form-actions">
 					<input type="submit" class="btn btn-primary" value="Reset" />
 				</div>
@@ -54,7 +56,7 @@
 			</fieldset>
 		</form>
 	</div> 
-
+</section>
 
 
     <!-- js placed at the end of the document so the pages load faster -->
