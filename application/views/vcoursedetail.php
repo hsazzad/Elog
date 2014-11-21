@@ -13,21 +13,21 @@
                                 <div class="adv-table">
                                    <table class="table-bordered table-striped">
                                       <thead>
-                                      <tr>
+                                      <tr >
 									    
-                                          <th>Nama Kursus</th>
-										  <th>Nama</th>
-                                          <th>Kategori Kursus</th>
-                                          <th>Tempat Kursus</th>
+                                          <th  style="width: 70px">Nama Kursus</th>
+										  <th  style="width: 70px">Nama</th>
+                                          <th  style="width: 70px">Kategori Kursus</th>
+                                          <th  style="width: 70px">Tempat Kursus</th>
                                     
-										  <th>Penilaian Kakitangan</th>
-										  <th>Penilaian Pengetahuan</th>
-										  <th>Komen Kakitangan</th>
-										  <th>Komen Pegawai Penilai</th>
-                                          <th>Tarikh Kursus</th>
+										  <th  style="width: 70px">Penilaian Kakitangan</th>
+										  <th  style="width: 70px">Penilaian Pengetahuan</th>
+										  <th  style="width: 70px">Komen Kakitangan</th>
+										  <th  style="width: 70px">Komen Pegawai Penilai</th>
+                                          <th  style="width: 70px">Tarikh Kursus</th>
 										 
-										  <th>Status</th>
-										   <th>Pegawai Penilai</th>
+										  <th  style="width: 70px">Status</th>
+										   <th  style="width: 70px">Pegawai Penilai</th>
 										   
                                       </tr>
                                       </thead>
@@ -69,8 +69,8 @@ foreach ($query2->result() as $row2)
         echo  "<option value='".$row2->Grade."'>".$row2->Name."</option>";
 }
  echo"</select></td>";
-?>
- <td style="width: 70px"><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary'>Sahkan</button></td></tr>
+
+  echo"<td style='width: 70px'>" ; ?><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary'>Sahkan</button></td></tr>
  <?php
  } 	else{
 	$query3 = 	$this->db->get_where('user', array('Grade'=>$Supervisor_Grade));
