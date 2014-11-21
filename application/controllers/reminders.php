@@ -14,7 +14,7 @@ class reminders extends CI_Controller
   {
    
   date_default_timezone_set('Asia/Kuala_Lumpur'); 
-  $timestamp = strtotime("+90 days");
+  $timestamp = strtotime("-3 month");
  
   $reminder = $this->mreminders->get_days($timestamp);
   if(!empty($reminder))

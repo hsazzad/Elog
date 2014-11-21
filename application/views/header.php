@@ -70,7 +70,7 @@ foreach ($query1->result() as $row1)
           $egrade= $row1->Grade;
 		  
 }
-	$Status = "Belum Selesai";
+	$Status = "Dalam Proses";
 		  $query2 = $this->db->get_where('course', array('Supervisor_Grade' => $egrade, 'Status' => $Status));
 	 
 	$num=$query2->num_rows();
