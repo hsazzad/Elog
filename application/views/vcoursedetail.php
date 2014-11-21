@@ -11,7 +11,7 @@
                           </header>
                           <div class="panel-body">
                                 <div class="adv-table">
-                                    <table  class="display table table-bordered table-striped" id="example">
+                                   <table class="table-bordered table-striped">
                                       <thead>
                                       <tr>
 									    
@@ -70,14 +70,14 @@ foreach ($query2->result() as $row2)
 }
  echo"</select></td>";
 ?>
- <td><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary'>Sahkan</button></td>
+ <td><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary'>Sahkan</button></td></tr>
  <?php
  } 	else{
 	$query3 = 	$this->db->get_where('user', array('Grade'=>$Supervisor_Grade));
  
 foreach ($query3->result() as $row3)
 {
-         echo "<td>".$row3->Name."</td>";
+         echo "<td>".$row3->Name."</td></tr>";
 }
   }
 
@@ -91,7 +91,7 @@ foreach ($query3->result() as $row3)
 											<?php  }?>	
                                           
 										
-						</tr>
+						
 								 
                           </table>
                                 </div>
