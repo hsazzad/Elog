@@ -31,13 +31,14 @@ foreach ($query1->result() as $row1)
 {
           $sgrade= $row1->Supervisor_Grade;
 		
+		
 }
 
  $query2 = $this->db->get_where('user', array('Grade' => $sgrade));
 foreach ($query2->result() as $row2)
 {
           $email= $row2->Email;
-		  $name = $row2->Name;
+		  
 
 echo $email;
 	  

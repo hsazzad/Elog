@@ -5,7 +5,7 @@ class mreminders extends CI_Model
   {
 
 
-    $day_start = date('Y/m/d', $day);
+    $day_start = date('Y-m-d', $day);
 
   $Mail_status="0";
    // $day_end = date('Y-m-d 23:59:59', $day);
