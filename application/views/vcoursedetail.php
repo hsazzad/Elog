@@ -37,8 +37,8 @@
 									  <form method="post" action="<?php  $this->load->helper('url'); echo site_url("updateuser/do_approve"); ?>" >
 									  <?php echo "<input type='hidden' id='UID[".$i."]' name='UID[".$i."]' value='".$row->UID."'>"; ?>
 									  <?php echo "<input type='hidden' id='cid[".$i."]' name='cid[".$i."]' value='".$row->id."'>"; ?>
-                                          <td><?php echo $row->Coursename ;?></td>
-										  <td> <?php
+                                          <td style="width: 70px"><?php echo $row->Coursename ;?></td>
+										  <td style="width: 70px"> <?php
 										  $UID=$row->UID;
 										  $query2 = $this->db->get_where('user', array( 'UID' => $UID)); 
 										  foreach ($query2->result() as $row2)
@@ -46,38 +46,38 @@
 										  echo $row2->Name;
 										  }
 										  ?>
-                                          <td><?php echo $row->course_catagory ;?></td>
-                                          <td><?php echo $row->Place_type ;?></td>
+                                          <td style="width: 70px"><?php echo $row->course_catagory ;?></td>
+                                          <td style="width: 70px"><?php echo $row->Place_type ;?></td>
    
-                                         <td><?php echo $row->Satisfaction ;?></td>
-										 <td><?php echo $row->Knowledge ;?></td>
-										 <td><?php echo $row->Comments ;?></td>
-										 <td><?php echo $row->Supervisor_comment ;?></td>
+                                         <td style="width: 70px"><?php echo $row->Satisfaction ;?></td>
+										 <td style="width: 70px"><?php echo $row->Knowledge ;?></td>
+										 <td style="width: 70px"><?php echo $row->Comments ;?></td>
+										 <td style="width: 70px"><?php echo $row->Supervisor_comment ;?></td>
 									
-                                         <td><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
+                                         <td style="width: 70px"><?php $date=$row->Course_Date; echo date("d/m/Y",strtotime($date)); ?></td>
 										  
-										  <td><?php if($row->Status == "Belum Selesai"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } elseif($row->Status == "Dalam Proses"){?> <span class="label label-warning"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
+										  <td style="width: 70px"><?php if($row->Status == "Belum Selesai"){?> <span class="label label-danger"><?php echo $row->Status ;?></span><?php } elseif($row->Status == "Dalam Proses"){?> <span class="label label-warning"><?php echo $row->Status ;?></span><?php } else {?> <span class="label label-success"> <?php echo $row->Status ; }?></span></td>
 
 										  
 										     <?php $Supervisor_Grade=$row->Supervisor_Grade;
 		if($Supervisor_Grade=="")
 		{
 $query2 = $this->db->get_where('user');
-echo "<td><select  name='Supervisor_Grade[".$i."]'>";
+echo "<td><select style='width: 70px' name='Supervisor_Grade[".$i."]'>";
 foreach ($query2->result() as $row2)
 {
         echo  "<option value='".$row2->Grade."'>".$row2->Name."</option>";
 }
  echo"</select></td>";
 ?>
- <td><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary'>Sahkan</button></td></tr>
+ <td style="width: 70px"><button type='submit' name='val' id='val' value="<?php echo $i; ?>" class='btn btn-primary'>Sahkan</button></td></tr>
  <?php
  } 	else{
 	$query3 = 	$this->db->get_where('user', array('Grade'=>$Supervisor_Grade));
  
 foreach ($query3->result() as $row3)
 {
-         echo "<td>".$row3->Name."</td></tr>";
+         echo "<td style='width: 70px'>".$row3->Name."</td></tr>";
 }
   }
 
