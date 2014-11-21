@@ -238,3 +238,9 @@ ERROR - 2014-11-21 04:59:53 --> Severity: 8192  --> mysql_pconnect(): The mysql 
 ERROR - 2014-11-21 04:59:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\Elog\system\database\drivers\mysql\mysql_driver.php 91
 ERROR - 2014-11-21 04:59:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\Elog\system\database\drivers\mysql\mysql_driver.php 91
 ERROR - 2014-11-21 04:59:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\Elog\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-11-21 05:03:10 --> 404 Page Not Found --> img
+ERROR - 2014-11-21 05:03:13 --> Severity: Notice  --> Undefined variable: data C:\xampp\htdocs\Elog\application\controllers\forgetPassword.php 22
+ERROR - 2014-11-21 05:03:13 --> 404 Page Not Found --> forgetPassword/img
+ERROR - 2014-11-21 05:03:37 --> Severity: Notice  --> Undefined variable: data C:\xampp\htdocs\Elog\application\controllers\forgetPassword.php 22
+ERROR - 2014-11-21 04:07:59 --> Severity: Notice  --> Undefined property: stdClass::$id C:\xampp\htdocs\Elog\application\models\emailmodel.php 60
+ERROR - 2014-11-21 04:07:59 --> Severity: Notice  --> Undefined property: stdClass::$email C:\xampp\htdocs\Elog\application\models\emailmodel.php 64

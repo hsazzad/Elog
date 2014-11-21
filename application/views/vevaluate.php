@@ -63,8 +63,8 @@ foreach ($querycp->result() as $row2)
 	<tr><th>Komen Pegawai Penilai</th>    
    <td><textarea class="form-control" data-placement="left" data-toggle="tooltip" class="btn btn-default tooltips" type="button" data-original-title="Tooltip on left" id="Supervisor_comment[<?php echo $j;?>]" name="Supervisor_comment[<?php echo $j;?>]" rows="4"
    
-   <?php $UID= $row->UID; 
-$querycp = $this->db->get_where('course', array('UID' => $UID));
+   <?php $cid= $row->id; 
+$querycp = $this->db->get_where('course', array('id' => $cid));
 foreach ($querycp->result() as $row2)
 {
           echo $Mail_status=$row2->Mail_status;
@@ -75,9 +75,9 @@ echo " disabled />";
 echo"Penyelia hanya boleh komen selepas 3 bulan dari tarikh latihan ini";
 }else
 {
-echo " ";
+echo " />";
 } ?> 
- />
+ 
    </textarea></td>
 	</tr>
 	
