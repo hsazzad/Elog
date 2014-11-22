@@ -40,18 +40,6 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
 
   </head>
-  <style>
-
-
-
-  input {
-  text-transform: uppercase;
-}
-  
-
-
-</style>
-
   <body class="lock-screen">
 
   <br/>
@@ -79,15 +67,15 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 		
 	
                                       <label for="exampleInputEmail1">Nama Penuh</label>
-                                      <input type="text" class="form-control" id ="Name" name = "Name"   value="<?php echo set_value('Name'); ?>" required autofocus>
+                                      <input type="text" style="text-transform:uppercase" class="form-control" id ="Name" name = "Name"   value="<?php echo set_value('Name'); ?>" required autofocus>
                                   </div>
                                   <div class="form-group">
                                       <label for="ic">No. Kad Pengenalan <?php echo form_error('ID'); ?></label>
-                                      <input type="text"  maxlength="12" class="form-control" name = "ID"  value="<?php echo set_value('ID'); ?>" required>
+                                      <input type="text" style="text-transform:uppercase"  maxlength="12" class="form-control" name = "ID"  value="<?php echo set_value('ID'); ?>" required>
                                   </div>
                                   <div class="form-group">
                                       <label for="grade">Gelaran Jawatan<?php echo form_error('Grade'); ?></label>
-                                 <input type="text" class="form-control" name = "Grade"  value="<?php echo set_value('Grade'); ?>" required>
+                                 <input type="text" style="text-transform:uppercase" class="form-control" name = "Grade"  value="<?php echo set_value('Grade'); ?>" required>
                                   </div>
 								   <div class="form-group">
                                       <label for="grade">Tarikh Lantikan</label>
@@ -98,7 +86,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                                   </div>
 								   <div class="form-group">
                                       <label for="grade">Unit/Bahagian/Jabatan</label>
-                               <input type="text" class="form-control" name = "Unit" placeholder="Unit/Bahagian/Jabatan" value="<?php echo set_value('Unit'); ?>" required>
+                               <input type="text" style="text-transform:uppercase" class="form-control" name = "Unit" placeholder="Unit/Bahagian/Jabatan" value="<?php echo set_value('Unit'); ?>" required>
                                   </div>
 								   <div class="form-group">
 								   <label for="inputUnit">Username <?php echo form_error('UID'); ?></label>
@@ -118,7 +106,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 								    <div class="form-group">
 								<label for="inputEmail">Email</label><?php echo form_error('Email'); ?>
                                     
-                              <input type="email" class="form-control" name = "Email" placeholder="Email" value="<?php echo set_value('Email'); ?>" required>
+                              <input type="email"  class="form-control" name = "Email" placeholder="Email" value="<?php echo set_value('Email'); ?>" required>
                                   </div>
                                   
                                <center>   <button type="submit" class="btn btn-info ">Hantar</button></center>
