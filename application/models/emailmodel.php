@@ -48,7 +48,7 @@ class emailmodel extends CI_Model {
           $this->email->to($email);
           $this->email->from("admin@sylobpsm.com");
           $this->email->subject("Peringatan Pengesahan Latihan");
-          $this->email->message($name. " Sila buat penilaian Latihan untuk kakitangan anda, Sila   klik disini http://sylobpsm.com ");
+          $this->email->message(" Sila buat penilaian Latihan untuk kakitangan ".$name.", Sila   klik disini http://sylobpsm.com ");
           $this->email->send();
   echo $this->email->print_debugger();
  }

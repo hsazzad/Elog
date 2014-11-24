@@ -45,7 +45,7 @@ $name = $row2->Name ;
 foreach ($query3->result() as $row3)
 {
           $email= $row3->Email;
-		  
+		
 
 echo $email;
 	  
