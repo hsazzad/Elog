@@ -71,7 +71,7 @@ foreach ($querycp->result() as $row2)
 }
 if($Mail_status==1)
 {
-
+echo " />";
 }else
 {
 
@@ -83,7 +83,7 @@ echo " />";
 
    </textarea></td>
 	</tr>
-	
+	<th><button type='submit' name="val" id="val"  value="<?php echo $j;?>" class='btn btn-primary btn-block' >Sahkan</button></th>
 </table>
 <hr/>
 <?php $j++;?>
@@ -93,28 +93,13 @@ echo " />";
 	echo "Tiada Rekod untuk disahkan";
 	}
 	?>
-	
-	<section class="panel">
-                          <header class="panel-heading">
-                              Gritter Notifications
-                          </header>
-                          <div class="panel-body">
-                              <p class="text-muted">Click on below buttons to check it out.</p>
-                              <a id="add-regular" class="btn btn-default btn-sm" href="javascript:;">Regular</a>
-                              <a id="add-sticky" class="btn btn-success  btn-sm" href="javascript:;">Sticky</a>
-                              <a id="add-without-image" class="btn btn-info  btn-sm" href="javascript:;">Imageless</a>
 
-                              <a id="add-gritter-light" class="btn btn-warning  btn-sm" href="javascript:;">Light</a>
-                              <a id="add-max" class="btn btn-primary  btn-sm" href="javascript:;">Max of 3</a>
-                              <a id="remove-all" class="btn btn-danger  btn-sm" href="#">Remove all</a>
-                          </div>
-                      </section>    
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
      <!-- /container -->
 	  </div>
       </div>
- 
+   <script src="<?php echo base_url();?>js/gritter.js" type="text/javascript"></script>
  </section></section></section>
 	  
  <?php include 'footer.php';?>
