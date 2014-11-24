@@ -30,14 +30,21 @@ echo   $rid;
 foreach ($query1->result() as $row1)
 {
           $sgrade= $row1->Supervisor_Grade;
+		  $uid = $row1->UID ;
 		
 		
 }
+$query2 = $this->db->get_where('user', array('UID' => $uid));
 
- $query2 = $this->db->get_where('user', array('Grade' => $sgrade));
-foreach ($query2->result() as $row2)
+foreach($query2->result() as $row2)
 {
-          $email= $row2->Email;
+
+$name = $row2->Name ;
+
+ $query3 = $this->db->get_where('user', array('Grade' => $sgrade));
+foreach ($query3->result() as $row3)
+{
+          $email= $row3->Email;
 		  
 
 echo $email;
@@ -47,7 +54,7 @@ echo $email;
           $this->mreminders->mark_reminded($rid); 
 		  }
     
-  } 
+  } }
   }
   
   else{
