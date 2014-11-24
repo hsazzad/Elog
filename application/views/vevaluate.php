@@ -83,7 +83,9 @@ echo " />";
 
    </textarea></td>
 	</tr>
+
 	<th><button type='submit' name="val" id="val"  value="<?php echo $j;?>" class='btn btn-primary btn-block' >Sahkan</button></th>
+
 </table>
 <hr/>
 <?php $j++;?>
