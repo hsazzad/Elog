@@ -71,7 +71,7 @@ foreach ($querycp->result() as $row2)
 }
 if($Mail_status==1)
 {
-
+echo " />";
 }else
 {
 
@@ -83,7 +83,7 @@ echo " />";
 
    </textarea></td>
 	</tr>
-	
+	<th><button type='submit' name="val" id="val"  value="<?php echo $j;?>" class='btn btn-primary btn-block' >Approve</button></th>
 </table>
 <hr/>
 <?php $j++;?>
