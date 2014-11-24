@@ -24,7 +24,7 @@ class reminders extends CI_Controller
 
       $rid= $row->id;
 
-echo   $rid;
+
 	
 	  $query1 = $this->db->get_where('course', array('id' => $rid));
 foreach ($query1->result() as $row1)
