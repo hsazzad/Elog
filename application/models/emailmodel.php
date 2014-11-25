@@ -4,6 +4,8 @@ class emailmodel extends CI_Model {
  function emailmodel(){
   parent::__construct();
   $this->load->library('email');
+  $this->load->helper('security');
+  $this->load->library('encrypt');
  }
 
 
@@ -11,8 +13,8 @@ class emailmodel extends CI_Model {
   
   $config = Array(
      'protocol' => 'smtp',
-     'smtp_host' => 'mx1.hostinger.my',
-     'smtp_port' => 2525,
+     'smtp_host' => 'mega3.kubri.net',
+     'smtp_port' => 465,
      'smtp_user' => 'admin@sylobpsm.com', // change it to yours
      'smtp_pass' => '01082003', // change it to yours
      'mailtype' => 'html',
@@ -35,15 +37,15 @@ class emailmodel extends CI_Model {
   
   $config = Array(
      'protocol' => 'smtp',
-     'smtp_host' => 'ssl://smtp.gmail.com',
+     'smtp_host' => 'mega3.kubri.net',
      'smtp_port' => 465,
-     'smtp_user' => 'sharkcreep87@gmail.com', // change it to yours
+     'smtp_user' => 'admin@sylobpsm.com', // change it to yours
      'smtp_pass' => '01082003', // change it to yours
      'mailtype' => 'html',
      'charset' => 'iso-8859-1',
      'wordwrap' => TRUE
   );
- 
+ $this->load->library('email', $config);
     $this->email->set_newline("\r\n");
           $this->email->to($email);
           $this->email->from("admin@sylobpsm.com");
@@ -54,16 +56,29 @@ class emailmodel extends CI_Model {
  }
  function resetpassword($user)
 	{
-		date_default_timezone_set('GMT');
+	
+	$config = Array(
+     'protocol' => 'smtp',
+     'smtp_host' => 'mega3.kubri.net',
+     'smtp_port' => 465,
+     'smtp_user' => 'admin@sylobpsm.com', // change it to yours
+     'smtp_pass' => '01082003', // change it to yours
+     'mailtype' => 'html',
+     'charset' => 'iso-8859-1',
+     'wordwrap' => TRUE
+  );
+	       $this->load->library('email', $config);
+		
 		$this->load->helper('string');
-		$password= random_string('alnum', 16);
-		$this->db->where('id', $user->id);
-		$this->db->update('user',array('password'=>MD5($password)));
+		$password= random_string('alnum', 8);
+		$passwordsha1 = $this->encrypt->sha1($password);
+		$this->db->where('UID', $user->UID);
+		$this->db->update('user',array('password'=>$passwordsha1));
 		$this->load->library('email');
 		$this->email->from('admin@sylobpsm.com', 'Admin sylobpsm');
-		$this->email->to($user->email); 	
+		$this->email->to($user->Email); 	
 		$this->email->subject('Reset Password');
-		$this->email->message('You have requested the new password, Here is you new password:'. $password);	
+		$this->email->message('Anda telah meminta untuk menukar kata laluan, ini kata lauan baru anda : '. $password);	
 		$this->email->send();
 		
 	} 
