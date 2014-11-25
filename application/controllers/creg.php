@@ -26,7 +26,7 @@ class creg extends CI_Controller {
 		$this->form_validation->set_rules('Date', 'Day/Month/Year', 'trim|required');
 		$this->form_validation->set_rules('Password', 'Kata Laluan', 'required|min_length[5]|trim');
 		$this->form_validation->set_rules('passconf','Ulangan Kata Laluan', 'trim|required|matches[Password]'); 
-		$this->form_validation->set_rules('Email', 'Email', 'callback_email_check');
+		$this->form_validation->set_rules('Email', 'Email', 'required|is_unique[user.Email]|callback_email_check');
 		
 		if ($this->form_validation->run() == FALSE)
 		{
