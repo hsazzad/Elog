@@ -40,10 +40,10 @@ public function mdo_approve()
 	$Status = "Selesai";
   
     $val= $_POST['val'];
-       $UID= $_POST['UID'][$val];
+       $cid= $_POST['cid'][$val];
 	   $Supervisor_comment= $_POST['Supervisor_comment'][$val];
 		
-		$this->db->where('UID', $UID); 
+		$this->db->where('id', $cid); 
 $res=$this->db->update('course',array ('Supervisor_comment' => $Supervisor_comment, 'Status' => $Status)); 
     
 	 if($res!=0)	  

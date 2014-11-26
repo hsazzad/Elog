@@ -27,8 +27,8 @@
 		<br/>
 	<tr><th>Nama Kakitangan</th>
 	
-	<?php  $UID= $row->UID;
-	echo "<input type='hidden' id='UID[".$j."]' name='UID[".$j."]' value='".$UID."'>"; ?>
+	<?php  $cid= $row->id;
+	echo "<input type='hidden' id='cid[".$j."]' name='cid[".$j."]' value='".$cid."'>"; ?>
 	<td><?php $UID= $row->UID; 
 $querycp = $this->db->get_where('user', array('UID' => $UID));
 foreach ($querycp->result() as $row2)
@@ -71,20 +71,15 @@ foreach ($querycp->result() as $row2)
 }
 if($Mail_status==1)
 {
-echo " />";
+echo " /></textarea></td></tr>";
+echo "<th><button type='submit' name='val' id='val'  value='".$j."' class='btn btn-primary btn-block'>Sahkan</button></th>";
 }else
 {
 
 echo " disabled />";
-echo"Penyelia hanya boleh komen selepas 3 bulan dari tarikh latihan ini";
-echo " />";
+echo"Penyelia hanya boleh komen selepas 3 bulan dari tarikh latihan ini</textarea></td></tr>";
+
 } ?> 
-
-
-   </textarea></td>
-	</tr>
-
-	<th><button type='submit' name="val" id="val"  value="<?php echo $j;?>" class='btn btn-primary btn-block' >Sahkan</button></th>
 
 </table>
 <hr/>

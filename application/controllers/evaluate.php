@@ -26,11 +26,10 @@ $data ['query']=$this->mevaluate->search();
     {
 	
 	  $this->load->model ('mevaluate'); 
-	   $res = $this->mevaluate->mdo_approve();
-	if( $res==1)
-	{
+	   $this->mevaluate->mdo_approve();
+
 	redirect('evaluate');
-	}
+	
 	
     
     }
