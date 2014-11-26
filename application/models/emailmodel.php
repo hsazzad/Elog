@@ -48,11 +48,11 @@ class emailmodel extends CI_Model {
  $this->load->library('email', $config);
     $this->email->set_newline("\r\n");
           $this->email->to($email);
-          $this->email->from("admin@sylobpsm.com");
+          $this->email->from('admin@sylobpsm.com', "Admin sylobpsm");
           $this->email->subject("Peringatan Pengesahan Latihan");
           $this->email->message(" Sila buat penilaian Latihan untuk kakitangan ".$name.", Sila   klik disini http://sylobpsm.com ");
           $this->email->send();
-  echo $this->email->print_debugger();
+ // echo $this->email->print_debugger();
  }
  function resetpassword($user)
 	{
